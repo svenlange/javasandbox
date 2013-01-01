@@ -1,4 +1,5 @@
-// quicksort benötigt weniger resourcen als mergesort. qs verzichtet auf mischvorgang und basiert auch auf divide-and-conquer
+package za.co.svenlange.sorting;// quicksort benötigt weniger resourcen als mergesort.
+// quicksort verzichtet auf mischvorgang und basiert auch auf divide-and-conquer.
 
 import java.util.Arrays;
 

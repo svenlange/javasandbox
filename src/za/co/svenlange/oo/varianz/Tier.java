@@ -1,4 +1,4 @@
-package tiger.melken;
+package za.co.svenlange.oo.varianz;
 
 public class Tier {
 

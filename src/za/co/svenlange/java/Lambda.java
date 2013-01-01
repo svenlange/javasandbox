@@ -1,3 +1,5 @@
+package za.co.svenlange.java;
+
 import java.util.ArrayList;
 import java.util.Collection;
 
@@ -28,9 +30,9 @@ public class Lambda {
         people.add(p1);
         people.add(p2);
 
-        Comparable c = (Person a, Person b) -> {
-            a.name.compareTo(b.name);
-        };
+//        Comparable c = (Person a, Person b) -> {
+//            a.name.compareTo(b.name);
+//        };
 
         System.out.println("m");
     }

@@ -1,4 +1,4 @@
-package tiger.melken;
+package za.co.svenlange.oo.varianz;
 
 import java.util.ArrayList;
 import java.util.List;

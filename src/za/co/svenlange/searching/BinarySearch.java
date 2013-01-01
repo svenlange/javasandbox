@@ -1,4 +1,6 @@
-public class Search {
+package za.co.svenlange.searching;
+
+public class BinarySearch {
 
 	static final int[] FELD = {1,2,3,6,8,9};
 	
