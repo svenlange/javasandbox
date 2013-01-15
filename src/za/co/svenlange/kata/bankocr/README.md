@@ -83,7 +83,7 @@ Some gotchas to avoid:
 
 ## Suggested Test Cases
 
-If you want to just copy and paste these test cases into your editor, I suggest first clicking "edit this page" so you can see the source. Then you can be sure to copy across all the whitespace necessary. Just don't save any changes by mistake.
+Be aware of missing necessary or having unnecessary whitespacs when doing a copy and paste of the following test cases.
 
 ### use case 1
 ```
