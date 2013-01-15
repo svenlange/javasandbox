@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * TODO/FIXME Javadoc
+ * AccountNumber
  *
  * @author Sven Lange
  */
@@ -22,12 +22,12 @@ public class AccountNumber {
         int exponent = 8;
 
         for (int i = 0; i < 27; i += 3) {
-            StringBuffer buffer = new StringBuffer();
-            buffer.append(string.substring(0 + i, 0 + 3 + i));
-            buffer.append(string.substring(27 + i, 27 + 3 + i));
-            buffer.append(string.substring(54 + i, 54 + 3 + i));
+            StringBuffer sb = new StringBuffer();
+            sb.append(string.substring(0 + i, 0 + 3 + i));
+            sb.append(string.substring(27 + i, 27 + 3 + i));
+            sb.append(string.substring(54 + i, 54 + 3 + i));
 
-            int number = new Digit(buffer).toInteger();
+            int number = new Digit(sb).toInteger();
             result += number * Math.pow(10, exponent);
 
             exponent--;
@@ -48,11 +48,11 @@ public class AccountNumber {
     }
 
     public String toEntryString() {
-        StringBuilder stringBuffer = new StringBuilder();
-        stringBuffer.append(string.substring(0, 27)).append("\n");
-        stringBuffer.append(string.substring(27, 54)).append("\n");
-        stringBuffer.append(string.substring(54, 81)).append("\n");
-        return stringBuffer.toString();
+        StringBuilder sb = new StringBuilder();
+        sb.append(string.substring(0, 27)).append("\n");
+        sb.append(string.substring(27, 54)).append("\n");
+        sb.append(string.substring(54, 81)).append("\n");
+        return sb.toString();
     }
 
     public boolean isValid() {

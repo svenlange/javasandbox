@@ -5,7 +5,7 @@ import org.junit.Test;
 import static junit.framework.Assert.assertEquals;
 
 /**
- * TODO/FIXME Javadoc
+ * DigitTest
  *
  * @author Sven Lange
  */
@@ -13,95 +13,95 @@ public class DigitTest {
 
     @Test
     public void convertNull() {
-        String input = " _ " +
-                "| |" +
-                "|_|";
+        String line = " _ " +
+                      "| |" +
+                      "|_|";
 
-        assertConvertZahl(0, input);
+        assertToInteger(0, line);
     }
 
     @Test
     public void convertEins() {
-        String input = "   " +
-                "  |" +
-                "  |";
+        String line = "   " +
+                      "  |" +
+                      "  |";
 
-        assertConvertZahl(1, input);
+        assertToInteger(1, line);
     }
 
     @Test
     public void convertZwei() {
-        String input = " _ " +
-                " _|" +
-                "|_ ";
+        String line = " _ " +
+                      " _|" +
+                      "|_ ";
 
-        assertConvertZahl(2, input);
+        assertToInteger(2, line);
     }
 
     @Test
     public void convertDrei() {
-        String input = " _ " +
-                " _|" +
-                " _|";
+        String line = " _ " +
+                      " _|" +
+                      " _|";
 
-        assertConvertZahl(3, input);
+        assertToInteger(3, line);
     }
 
     @Test
     public void convertVier() {
-        String input = "   " +
-                "|_|" +
-                "  |";
+        String line = "   " +
+                      "|_|" +
+                      "  |";
 
-        assertConvertZahl(4, input);
+        assertToInteger(4, line);
     }
 
     @Test
     public void convertFuenf() {
-        String input = " _ " +
-                "|_ " +
-                " _|";
+        String line = " _ " +
+                      "|_ " +
+                      " _|";
 
-        assertConvertZahl(5, input);
+        assertToInteger(5, line);
     }
 
     @Test
     public void convertSechs() {
-        String input = " _ " +
-                "|_ " +
-                "|_|";
+        String line = " _ " +
+                      "|_ " +
+                      "|_|";
 
-        assertConvertZahl(6, input);
+        assertToInteger(6, line);
     }
 
     @Test
     public void convertSieben() {
-        String input = " _ " +
-                "  |" +
-                "  |";
+        String line = " _ " +
+                      "  |" +
+                      "  |";
 
-        assertConvertZahl(7, input);
+        assertToInteger(7, line);
     }
 
     @Test
     public void convertAcht() {
-        String input = " _ " +
-                "|_|" +
-                "|_|";
+        String line = " _ " +
+                      "|_|" +
+                      "|_|";
 
-        assertConvertZahl(8, input);
+        assertToInteger(8, line);
     }
 
     @Test
     public void convertNeun() {
-        String input = " _ " +
-                "|_|" +
-                " _|";
+        String line = " _ " +
+                      "|_|" +
+                      " _|";
 
-        assertConvertZahl(9, input);
+        assertToInteger(9, line);
     }
 
-    private void assertConvertZahl(int expected, String input) {
+    private void assertToInteger(int expected, String input) {
         assertEquals(expected, new Digit(input).toInteger());
     }
 

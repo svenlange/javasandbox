@@ -1,7 +1,7 @@
 package za.co.svenlange.kata.bankocr;
 
 /**
- * TODO/FIXME Javadoc
+ * Digit
  *
  * @author Sven Lange
  */

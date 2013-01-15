@@ -8,7 +8,7 @@ import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.assertNotNull;
 
 /**
- * TODO/FIXME Javadoc
+ * BankOCRTest
  *
  * @author Sven Lange
  */

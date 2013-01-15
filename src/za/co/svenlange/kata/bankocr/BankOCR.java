@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
- * TODO/FIXME Javadoc
+ * BankOCR. Main class to parse input files.
  *
  * @author Sven Lange
  */
