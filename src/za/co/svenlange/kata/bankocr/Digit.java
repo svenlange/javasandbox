@@ -28,29 +28,29 @@ public class Digit {
         this.string = stringBuffer.toString();
     }
 
-    public int toInteger() {
+    public String toInteger() {
         if (string.equals(NULL)) {
-            return 0;
+            return "0";
         } else if (string.equals(EINS)) {
-            return 1;
+            return "1";
         } else if (string.equals(ZWEI)) {
-            return 2;
+            return "2";
         } else if (string.equals(DREI)) {
-            return 3;
+            return "3";
         } else if (string.equals(VIER)) {
-            return 4;
+            return "4";
         } else if (string.equals(FUENF)) {
-            return 5;
+            return "5";
         } else if (string.equals(SECHS)) {
-            return 6;
+            return "6";
         } else if (string.equals(SIEBEN)) {
-            return 7;
+            return "7";
         } else if (string.equals(ACHT)) {
-            return 8;
+            return "8";
         } else if (string.equals(NEUN)) {
-            return 9;
+            return "9";
+        } else {
+            return "?";
         }
-
-        throw new IllegalArgumentException("Problem converting given string to int. String: '" + string + "'");
     }
 }

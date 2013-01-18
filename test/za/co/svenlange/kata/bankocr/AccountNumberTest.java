@@ -17,7 +17,7 @@ public class AccountNumberTest {
                       "  | _| _||_||_ |_   ||_||_|" +
                       "  ||_  _|  | _||_|  ||_| _|";
 
-        assertEquals(123456789, new AccountNumber(line).toInteger());
+        assertEquals("123456789", new AccountNumber(line).toInteger());
     }
 
     @Test
@@ -26,7 +26,7 @@ public class AccountNumberTest {
                       "  |  | _||_||_ |_   || || |" +
                       "  |  | _|  | _||_|  ||_||_|";
 
-        assertEquals(173456700, new AccountNumber(line).toInteger());
+        assertEquals("173456700", new AccountNumber(line).toInteger());
     }
     
     @Test
@@ -63,6 +63,15 @@ public class AccountNumberTest {
                       " _|  | _||_||_||_ |_||_| _|";
 
         assertEquals(true, new AccountNumber(line).isValid());
+    }
+    
+    @Test
+    public void convertLineToString_49006771X() {
+        String line = "    _  _  _  _  _  _     _ " +
+                      "|_||_|| || ||_   |  |  | _ " +
+                      "  | _||_||_ |_|  |  |  | _|";
+
+        assertEquals("490?6771? ILL", new AccountNumber(line).toString());
     }
     
 }

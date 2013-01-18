@@ -16,21 +16,16 @@ public class AccountNumber {
         this.string = string;
     }
 
-    public int toInteger() {
-        int result = 0;
-
-        int exponent = 8;
-
+    public String toInteger() {
+        String result = "";
+        
         for (int i = 0; i < 27; i += 3) {
             StringBuffer sb = new StringBuffer();
             sb.append(string.substring(0 + i, 0 + 3 + i));
             sb.append(string.substring(27 + i, 27 + 3 + i));
             sb.append(string.substring(54 + i, 54 + 3 + i));
 
-            int number = new Digit(sb).toInteger();
-            result += number * Math.pow(10, exponent);
-
-            exponent--;
+            result += new Digit(sb).toInteger();
         }
 
         return result;
@@ -42,6 +37,10 @@ public class AccountNumber {
 
         for (int i = 9 - s.length(); i > 0; i--) {
             s = "0" + s;
+        }
+        
+        if(s.contains("?")) {
+            s += " ILL";
         }
 
         return s;

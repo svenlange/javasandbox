@@ -17,7 +17,7 @@ public class DigitTest {
                       "| |" +
                       "|_|";
 
-        assertToInteger(0, line);
+        assertToInteger("0", line);
     }
 
     @Test
@@ -26,7 +26,7 @@ public class DigitTest {
                       "  |" +
                       "  |";
 
-        assertToInteger(1, line);
+        assertToInteger("1", line);
     }
 
     @Test
@@ -35,7 +35,7 @@ public class DigitTest {
                       " _|" +
                       "|_ ";
 
-        assertToInteger(2, line);
+        assertToInteger("2", line);
     }
 
     @Test
@@ -44,7 +44,7 @@ public class DigitTest {
                       " _|" +
                       " _|";
 
-        assertToInteger(3, line);
+        assertToInteger("3", line);
     }
 
     @Test
@@ -53,7 +53,7 @@ public class DigitTest {
                       "|_|" +
                       "  |";
 
-        assertToInteger(4, line);
+        assertToInteger("4", line);
     }
 
     @Test
@@ -62,7 +62,7 @@ public class DigitTest {
                       "|_ " +
                       " _|";
 
-        assertToInteger(5, line);
+        assertToInteger("5", line);
     }
 
     @Test
@@ -71,7 +71,7 @@ public class DigitTest {
                       "|_ " +
                       "|_|";
 
-        assertToInteger(6, line);
+        assertToInteger("6", line);
     }
 
     @Test
@@ -80,7 +80,7 @@ public class DigitTest {
                       "  |" +
                       "  |";
 
-        assertToInteger(7, line);
+        assertToInteger("7", line);
     }
 
     @Test
@@ -89,7 +89,7 @@ public class DigitTest {
                       "|_|" +
                       "|_|";
 
-        assertToInteger(8, line);
+        assertToInteger("8", line);
     }
 
     @Test
@@ -98,10 +98,10 @@ public class DigitTest {
                       "|_|" +
                       " _|";
 
-        assertToInteger(9, line);
+        assertToInteger("9", line);
     }
 
-    private void assertToInteger(int expected, String input) {
+    private void assertToInteger(String expected, String input) {
         assertEquals(expected, new Digit(input).toInteger());
     }
 
