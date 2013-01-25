@@ -1,6 +1,6 @@
-# Bank OCR
+# Bank OCR Kata
 
-Original: http://www.codingdojo.org/cgi-bin/wiki.pl?KataBankOCR
+Original: http://codingdojo.org/cgi-bin/wiki.pl?KataBankOCR
 
 This Kata was presented at XP2006 by Emmanuel Gaillot and Christophe Thibaut.
 
@@ -81,9 +81,9 @@ When Christophe and Emmanuel presented this Kata at XP2005 they worked on a solu
 
 Some gotchas to avoid:
 
- - be very careful to read the definition of checksum correctly. It is not a simple dot product, the digits are reversed from what you expect.
- - The spec does not list all the possible alternatives for valid digits when one pipe or underscore has been removed or added
- - don't forget to try to work out what a ? should have been by adding or removing one pipe or underscore.
+* Be very careful to read the definition of checksum correctly. It is not a simple dot product, the digits are reversed from what you expect.
+* The spec does not list all the possible alternatives for valid digits when one pipe or underscore has been removed or added
+* Don't forget to try to work out what a ? should have been by adding or removing one pipe or underscore.
 
 ## Suggested Test Cases
 
