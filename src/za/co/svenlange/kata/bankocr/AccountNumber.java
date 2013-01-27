@@ -10,47 +10,37 @@ import java.util.List;
  */
 public class AccountNumber {
 
-    private final String string;
+    private final String accountNumber;
 
-    public AccountNumber(String string) {
-        this.string = string;
+    public AccountNumber(String accountNumber) {
+        this.accountNumber = accountNumber;
     }
 
-    public String toInteger() {
+    @Override
+    public String toString() {
         String result = "";
-        
+
         for (int i = 0; i < 27; i += 3) {
             StringBuffer sb = new StringBuffer();
-            sb.append(string.substring(0 + i, 0 + 3 + i));
-            sb.append(string.substring(27 + i, 27 + 3 + i));
-            sb.append(string.substring(54 + i, 54 + 3 + i));
+            sb.append(accountNumber.substring(i, 0 + 3 + i));
+            sb.append(accountNumber.substring(27 + i, 27 + 3 + i));
+            sb.append(accountNumber.substring(54 + i, 54 + 3 + i));
 
-            result += new Digit(sb).toInteger();
+            result += Digit.convert(sb);
+        }
+
+        if (result.contains("?")) {
+            result += " ILL";
         }
 
         return result;
     }
 
-    @Override
-    public String toString() {
-        String s = String.valueOf(this.toInteger());
-
-        for (int i = 9 - s.length(); i > 0; i--) {
-            s = "0" + s;
-        }
-        
-        if(s.contains("?")) {
-            s += " ILL";
-        }
-
-        return s;
-    }
-
-    public String toEntryString() {
+    public String getAccountNumber() {
         StringBuilder sb = new StringBuilder();
-        sb.append(string.substring(0, 27)).append("\n");
-        sb.append(string.substring(27, 54)).append("\n");
-        sb.append(string.substring(54, 81)).append("\n");
+        sb.append(accountNumber.substring(0, 27)).append("\n");
+        sb.append(accountNumber.substring(27, 54)).append("\n");
+        sb.append(accountNumber.substring(54, 81)).append("\n");
         return sb.toString();
     }
 

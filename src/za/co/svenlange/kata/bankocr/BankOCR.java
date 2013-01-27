@@ -22,7 +22,14 @@ public class BankOCR {
         }
     }
 
-    public List<AccountNumber> read() {
+    public void output() {
+        for (AccountNumber accountNumber : this.read()) {
+            System.out.println(accountNumber.getAccountNumber());
+            System.out.println("==> " + accountNumber);
+        }
+    }
+
+    List<AccountNumber> read() {
         ArrayList<AccountNumber> result = new ArrayList<AccountNumber>();
 
         StringBuffer stringBuffer = new StringBuffer();
@@ -43,14 +50,6 @@ public class BankOCR {
             }
         }
 
-
         return result;
-    }
-
-    public void output() {
-        for(AccountNumber accountNumber : this.read()) {
-            System.out.println(accountNumber.toEntryString());
-            System.out.println("==> " + accountNumber);
-        }
     }
 }

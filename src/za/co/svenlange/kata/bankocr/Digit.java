@@ -6,8 +6,6 @@ package za.co.svenlange.kata.bankocr;
  * @author Sven Lange
  */
 public class Digit {
-
-    private final String string;
     
     private static final String NULL = " _ | ||_|";
     private static final String EINS = "     |  |";
@@ -20,15 +18,11 @@ public class Digit {
     private static final String ACHT = " _ |_||_|";
     private static final String NEUN = " _ |_| _|";
 
-    public Digit(String string) {
-        this.string = string;
+    public static String convert(StringBuffer stringBuffer) {
+        return convert(stringBuffer.toString());
     }
-
-    public Digit(StringBuffer stringBuffer) {
-        this.string = stringBuffer.toString();
-    }
-
-    public String toInteger() {
+    
+    public static String convert(String string) {
         if (string.equals(NULL)) {
             return "0";
         } else if (string.equals(EINS)) {

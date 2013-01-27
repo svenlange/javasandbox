@@ -31,11 +31,11 @@ public class BankOCRTest {
         assertNotNull(content);
         assertEquals(5, content.size());
 
-        assertEquals("000000000", content.get(0).toInteger());
-        assertEquals("111111111", content.get(1).toInteger());
-        assertEquals("222222222", content.get(2).toInteger());
-        assertEquals("123456789", content.get(3).toInteger());
-        assertEquals("000000001", content.get(4).toInteger());
+        assertEquals("000000000", content.get(0).toString());
+        assertEquals("111111111", content.get(1).toString());
+        assertEquals("222222222", content.get(2).toString());
+        assertEquals("123456789", content.get(3).toString());
+        assertEquals("000000001", content.get(4).toString());
     }
 
     @Test

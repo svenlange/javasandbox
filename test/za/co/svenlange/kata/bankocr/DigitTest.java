@@ -102,7 +102,7 @@ public class DigitTest {
     }
 
     private void assertToInteger(String expected, String input) {
-        assertEquals(expected, new Digit(input).toInteger());
+        assertEquals(expected, Digit.convert(input));
     }
 
 }
