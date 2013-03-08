@@ -41,8 +41,8 @@ public class Grid {
         }
     }
 
-    public void addCell(Cell cell) {
-        grid[cell.getX()][cell.getY()] = cell;
+    public void addCell(int x, int y) {
+        grid[x][y] = new Cell(x, y);
     }
 
     public Grid tick() {
@@ -51,7 +51,7 @@ public class Grid {
         for (int x = 0; x < grid.length; x++) {
             for (int y = 0; y < grid.length; y++) {
                 if (isAliveInNextGeneration(x, y)) {
-                    nextGrid.addCell(new Cell(x, y));
+                    nextGrid.addCell(x, y);
                 }
             }
         }
@@ -89,44 +89,44 @@ public class Grid {
 
     public static Grid getBlinkerGrid() {
         Grid grid = new Grid(8);
-        grid.addCell(new Cell(2, 2));
-        grid.addCell(new Cell(2, 3));
-        grid.addCell(new Cell(2, 4));
-        grid.addCell(new Cell(1, 1));
+        grid.addCell(2, 2);
+        grid.addCell(2, 3);
+        grid.addCell(2, 4);
+        grid.addCell(1, 1);
         return grid;
     }
 
     public static Grid getBeaconGrid() {
         Grid grid = new Grid(8);
-        grid.addCell(new Cell(1, 1));
-        grid.addCell(new Cell(1, 2));
-        grid.addCell(new Cell(2, 1));
-        grid.addCell(new Cell(2, 2));
-        grid.addCell(new Cell(3, 3));
-        grid.addCell(new Cell(3, 4));
-        grid.addCell(new Cell(4, 3));
-        grid.addCell(new Cell(4, 4));
+        grid.addCell(1, 1);
+        grid.addCell(1, 2);
+        grid.addCell(2, 1);
+        grid.addCell(2, 2);
+        grid.addCell(3, 3);
+        grid.addCell(3, 4);
+        grid.addCell(4, 3);
+        grid.addCell(4, 4);
         return grid;
     }
 
     public static Grid getOctagon2Grid() {
         Grid grid = new Grid(10);
-        grid.addCell(new Cell(4, 1));
-        grid.addCell(new Cell(5, 1));
-        grid.addCell(new Cell(3, 2));
-        grid.addCell(new Cell(6, 2));
-        grid.addCell(new Cell(2, 3));
-        grid.addCell(new Cell(7, 3));
-        grid.addCell(new Cell(1, 4));
-        grid.addCell(new Cell(8, 4));
-        grid.addCell(new Cell(1, 5));
-        grid.addCell(new Cell(8, 5));
-        grid.addCell(new Cell(2, 6));
-        grid.addCell(new Cell(7, 6));
-        grid.addCell(new Cell(3, 7));
-        grid.addCell(new Cell(6, 7));
-        grid.addCell(new Cell(4, 8));
-        grid.addCell(new Cell(5, 8));
+        grid.addCell(4, 1);
+        grid.addCell(5, 1);
+        grid.addCell(3, 2);
+        grid.addCell(6, 2);
+        grid.addCell(2, 3);
+        grid.addCell(7, 3);
+        grid.addCell(1, 4);
+        grid.addCell(8, 4);
+        grid.addCell(1, 5);
+        grid.addCell(8, 5);
+        grid.addCell(2, 6);
+        grid.addCell(7, 6);
+        grid.addCell(3, 7);
+        grid.addCell(6, 7);
+        grid.addCell(4, 8);
+        grid.addCell(5, 8);
         return grid;
     }
 

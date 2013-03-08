@@ -10,14 +10,11 @@ import static za.co.svenlange.gameoflife.State.DEAD;
 public class CellTest {
 
     private Grid grid;
-    private Cell cell;
 
     @Before
     public void setUp() throws Exception {
-        cell = new Cell(1, 1);
-
-        grid = new Grid(5);
-        grid.addCell(cell);
+        grid = new Grid(8);
+        grid.addCell(1, 1);
     }
 
     @Test
@@ -28,45 +25,44 @@ public class CellTest {
 
     @Test
     public void liveCellWithOneLiveNeighboursDies() {
-        grid.addCell(new Cell(0, 1));
+        grid.addCell(0, 1);
         grid = grid.tick();
         assertEquals(DEAD, grid.getCellState(1, 1));
     }
 
     @Test
     public void liveCellWithTwoLiveNeighboursLivesOn() {
-        grid.addCell(new Cell(0, 0));
-        grid.addCell(new Cell(0, 1));
+        grid.addCell(0, 0);
+        grid.addCell(0, 1);
         grid = grid.tick();
         assertEquals(ALIVE, grid.getCellState(1, 1));
     }
 
     @Test
     public void liveCellWithThreeLiveNeighboursLivesOn() {
-        grid.addCell(new Cell(0, 0));
-        grid.addCell(new Cell(0, 1));
-        grid.addCell(new Cell(0, 2));
+        grid.addCell(0, 0);
+        grid.addCell(0, 1);
+        grid.addCell(0, 2);
         grid = grid.tick();
         assertEquals(ALIVE, grid.getCellState(1, 1));
     }
 
     @Test
     public void liveCellWithFourLiveNeighboursDies() throws Exception {
-        grid.addCell(new Cell(0, 0));
-        grid.addCell(new Cell(0, 1));
-        grid.addCell(new Cell(0, 2));
-        grid.addCell(new Cell(1, 2));
+        grid.addCell(0, 0);
+        grid.addCell(0, 1);
+        grid.addCell(0, 2);
+        grid.addCell(1, 2);
         grid = grid.tick();
         assertEquals(DEAD, grid.getCellState(1, 1));
     }
 
     @Test
     public void deadCellWithExactlyThreeLiveNeighboursBecomesLiveCell() {
-        cell.setState(DEAD);
-        grid.addCell(new Cell(0, 0));
-        grid.addCell(new Cell(0, 1));
-        grid.addCell(new Cell(0, 2));
+        grid.addCell(0, 5);
+        grid.addCell(0, 6);
+        grid.addCell(0, 7);
         grid = grid.tick();
-        assertEquals(ALIVE, grid.getCellState(1, 1));
+        assertEquals(ALIVE, grid.getCellState(1, 6));
     }
 }
