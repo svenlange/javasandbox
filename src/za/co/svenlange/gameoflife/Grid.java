@@ -13,11 +13,11 @@ import static za.co.svenlange.gameoflife.State.DEAD;
  */
 public class Grid {
 
+    private final Cell[][] grid;
+
     public Grid(int size) {
         this.grid = new Cell[size][size];
     }
-
-    private Cell[][] grid;
 
     public int numberOfNeighbours(int i, int j) {
         Set<Cell> neighbours = new HashSet<Cell>();
@@ -45,6 +45,20 @@ public class Grid {
         grid[cell.getX()][cell.getY()] = cell;
     }
 
+    public Grid tick() {
+        Grid nextGrid = new Grid(grid.length);
+
+        for (int x = 0; x < grid.length; x++) {
+            for (int y = 0; y < grid.length; y++) {
+                if (isAliveInNextGeneration(x, y)) {
+                    nextGrid.addCell(new Cell(x, y));
+                }
+            }
+        }
+
+        return nextGrid;
+    }
+
     private boolean isAliveInNextGeneration(int x, int y) {
         Cell cell;
         if (grid[x][y] == null) {
@@ -59,40 +73,6 @@ public class Grid {
         } else {
             return neighbours == 3;
         }
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder buffer = new StringBuilder();
-
-        for (int x = 0; x < grid.length; x++) {
-            for (int y = 0; y < grid.length; y++) {
-
-                buffer.append(grid[x][y]);
-                if (y != grid.length - 1) {
-                    buffer.append(" | ");
-                } else {
-                    buffer.append("\n");
-                }
-
-            }
-        }
-        return buffer.toString();
-    }
-
-    public Grid tick() {
-
-        Grid nextGrid = new Grid(grid.length);
-
-        for (int x = 0; x < grid.length; x++) {
-            for (int y = 0; y < grid.length; y++) {
-                if (isAliveInNextGeneration(x, y)) {
-                    nextGrid.addCell(new Cell(x, y));
-                }
-            }
-        }
-
-        return nextGrid;
     }
 
     public State getCellState(int x, int y) {
@@ -148,5 +128,24 @@ public class Grid {
         grid.addCell(new Cell(4, 8));
         grid.addCell(new Cell(5, 8));
         return grid;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder buffer = new StringBuilder();
+
+        for (int x = 0; x < grid.length; x++) {
+            for (int y = 0; y < grid.length; y++) {
+
+                buffer.append(grid[x][y]);
+                if (y != grid.length - 1) {
+                    buffer.append(" | ");
+                } else {
+                    buffer.append("\n");
+                }
+
+            }
+        }
+        return buffer.toString();
     }
 }
