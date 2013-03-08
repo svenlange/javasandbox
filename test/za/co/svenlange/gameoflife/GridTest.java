@@ -7,11 +7,11 @@ import static org.junit.Assert.*;
 
 public class GridTest {
 
-    private Grid grid;
+    private GridImpl grid;
 
     @Before
     public void setUp() throws Exception {
-        grid = new Grid(8);
+        grid = new GridImpl(8);
     }
 
     @Test
@@ -100,11 +100,11 @@ public class GridTest {
 
     @Test
     public void printBlinkerToConsole() throws Exception {
-        grid = Grid.getBlinkerGrid();
-        System.out.println(grid + "\n\n\n");
-        grid = grid.tick();
-        System.out.println(grid + "\n\n\n");
-        grid = grid.tick();
-        System.out.println(grid);
+        Grid blinker = PredefinedGrids.getBlinkerGrid();
+        System.out.println(blinker + "\n\n\n");
+        blinker = blinker.tick();
+        System.out.println(blinker + "\n\n\n");
+        blinker = blinker.tick();
+        System.out.println(blinker);
     }
 }

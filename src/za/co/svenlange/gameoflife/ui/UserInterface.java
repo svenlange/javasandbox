@@ -12,6 +12,7 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.RectangleBuilder;
 import javafx.stage.Stage;
 import za.co.svenlange.gameoflife.Grid;
+import za.co.svenlange.gameoflife.PredefinedGrids;
 
 public class UserInterface extends Application {
 
@@ -25,7 +26,7 @@ public class UserInterface extends Application {
                 .focusTraversable(true)
                 .build();
 
-        Grid grid = Grid.getOctagon2Grid();
+        Grid grid = PredefinedGrids.getOctagon2Grid();
 
         populateGridPane(gridPane, grid);
 
