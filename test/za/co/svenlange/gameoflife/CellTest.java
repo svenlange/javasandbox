@@ -16,7 +16,7 @@ public class CellTest {
     public void setUp() throws Exception {
         cell = new Cell(1, 1);
 
-        grid = new Grid();
+        grid = new Grid(5);
         grid.addCell(cell);
     }
 

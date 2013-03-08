@@ -17,54 +17,7 @@ public class Grid {
         this.grid = new Cell[size][size];
     }
 
-    public Grid() {
-        this(5);
-    }
-
     private Cell[][] grid;
-
-    public static Grid getOctagon2Grid() {
-        Grid grid = new Grid(10);
-        grid.addCell(new Cell(4, 1));
-        grid.addCell(new Cell(5, 1));
-        grid.addCell(new Cell(3, 2));
-        grid.addCell(new Cell(6, 2));
-        grid.addCell(new Cell(2, 3));
-        grid.addCell(new Cell(7, 3));
-        grid.addCell(new Cell(1, 4));
-        grid.addCell(new Cell(8, 4));
-        grid.addCell(new Cell(1, 5));
-        grid.addCell(new Cell(8, 5));
-        grid.addCell(new Cell(2, 6));
-        grid.addCell(new Cell(7, 6));
-        grid.addCell(new Cell(3, 7));
-        grid.addCell(new Cell(6, 7));
-        grid.addCell(new Cell(4, 8));
-        grid.addCell(new Cell(5, 8));
-        return grid;
-    }
-
-    public static Grid getBeaconGrid() {
-        Grid grid = new Grid(8);
-        grid.addCell(new Cell(1, 1));
-        grid.addCell(new Cell(1, 2));
-        grid.addCell(new Cell(2, 1));
-        grid.addCell(new Cell(2, 2));
-        grid.addCell(new Cell(3, 3));
-        grid.addCell(new Cell(3, 4));
-        grid.addCell(new Cell(4, 3));
-        grid.addCell(new Cell(4, 4));
-        return grid;
-    }
-
-    public static Grid getBlinkerGrid() {
-        Grid grid = new Grid(8);
-        grid.addCell(new Cell(2, 2));
-        grid.addCell(new Cell(2, 3));
-        grid.addCell(new Cell(2, 4));
-        grid.addCell(new Cell(1, 1));
-        return grid;
-    }
 
     public Set<Cell> getNeighbours(int i, int j) {
         Set<Cell> neighbours = new HashSet<Cell>();
@@ -151,5 +104,48 @@ public class Grid {
 
     public int size() {
         return grid.length;
+    }
+
+    public static Grid getBlinkerGrid() {
+        Grid grid = new Grid(8);
+        grid.addCell(new Cell(2, 2));
+        grid.addCell(new Cell(2, 3));
+        grid.addCell(new Cell(2, 4));
+        grid.addCell(new Cell(1, 1));
+        return grid;
+    }
+
+    public static Grid getBeaconGrid() {
+        Grid grid = new Grid(8);
+        grid.addCell(new Cell(1, 1));
+        grid.addCell(new Cell(1, 2));
+        grid.addCell(new Cell(2, 1));
+        grid.addCell(new Cell(2, 2));
+        grid.addCell(new Cell(3, 3));
+        grid.addCell(new Cell(3, 4));
+        grid.addCell(new Cell(4, 3));
+        grid.addCell(new Cell(4, 4));
+        return grid;
+    }
+
+    public static Grid getOctagon2Grid() {
+        Grid grid = new Grid(10);
+        grid.addCell(new Cell(4, 1));
+        grid.addCell(new Cell(5, 1));
+        grid.addCell(new Cell(3, 2));
+        grid.addCell(new Cell(6, 2));
+        grid.addCell(new Cell(2, 3));
+        grid.addCell(new Cell(7, 3));
+        grid.addCell(new Cell(1, 4));
+        grid.addCell(new Cell(8, 4));
+        grid.addCell(new Cell(1, 5));
+        grid.addCell(new Cell(8, 5));
+        grid.addCell(new Cell(2, 6));
+        grid.addCell(new Cell(7, 6));
+        grid.addCell(new Cell(3, 7));
+        grid.addCell(new Cell(6, 7));
+        grid.addCell(new Cell(4, 8));
+        grid.addCell(new Cell(5, 8));
+        return grid;
     }
 }

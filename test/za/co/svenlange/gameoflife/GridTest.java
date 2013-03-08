@@ -8,14 +8,14 @@ public class GridTest {
 
     @Test
     public void neighbourCountIsZero() throws Exception {
-        Grid grid = new Grid();
+        Grid grid = new Grid(5);
         grid.addCell(new Cell(1, 1));
         assertEquals(0, grid.getNeighbours(1, 1).size());
     }
 
     @Test
     public void neighbourCountIsOne() throws Exception {
-        Grid grid = new Grid();
+        Grid grid = new Grid(5);
         grid.addCell(new Cell(0, 0));
         grid.addCell(new Cell(1, 1));
         assertEquals(1, grid.getNeighbours(1, 1).size());
@@ -23,7 +23,7 @@ public class GridTest {
 
     @Test
     public void neighbourCountIsTwo() throws Exception {
-        Grid grid = new Grid();
+        Grid grid = new Grid(5);
         grid.addCell(new Cell(0, 0));
         grid.addCell(new Cell(1, 1));
         grid.addCell(new Cell(2, 2));
@@ -32,7 +32,7 @@ public class GridTest {
 
     @Test
     public void neighbourCountIsThree() throws Exception {
-        Grid grid = new Grid();
+        Grid grid = new Grid(5);
         grid.addCell(new Cell(0, 0));
         grid.addCell(new Cell(1, 1));
         grid.addCell(new Cell(0, 1));
@@ -42,7 +42,7 @@ public class GridTest {
 
     @Test
     public void initializeEmptyGrid() throws Exception {
-        Grid grid = new Grid();
+        Grid grid = new Grid(5);
         grid.addCell(new Cell(2, 1));
         grid.addCell(new Cell(2, 2));
         grid.addCell(new Cell(2, 3));
