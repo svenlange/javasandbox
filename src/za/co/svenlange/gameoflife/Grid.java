@@ -21,7 +21,7 @@ public class Grid {
 
         for (int x = calculatePosition(i); x <= i + 1 && x < grid.length; x++) {
             for (int y = calculatePosition(j); y <= j + 1 && y < grid.length; y++) {
-                if (grid[x][y] != null && grid[x][y] != DEAD && !(i == x && j == y)) {
+                if (getCellState(x,y) != DEAD && !(i == x && j == y)) {
                     neighbours++;
                 }
             }
@@ -57,18 +57,10 @@ public class Grid {
     }
 
     private boolean isAliveInNextGeneration(int x, int y) {
-        State state;
-        if (grid[x][y] == null) {
-            state = DEAD;
+        if (getCellState(x, y) == ALIVE) {
+            return !(numberOfNeighbours(x, y) < 2) && !(numberOfNeighbours(x, y) > 3);
         } else {
-            state = grid[x][y];
-        }
-
-        int neighbours = numberOfNeighbours(x, y);
-        if (state == ALIVE) {
-            return !(neighbours < 2) && !(neighbours > 3);
-        } else {
-            return neighbours == 3;
+            return numberOfNeighbours(x, y) == 3;
         }
     }
 
@@ -76,7 +68,7 @@ public class Grid {
         if (grid[x][y] == null) {
             return DEAD;
         } else {
-            return ALIVE;
+            return grid[x][y];
         }
     }
 
@@ -85,11 +77,10 @@ public class Grid {
     }
 
     public static Grid getBlinkerGrid() {
-        Grid grid = new Grid(8);
+        Grid grid = new Grid(6);
         grid.addCell(2, 2);
         grid.addCell(2, 3);
         grid.addCell(2, 4);
-        grid.addCell(1, 1);
         return grid;
     }
 
