@@ -1,8 +1,5 @@
 package za.co.svenlange.gameoflife;
 
-import static za.co.svenlange.gameoflife.State.ALIVE;
-import static za.co.svenlange.gameoflife.State.DEAD;
-
 /**
  * Grid
  *
@@ -21,7 +18,7 @@ public class Grid {
 
         for (int x = calculatePosition(i); x <= i + 1 && x < grid.length; x++) {
             for (int y = calculatePosition(j); y <= j + 1 && y < grid.length; y++) {
-                if (getCellState(x,y) != DEAD && !(i == x && j == y)) {
+                if (isCellAlive(x, y) && !(i == x && j == y)) {
                     neighbours++;
                 }
             }
@@ -39,7 +36,7 @@ public class Grid {
     }
 
     public void addCell(int x, int y) {
-        grid[x][y] = ALIVE;
+        grid[x][y] = State.ALIVE;
     }
 
     public Grid tick() {
@@ -57,19 +54,15 @@ public class Grid {
     }
 
     private boolean isAliveInNextGeneration(int x, int y) {
-        if (getCellState(x, y) == ALIVE) {
+        if (isCellAlive(x, y)) {
             return !(numberOfNeighbours(x, y) < 2) && !(numberOfNeighbours(x, y) > 3);
         } else {
             return numberOfNeighbours(x, y) == 3;
         }
     }
 
-    public State getCellState(int x, int y) {
-        if (grid[x][y] == null) {
-            return DEAD;
-        } else {
-            return grid[x][y];
-        }
+    public boolean isCellAlive(int x, int y) {
+        return grid[x][y] != null && grid[x][y] == State.ALIVE;
     }
 
     public int size() {
@@ -135,5 +128,9 @@ public class Grid {
             }
         }
         return buffer.toString();
+    }
+
+    private static enum State {
+        ALIVE
     }
 }

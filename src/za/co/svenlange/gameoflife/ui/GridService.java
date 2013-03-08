@@ -13,7 +13,6 @@ public class GridService extends Service<Grid> {
 
     private Grid grid;
 
-
     public GridService(Grid grid) {
         this.grid = grid;
     }

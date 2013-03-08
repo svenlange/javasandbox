@@ -3,9 +3,7 @@ package za.co.svenlange.gameoflife;
 import org.junit.Before;
 import org.junit.Test;
 
-import static junit.framework.Assert.assertEquals;
-import static za.co.svenlange.gameoflife.State.ALIVE;
-import static za.co.svenlange.gameoflife.State.DEAD;
+import static org.junit.Assert.*;
 
 public class GridTest {
 
@@ -50,7 +48,7 @@ public class GridTest {
     public void liveCellWithZeroLiveNeighboursDies() {
         grid.addCell(1, 1);
         grid = grid.tick();
-        assertEquals(DEAD, grid.getCellState(1, 1));
+        assertFalse(grid.isCellAlive(1, 1));
     }
 
     @Test
@@ -58,7 +56,7 @@ public class GridTest {
         grid.addCell(0, 1);
         grid.addCell(1, 1);
         grid = grid.tick();
-        assertEquals(DEAD, grid.getCellState(1, 1));
+        assertFalse(grid.isCellAlive(1, 1));
     }
 
     @Test
@@ -67,7 +65,7 @@ public class GridTest {
         grid.addCell(0, 1);
         grid.addCell(1, 1);
         grid = grid.tick();
-        assertEquals(ALIVE, grid.getCellState(1, 1));
+        assertEquals(true, grid.isCellAlive(1, 1));
     }
 
     @Test
@@ -77,7 +75,7 @@ public class GridTest {
         grid.addCell(0, 2);
         grid.addCell(1, 1);
         grid = grid.tick();
-        assertEquals(ALIVE, grid.getCellState(1, 1));
+        assertTrue(grid.isCellAlive(1, 1));
     }
 
     @Test
@@ -88,7 +86,7 @@ public class GridTest {
         grid.addCell(1, 2);
         grid.addCell(1, 1);
         grid = grid.tick();
-        assertEquals(DEAD, grid.getCellState(1, 1));
+        assertFalse(grid.isCellAlive(1, 1));
     }
 
     @Test
@@ -97,7 +95,7 @@ public class GridTest {
         grid.addCell(0, 6);
         grid.addCell(0, 7);
         grid = grid.tick();
-        assertEquals(ALIVE, grid.getCellState(1, 6));
+        assertEquals(true, grid.isCellAlive(1, 6));
     }
 
     @Test

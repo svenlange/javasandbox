@@ -13,8 +13,6 @@ import javafx.scene.shape.RectangleBuilder;
 import javafx.stage.Stage;
 import za.co.svenlange.gameoflife.Grid;
 
-import static za.co.svenlange.gameoflife.State.ALIVE;
-
 public class UserInterface extends Application {
 
     @Override
@@ -53,10 +51,12 @@ public class UserInterface extends Application {
         for (int i = 0; i < grid.size(); i++) {
             for (int j = 0; j < grid.size(); j++) {
 
+                Color color = getColor(grid.isCellAlive(i, j));
+
                 Rectangle rectangle = RectangleBuilder.create()
                         .height(15)
                         .width(15)
-                        .fill(getColor(i, j, grid))
+                        .fill(color)
                         .build();
 
 
@@ -65,14 +65,12 @@ public class UserInterface extends Application {
         }
     }
 
-    private Color getColor(int i, int j, Grid grid) {
-        Color color;
-        if (grid.getCellState(i, j) == ALIVE) {
-            color = Color.BROWN;
+    private Color getColor(boolean cellAlive) {
+        if (cellAlive) {
+            return Color.BROWN;
         } else {
-            color = Color.ANTIQUEWHITE;
+            return Color.ANTIQUEWHITE;
         }
-        return color;
     }
 
     public static void main(String[] args) {
