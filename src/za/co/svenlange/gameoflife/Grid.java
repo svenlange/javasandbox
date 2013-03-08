@@ -95,11 +95,12 @@ public class Grid {
         return nextGrid;
     }
 
-    public Cell getCell(int x, int y) {
+    public State getCellState(int x, int y) {
         if (grid[x][y] == null) {
-            return new Cell(x, y, DEAD);
+            return DEAD;
+        } else {
+            return ALIVE;
         }
-        return grid[x][y];
     }
 
     public int size() {

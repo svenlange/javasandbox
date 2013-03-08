@@ -14,6 +14,8 @@ import javafx.stage.Stage;
 import za.co.svenlange.gameoflife.Grid;
 import za.co.svenlange.gameoflife.State;
 
+import static za.co.svenlange.gameoflife.State.ALIVE;
+
 public class UserInterface extends Application {
 
     @Override
@@ -66,7 +68,7 @@ public class UserInterface extends Application {
 
     private Color getColor(int i, int j, Grid grid) {
         Color color;
-        if (grid.getCell(i, j).getState() == State.ALIVE) {
+        if (grid.getCellState(i, j) == ALIVE) {
             color = Color.BROWN;
         } else {
             color = Color.ANTIQUEWHITE;

@@ -23,14 +23,14 @@ public class CellTest {
     @Test
     public void liveCellWithZeroLiveNeighboursDies() {
         grid = grid.tick();
-        assertEquals(DEAD, grid.getCell(1, 1).getState());
+        assertEquals(DEAD, grid.getCellState(1, 1));
     }
 
     @Test
     public void liveCellWithOneLiveNeighboursDies() {
         grid.addCell(new Cell(0, 1));
         grid = grid.tick();
-        assertEquals(DEAD, grid.getCell(1, 1).getState());
+        assertEquals(DEAD, grid.getCellState(1, 1));
     }
 
     @Test
@@ -38,7 +38,7 @@ public class CellTest {
         grid.addCell(new Cell(0, 0));
         grid.addCell(new Cell(0, 1));
         grid = grid.tick();
-        assertEquals(ALIVE, grid.getCell(1, 1).getState());
+        assertEquals(ALIVE, grid.getCellState(1, 1));
     }
 
     @Test
@@ -47,7 +47,7 @@ public class CellTest {
         grid.addCell(new Cell(0, 1));
         grid.addCell(new Cell(0, 2));
         grid = grid.tick();
-        assertEquals(ALIVE, grid.getCell(1, 1).getState());
+        assertEquals(ALIVE, grid.getCellState(1, 1));
     }
 
     @Test
@@ -57,7 +57,7 @@ public class CellTest {
         grid.addCell(new Cell(0, 2));
         grid.addCell(new Cell(1, 2));
         grid = grid.tick();
-        assertEquals(DEAD, grid.getCell(1, 1).getState());
+        assertEquals(DEAD, grid.getCellState(1, 1));
     }
 
     @Test
@@ -67,6 +67,6 @@ public class CellTest {
         grid.addCell(new Cell(0, 1));
         grid.addCell(new Cell(0, 2));
         grid = grid.tick();
-        assertEquals(ALIVE, grid.getCell(1, 1).getState());
+        assertEquals(ALIVE, grid.getCellState(1, 1));
     }
 }
