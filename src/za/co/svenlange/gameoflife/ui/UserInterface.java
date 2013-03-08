@@ -12,7 +12,6 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.RectangleBuilder;
 import javafx.stage.Stage;
 import za.co.svenlange.gameoflife.Grid;
-import za.co.svenlange.gameoflife.State;
 
 import static za.co.svenlange.gameoflife.State.ALIVE;
 
