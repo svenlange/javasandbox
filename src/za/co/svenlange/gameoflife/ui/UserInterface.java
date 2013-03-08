@@ -11,13 +11,10 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.RectangleBuilder;
 import javafx.stage.Stage;
-import za.co.svenlange.gameoflife.Cell;
 import za.co.svenlange.gameoflife.Grid;
 import za.co.svenlange.gameoflife.State;
 
 public class UserInterface extends Application {
-
-    private static final int SIZE = 10;
 
     @Override
     public void start(Stage stage) throws Exception {
@@ -29,9 +26,7 @@ public class UserInterface extends Application {
                 .focusTraversable(true)
                 .build();
 
-//        Grid grid = getBlinkerGrid();
-//        Grid grid = getBeaconGrid();
-        Grid grid = getOctagon2Grid();
+        Grid grid = Grid.getOctagon2Grid();
 
         populateGridPane(gridPane, grid);
 
@@ -53,52 +48,9 @@ public class UserInterface extends Application {
 
     }
 
-    private Grid getOctagon2Grid() {
-        Grid grid = new Grid(SIZE);
-        grid.addCell(new Cell(4, 1));
-        grid.addCell(new Cell(5, 1));
-        grid.addCell(new Cell(3, 2));
-        grid.addCell(new Cell(6, 2));
-        grid.addCell(new Cell(2, 3));
-        grid.addCell(new Cell(7, 3));
-        grid.addCell(new Cell(1, 4));
-        grid.addCell(new Cell(8, 4));
-        grid.addCell(new Cell(1, 5));
-        grid.addCell(new Cell(8, 5));
-        grid.addCell(new Cell(2, 6));
-        grid.addCell(new Cell(7, 6));
-        grid.addCell(new Cell(3, 7));
-        grid.addCell(new Cell(6, 7));
-        grid.addCell(new Cell(4, 8));
-        grid.addCell(new Cell(5, 8));
-        return grid;
-    }
-
-    private Grid getBeaconGrid() {
-        Grid grid = new Grid(SIZE);
-        grid.addCell(new Cell(1, 1));
-        grid.addCell(new Cell(1, 2));
-        grid.addCell(new Cell(2, 1));
-        grid.addCell(new Cell(2, 2));
-        grid.addCell(new Cell(3, 3));
-        grid.addCell(new Cell(3, 4));
-        grid.addCell(new Cell(4, 3));
-        grid.addCell(new Cell(4, 4));
-        return grid;
-    }
-
-    private Grid getBlinkerGrid() {
-        Grid grid = new Grid(SIZE);
-        grid.addCell(new Cell(2, 2));
-        grid.addCell(new Cell(2, 3));
-        grid.addCell(new Cell(2, 4));
-        grid.addCell(new Cell(1, 1));
-        return grid;
-    }
-
     private void populateGridPane(GridPane gridPane, Grid grid) {
-        for (int i = 0; i < SIZE; i++) {
-            for (int j = 0; j < SIZE; j++) {
+        for (int i = 0; i < grid.size(); i++) {
+            for (int j = 0; j < grid.size(); j++) {
 
                 Rectangle rectangle = RectangleBuilder.create()
                         .height(15)
