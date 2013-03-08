@@ -19,7 +19,7 @@ public class Grid {
 
     private Cell[][] grid;
 
-    public Set<Cell> getNeighbours(int i, int j) {
+    public int numberOfNeighbours(int i, int j) {
         Set<Cell> neighbours = new HashSet<Cell>();
 
         for (int x = calculatePosition(i); x <= i + 1 && x < grid.length; x++) {
@@ -30,7 +30,7 @@ public class Grid {
             }
         }
 
-        return neighbours;
+        return neighbours.size();
     }
 
     private int calculatePosition(int position) {
@@ -53,11 +53,11 @@ public class Grid {
             cell = grid[x][y];
         }
 
-        Set<Cell> neighbours = getNeighbours(cell.getX(), cell.getY());
+        int neighbours = numberOfNeighbours(cell.getX(), cell.getY());
         if (cell.getState() == ALIVE) {
-            return !(neighbours.size() < 2) && !(neighbours.size() > 3);
+            return !(neighbours < 2) && !(neighbours > 3);
         } else {
-            return neighbours.size() == 3;
+            return neighbours == 3;
         }
     }
 
