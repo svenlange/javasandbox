@@ -1,8 +1,5 @@
 package za.co.svenlange.gameoflife;
 
-import java.util.HashSet;
-import java.util.Set;
-
 import static za.co.svenlange.gameoflife.State.ALIVE;
 import static za.co.svenlange.gameoflife.State.DEAD;
 
@@ -13,24 +10,24 @@ import static za.co.svenlange.gameoflife.State.DEAD;
  */
 public class Grid {
 
-    private final Cell[][] grid;
+    private final State[][] grid;
 
     public Grid(int size) {
-        this.grid = new Cell[size][size];
+        this.grid = new State[size][size];
     }
 
     public int numberOfNeighbours(int i, int j) {
-        Set<Cell> neighbours = new HashSet<Cell>();
+        int neighbours = 0;
 
         for (int x = calculatePosition(i); x <= i + 1 && x < grid.length; x++) {
             for (int y = calculatePosition(j); y <= j + 1 && y < grid.length; y++) {
-                if (grid[x][y] != null && grid[x][y].getState() != DEAD && !(i == x && j == y)) {
-                    neighbours.add(grid[x][y]);
+                if (grid[x][y] != null && grid[x][y] != DEAD && !(i == x && j == y)) {
+                    neighbours++;
                 }
             }
         }
 
-        return neighbours.size();
+        return neighbours;
     }
 
     private int calculatePosition(int position) {
@@ -42,7 +39,7 @@ public class Grid {
     }
 
     public void addCell(int x, int y) {
-        grid[x][y] = new Cell(x, y);
+        grid[x][y] = ALIVE;
     }
 
     public Grid tick() {
@@ -60,15 +57,15 @@ public class Grid {
     }
 
     private boolean isAliveInNextGeneration(int x, int y) {
-        Cell cell;
+        State state;
         if (grid[x][y] == null) {
-            cell = new Cell(x, y, DEAD);
+            state = DEAD;
         } else {
-            cell = grid[x][y];
+            state = grid[x][y];
         }
 
-        int neighbours = numberOfNeighbours(cell.getX(), cell.getY());
-        if (cell.getState() == ALIVE) {
+        int neighbours = numberOfNeighbours(x, y);
+        if (state == ALIVE) {
             return !(neighbours < 2) && !(neighbours > 3);
         } else {
             return neighbours == 3;

@@ -1,21 +1,29 @@
 package za.co.svenlange.gameoflife;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import static junit.framework.Assert.assertEquals;
+import static za.co.svenlange.gameoflife.State.ALIVE;
+import static za.co.svenlange.gameoflife.State.DEAD;
 
 public class GridTest {
 
+    private Grid grid;
+
+    @Before
+    public void setUp() throws Exception {
+        grid = new Grid(8);
+    }
+
     @Test
     public void neighbourCountIsZero() throws Exception {
-        Grid grid = new Grid(5);
         grid.addCell(1, 1);
         assertEquals(0, grid.numberOfNeighbours(1, 1));
     }
 
     @Test
     public void neighbourCountIsOne() throws Exception {
-        Grid grid = new Grid(5);
         grid.addCell(0, 0);
         grid.addCell(1, 1);
         assertEquals(1, grid.numberOfNeighbours(1, 1));
@@ -23,7 +31,6 @@ public class GridTest {
 
     @Test
     public void neighbourCountIsTwo() throws Exception {
-        Grid grid = new Grid(5);
         grid.addCell(0, 0);
         grid.addCell(1, 1);
         grid.addCell(2, 2);
@@ -32,7 +39,6 @@ public class GridTest {
 
     @Test
     public void neighbourCountIsThree() throws Exception {
-        Grid grid = new Grid(5);
         grid.addCell(0, 0);
         grid.addCell(1, 1);
         grid.addCell(0, 1);
@@ -41,16 +47,65 @@ public class GridTest {
     }
 
     @Test
-    public void initializeEmptyGrid() throws Exception {
-        Grid grid = new Grid(5);
-        grid.addCell(2, 1);
-        grid.addCell(2, 2);
-        grid.addCell(2, 3);
-        System.out.println(grid);
-        System.out.println("\n\n\n");
+    public void liveCellWithZeroLiveNeighboursDies() {
+        grid.addCell(1, 1);
         grid = grid.tick();
-        System.out.println(grid);
-        System.out.println("\n\n\n");
+        assertEquals(DEAD, grid.getCellState(1, 1));
+    }
+
+    @Test
+    public void liveCellWithOneLiveNeighboursDies() {
+        grid.addCell(0, 1);
+        grid.addCell(1, 1);
+        grid = grid.tick();
+        assertEquals(DEAD, grid.getCellState(1, 1));
+    }
+
+    @Test
+    public void liveCellWithTwoLiveNeighboursLivesOn() {
+        grid.addCell(0, 0);
+        grid.addCell(0, 1);
+        grid.addCell(1, 1);
+        grid = grid.tick();
+        assertEquals(ALIVE, grid.getCellState(1, 1));
+    }
+
+    @Test
+    public void liveCellWithThreeLiveNeighboursLivesOn() {
+        grid.addCell(0, 0);
+        grid.addCell(0, 1);
+        grid.addCell(0, 2);
+        grid.addCell(1, 1);
+        grid = grid.tick();
+        assertEquals(ALIVE, grid.getCellState(1, 1));
+    }
+
+    @Test
+    public void liveCellWithFourLiveNeighboursDies() throws Exception {
+        grid.addCell(0, 0);
+        grid.addCell(0, 1);
+        grid.addCell(0, 2);
+        grid.addCell(1, 2);
+        grid.addCell(1, 1);
+        grid = grid.tick();
+        assertEquals(DEAD, grid.getCellState(1, 1));
+    }
+
+    @Test
+    public void deadCellWithExactlyThreeLiveNeighboursBecomesLiveCell() {
+        grid.addCell(0, 5);
+        grid.addCell(0, 6);
+        grid.addCell(0, 7);
+        grid = grid.tick();
+        assertEquals(ALIVE, grid.getCellState(1, 6));
+    }
+
+    @Test
+    public void printBlinkerToConsole() throws Exception {
+        grid = Grid.getBlinkerGrid();
+        System.out.println(grid + "\n\n\n");
+        grid = grid.tick();
+        System.out.println(grid + "\n\n\n");
         grid = grid.tick();
         System.out.println(grid);
     }
