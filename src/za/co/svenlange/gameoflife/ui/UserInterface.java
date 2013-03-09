@@ -14,18 +14,18 @@ import za.co.svenlange.gameoflife.PredefinedGrids;
 
 public class UserInterface extends Application {
 
-    private static final int CELL_SIZE = 18;
+    private static final int CELL_SIZE = 7;
     private static final int BORDER_WIDTH = 1;
     private static final int OFFSET = 10;
-    private static final Color BACKGROUND_COLOR = Color.DARKGRAY;
+    private static final Color BACKGROUND_COLOR = Color.WHITE;
     private static final Color GRID_COLOR = Color.BLACK;
-    private static final Color CELL_COLOR = Color.BLUE;
+    private static final Color CELL_COLOR = Color.ORANGE;
 
     @Override
     public void start(Stage stage) throws Exception {
         stage.setTitle("Conway's Game of Life by Sven Lange");
 
-        Grid grid = PredefinedGrids.getOctagon2Grid();
+        Grid grid = PredefinedGrids.getActionGrid();
 
         final Group root = new Group();
         root.getChildren().add(createCanvas(grid));

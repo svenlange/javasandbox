@@ -47,4 +47,13 @@ public class PredefinedGrids {
         grid.addCell(5, 8);
         return grid;
     }
+
+    public static Grid getActionGrid() {
+        int size = 100; // thats a grid with 10000 cells
+        GridImpl grid = new GridImpl(size);
+        for (int i = 0; i < size; i++) {
+            grid.addCell(i, size / 2);
+        }
+        return grid;
+    }
 }

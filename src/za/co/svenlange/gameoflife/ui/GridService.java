@@ -24,7 +24,7 @@ public class GridService extends Service<Grid> {
 
             @Override
             protected Grid call() throws Exception {
-                Thread.sleep(200);
+                Thread.sleep(150);
                 grid = grid.tick();
                 return grid.tick();
             }
