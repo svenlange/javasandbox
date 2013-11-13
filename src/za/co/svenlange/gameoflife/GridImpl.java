@@ -9,8 +9,8 @@ public class GridImpl implements Grid {
 
     private final State[][] grid;
 
-    public GridImpl(int size) {
-        this.grid = new State[size][size];
+    public GridImpl(int width, int height) {
+        grid = new State[width][height];
     }
 
     int numberOfNeighbours(int i, int j) {
@@ -41,7 +41,7 @@ public class GridImpl implements Grid {
 
     @Override
     public GridImpl tick() {
-        GridImpl nextGrid = new GridImpl(grid.length);
+        GridImpl nextGrid = new GridImpl(getWidth(), getHeight());
 
         for (int x = 0; x < grid.length; x++) {
             for (int y = 0; y < grid.length; y++) {
@@ -68,8 +68,13 @@ public class GridImpl implements Grid {
     }
 
     @Override
-    public int size() {
+    public int getWidth() {
         return grid.length;
+    }
+
+    @Override
+    public int getHeight() {
+        return grid[0].length;
     }
 
     @Override

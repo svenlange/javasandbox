@@ -14,12 +14,12 @@ import za.co.svenlange.gameoflife.PredefinedGrids;
 
 public class UserInterface extends Application {
 
-    private static final int CELL_SIZE = 7;
+    private static final int CELL_SIZE = 8;
     private static final int BORDER_WIDTH = 1;
     private static final int OFFSET = 10;
     private static final Color BACKGROUND_COLOR = Color.WHITE;
     private static final Color GRID_COLOR = Color.BLACK;
-    private static final Color CELL_COLOR = Color.ORANGE;
+    private static final Color CELL_COLOR = Color.ORANGERED;
 
     @Override
     public void start(Stage stage) throws Exception {
@@ -29,7 +29,7 @@ public class UserInterface extends Application {
 
         final Group root = new Group();
         root.getChildren().add(createCanvas(grid));
-        stage.setScene(new Scene(root, sceneSize(grid), sceneSize(grid), BACKGROUND_COLOR));
+        stage.setScene(new Scene(root, getSceneWidth(grid), getSceneHeight(grid), BACKGROUND_COLOR));
         stage.show();
 
         final GridService service = new GridService(grid);
@@ -45,17 +45,21 @@ public class UserInterface extends Application {
         service.start();
     }
 
-    private int sceneSize(Grid grid) {
-        return grid.size() * CELL_SIZE + OFFSET * 2;
+    private int getSceneWidth(Grid grid) {
+        return grid.getWidth() * CELL_SIZE + OFFSET * 2;
+    }
+
+    private int getSceneHeight(Grid grid) {
+        return grid.getHeight() * CELL_SIZE + OFFSET * 2;
     }
 
     private Canvas createCanvas(Grid grid) {
-        Canvas canvas = new Canvas(sceneSize(grid), sceneSize(grid));
+        Canvas canvas = new Canvas(getSceneWidth(grid), getSceneHeight(grid));
         GraphicsContext gc = canvas.getGraphicsContext2D();
 
 
-        for (int x = 0; x < grid.size(); x++) {
-            for (int y = 0; y < grid.size(); y++) {
+        for (int x = 0; x < grid.getWidth(); x++) {
+            for (int y = 0; y < grid.getHeight(); y++) {
                 gc.setFill(GRID_COLOR);
                 gc.fillRect(x * CELL_SIZE + OFFSET, y * CELL_SIZE + OFFSET, CELL_SIZE, BORDER_WIDTH);
                 gc.fillRect(x * CELL_SIZE + OFFSET, y * CELL_SIZE + OFFSET, BORDER_WIDTH, CELL_SIZE);
@@ -67,10 +71,11 @@ public class UserInterface extends Application {
             }
         }
 
-        int size = grid.size() * CELL_SIZE;
+        int sizea = grid.getHeight() * CELL_SIZE;
+        int sizeb = grid.getWidth() * CELL_SIZE;
         gc.setFill(GRID_COLOR);
-        gc.fillRect(size + OFFSET, OFFSET, BORDER_WIDTH, size + BORDER_WIDTH);
-        gc.fillRect(OFFSET, size + OFFSET, size, BORDER_WIDTH);
+        gc.fillRect(sizea + OFFSET, OFFSET, BORDER_WIDTH, sizea + BORDER_WIDTH);
+        gc.fillRect(OFFSET, sizeb + OFFSET, sizeb, BORDER_WIDTH);
 
         return canvas;
     }

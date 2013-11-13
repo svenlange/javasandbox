@@ -11,7 +11,7 @@ public class GridTest {
 
     @Before
     public void setUp() throws Exception {
-        grid = new GridImpl(8);
+        grid = new GridImpl(8, 8);
     }
 
     @Test

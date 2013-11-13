@@ -10,5 +10,7 @@ public interface Grid {
 
     boolean isCellAlive(int x, int y);
 
-    int size();
+    int getWidth();
+
+    int getHeight();
 }
