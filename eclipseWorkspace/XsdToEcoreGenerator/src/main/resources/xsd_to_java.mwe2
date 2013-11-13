@@ -1,0 +1,15 @@
+module za.co.svenlange.eclipse.XsdToJava
+
+var String xsdFile = "src/main/resources/employees.xsd"
+var String emfOutDir = "XsdToEcoreGenerator/src/main/emf-gen"
+
+Workflow {
+	bean = org.eclipse.emf.mwe.utils.StandaloneSetup {
+		platformUri = ".."
+	}
+	component = za.co.svenlange.eclipse.XsdToJavaGenerator {
+		xsdSchema = xsdFile
+		srcPath = "dummy"
+		modelDirectory = emfOutDir
+	}
+}
