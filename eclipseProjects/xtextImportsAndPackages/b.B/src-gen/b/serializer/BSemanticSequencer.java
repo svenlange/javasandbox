@@ -3,6 +3,7 @@ package b.serializer;
 import b.b.BPackage;
 import b.b.Import;
 import b.b.Model;
+import b.b.PackageDeclaration;
 import b.b.ReferencedGreetings;
 import b.services.BGrammarAccess;
 import com.google.inject.Inject;
@@ -39,6 +40,12 @@ public class BSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 					return; 
 				}
 				else break;
+			case BPackage.PACKAGE_DECLARATION:
+				if(context == grammarAccess.getPackageDeclarationRule()) {
+					sequence_PackageDeclaration(context, (PackageDeclaration) semanticObject); 
+					return; 
+				}
+				else break;
 			case BPackage.REFERENCED_GREETINGS:
 				if(context == grammarAccess.getReferencedGreetingsRule()) {
 					sequence_ReferencedGreetings(context, (ReferencedGreetings) semanticObject); 
@@ -67,7 +74,7 @@ public class BSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (imports+=Import* greetings+=ReferencedGreetings*)
+	 *     (package=PackageDeclaration? imports+=Import*)
 	 */
 	protected void sequence_Model(EObject context, Model semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -76,7 +83,16 @@ public class BSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     name=[Greeting|ID]
+	 *     (name=QualifiedName greetings+=ReferencedGreetings*)
+	 */
+	protected void sequence_PackageDeclaration(EObject context, PackageDeclaration semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     name=[Greeting|QualifiedName]
 	 */
 	protected void sequence_ReferencedGreetings(EObject context, ReferencedGreetings semanticObject) {
 		if(errorAcceptor != null) {
@@ -85,7 +101,7 @@ public class BSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getReferencedGreetingsAccess().getNameGreetingIDTerminalRuleCall_1_0_1(), semanticObject.getName());
+		feeder.accept(grammarAccess.getReferencedGreetingsAccess().getNameGreetingQualifiedNameParserRuleCall_1_0_1(), semanticObject.getName());
 		feeder.finish();
 	}
 }

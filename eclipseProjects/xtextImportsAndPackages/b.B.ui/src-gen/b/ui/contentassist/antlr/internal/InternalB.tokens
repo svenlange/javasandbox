@@ -1,6 +1,7 @@
-'.'=13
-'g: '=12
-'import'=11
+'.'=14
+'g: '=13
+'import'=12
+'package'=11
 RULE_ANY_OTHER=10
 RULE_ID=4
 RULE_INT=5
@@ -11,3 +12,4 @@ RULE_WS=9
 T__11=11
 T__12=12
 T__13=13
+T__14=14

@@ -20,30 +20,18 @@ public class AGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public class ModelElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Model");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cPackageAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cPackagePackageDeclarationParserRuleCall_0_0 = (RuleCall)cPackageAssignment_0.eContents().get(0);
-		private final Assignment cGreetingsAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cGreetingsGreetingParserRuleCall_1_0 = (RuleCall)cGreetingsAssignment_1.eContents().get(0);
+		private final Assignment cPackageAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cPackagePackageDeclarationParserRuleCall_0 = (RuleCall)cPackageAssignment.eContents().get(0);
 		
 		//Model:
-		//	package=PackageDeclaration? greetings+=Greeting*;
+		//	package=PackageDeclaration?;
 		public ParserRule getRule() { return rule; }
 
-		//package=PackageDeclaration? greetings+=Greeting*
-		public Group getGroup() { return cGroup; }
-
 		//package=PackageDeclaration?
-		public Assignment getPackageAssignment_0() { return cPackageAssignment_0; }
+		public Assignment getPackageAssignment() { return cPackageAssignment; }
 
 		//PackageDeclaration
-		public RuleCall getPackagePackageDeclarationParserRuleCall_0_0() { return cPackagePackageDeclarationParserRuleCall_0_0; }
-
-		//greetings+=Greeting*
-		public Assignment getGreetingsAssignment_1() { return cGreetingsAssignment_1; }
-
-		//Greeting
-		public RuleCall getGreetingsGreetingParserRuleCall_1_0() { return cGreetingsGreetingParserRuleCall_1_0; }
+		public RuleCall getPackagePackageDeclarationParserRuleCall_0() { return cPackagePackageDeclarationParserRuleCall_0; }
 	}
 
 	public class PackageDeclarationElements extends AbstractParserRuleElementFinder {
@@ -52,12 +40,14 @@ public class AGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cPackageKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameQualifiedNameParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Assignment cGreetingsAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cGreetingsGreetingParserRuleCall_2_0 = (RuleCall)cGreetingsAssignment_2.eContents().get(0);
 		
 		//PackageDeclaration:
-		//	"package" name=QualifiedName;
+		//	"package" name=QualifiedName greetings+=Greeting*;
 		public ParserRule getRule() { return rule; }
 
-		//"package" name=QualifiedName
+		//"package" name=QualifiedName greetings+=Greeting*
 		public Group getGroup() { return cGroup; }
 
 		//"package"
@@ -68,6 +58,12 @@ public class AGrammarAccess extends AbstractGrammarElementFinder {
 
 		//QualifiedName
 		public RuleCall getNameQualifiedNameParserRuleCall_1_0() { return cNameQualifiedNameParserRuleCall_1_0; }
+
+		//greetings+=Greeting*
+		public Assignment getGreetingsAssignment_2() { return cGreetingsAssignment_2; }
+
+		//Greeting
+		public RuleCall getGreetingsGreetingParserRuleCall_2_0() { return cGreetingsGreetingParserRuleCall_2_0; }
 	}
 
 	public class QualifiedNameElements extends AbstractParserRuleElementFinder {
@@ -171,7 +167,7 @@ public class AGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//Model:
-	//	package=PackageDeclaration? greetings+=Greeting*;
+	//	package=PackageDeclaration?;
 	public ModelElements getModelAccess() {
 		return pModel;
 	}
@@ -181,7 +177,7 @@ public class AGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//PackageDeclaration:
-	//	"package" name=QualifiedName;
+	//	"package" name=QualifiedName greetings+=Greeting*;
 	public PackageDeclarationElements getPackageDeclarationAccess() {
 		return pPackageDeclaration;
 	}

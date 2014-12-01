@@ -3,10 +3,11 @@ grammar a.A with org.eclipse.xtext.common.Terminals
 generate a "http://www.A.a"
 
 Model:
-	package=PackageDeclaration?  greetings+=Greeting*;
+	package=PackageDeclaration?;
 
 PackageDeclaration:
-	'package' name=QualifiedName;
+	'package' name=QualifiedName
+	greetings+=Greeting*;
 
 QualifiedName:
 	ID ('.' ID)*;

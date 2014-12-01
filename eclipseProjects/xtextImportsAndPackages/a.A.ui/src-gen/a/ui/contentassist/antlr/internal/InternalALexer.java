@@ -103,10 +103,10 @@ public class InternalALexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../a.A.ui/src-gen/a/ui/contentassist/antlr/internal/InternalA.g:547:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../a.A.ui/src-gen/a/ui/contentassist/antlr/internal/InternalA.g:547:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../a.A.ui/src-gen/a/ui/contentassist/antlr/internal/InternalA.g:517:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../a.A.ui/src-gen/a/ui/contentassist/antlr/internal/InternalA.g:517:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../a.A.ui/src-gen/a/ui/contentassist/antlr/internal/InternalA.g:547:11: ( '^' )?
+            // ../a.A.ui/src-gen/a/ui/contentassist/antlr/internal/InternalA.g:517:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -115,7 +115,7 @@ public class InternalALexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../a.A.ui/src-gen/a/ui/contentassist/antlr/internal/InternalA.g:547:11: '^'
+                    // ../a.A.ui/src-gen/a/ui/contentassist/antlr/internal/InternalA.g:517:11: '^'
                     {
                     match('^'); 
 
@@ -133,7 +133,7 @@ public class InternalALexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../a.A.ui/src-gen/a/ui/contentassist/antlr/internal/InternalA.g:547:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../a.A.ui/src-gen/a/ui/contentassist/antlr/internal/InternalA.g:517:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -182,10 +182,10 @@ public class InternalALexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../a.A.ui/src-gen/a/ui/contentassist/antlr/internal/InternalA.g:549:10: ( ( '0' .. '9' )+ )
-            // ../a.A.ui/src-gen/a/ui/contentassist/antlr/internal/InternalA.g:549:12: ( '0' .. '9' )+
+            // ../a.A.ui/src-gen/a/ui/contentassist/antlr/internal/InternalA.g:519:10: ( ( '0' .. '9' )+ )
+            // ../a.A.ui/src-gen/a/ui/contentassist/antlr/internal/InternalA.g:519:12: ( '0' .. '9' )+
             {
-            // ../a.A.ui/src-gen/a/ui/contentassist/antlr/internal/InternalA.g:549:12: ( '0' .. '9' )+
+            // ../a.A.ui/src-gen/a/ui/contentassist/antlr/internal/InternalA.g:519:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -199,7 +199,7 @@ public class InternalALexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // ../a.A.ui/src-gen/a/ui/contentassist/antlr/internal/InternalA.g:549:13: '0' .. '9'
+            	    // ../a.A.ui/src-gen/a/ui/contentassist/antlr/internal/InternalA.g:519:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -231,10 +231,10 @@ public class InternalALexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../a.A.ui/src-gen/a/ui/contentassist/antlr/internal/InternalA.g:551:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../a.A.ui/src-gen/a/ui/contentassist/antlr/internal/InternalA.g:551:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../a.A.ui/src-gen/a/ui/contentassist/antlr/internal/InternalA.g:521:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../a.A.ui/src-gen/a/ui/contentassist/antlr/internal/InternalA.g:521:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../a.A.ui/src-gen/a/ui/contentassist/antlr/internal/InternalA.g:551:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../a.A.ui/src-gen/a/ui/contentassist/antlr/internal/InternalA.g:521:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -252,10 +252,10 @@ public class InternalALexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // ../a.A.ui/src-gen/a/ui/contentassist/antlr/internal/InternalA.g:551:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../a.A.ui/src-gen/a/ui/contentassist/antlr/internal/InternalA.g:521:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../a.A.ui/src-gen/a/ui/contentassist/antlr/internal/InternalA.g:551:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../a.A.ui/src-gen/a/ui/contentassist/antlr/internal/InternalA.g:521:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -271,7 +271,7 @@ public class InternalALexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // ../a.A.ui/src-gen/a/ui/contentassist/antlr/internal/InternalA.g:551:21: '\\\\' .
+                    	    // ../a.A.ui/src-gen/a/ui/contentassist/antlr/internal/InternalA.g:521:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -279,7 +279,7 @@ public class InternalALexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../a.A.ui/src-gen/a/ui/contentassist/antlr/internal/InternalA.g:551:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../a.A.ui/src-gen/a/ui/contentassist/antlr/internal/InternalA.g:521:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -304,10 +304,10 @@ public class InternalALexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../a.A.ui/src-gen/a/ui/contentassist/antlr/internal/InternalA.g:551:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../a.A.ui/src-gen/a/ui/contentassist/antlr/internal/InternalA.g:521:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../a.A.ui/src-gen/a/ui/contentassist/antlr/internal/InternalA.g:551:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../a.A.ui/src-gen/a/ui/contentassist/antlr/internal/InternalA.g:521:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -323,7 +323,7 @@ public class InternalALexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // ../a.A.ui/src-gen/a/ui/contentassist/antlr/internal/InternalA.g:551:54: '\\\\' .
+                    	    // ../a.A.ui/src-gen/a/ui/contentassist/antlr/internal/InternalA.g:521:54: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -331,7 +331,7 @@ public class InternalALexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../a.A.ui/src-gen/a/ui/contentassist/antlr/internal/InternalA.g:551:61: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../a.A.ui/src-gen/a/ui/contentassist/antlr/internal/InternalA.g:521:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -374,12 +374,12 @@ public class InternalALexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../a.A.ui/src-gen/a/ui/contentassist/antlr/internal/InternalA.g:553:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../a.A.ui/src-gen/a/ui/contentassist/antlr/internal/InternalA.g:553:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../a.A.ui/src-gen/a/ui/contentassist/antlr/internal/InternalA.g:523:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../a.A.ui/src-gen/a/ui/contentassist/antlr/internal/InternalA.g:523:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../a.A.ui/src-gen/a/ui/contentassist/antlr/internal/InternalA.g:553:24: ( options {greedy=false; } : . )*
+            // ../a.A.ui/src-gen/a/ui/contentassist/antlr/internal/InternalA.g:523:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -404,7 +404,7 @@ public class InternalALexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // ../a.A.ui/src-gen/a/ui/contentassist/antlr/internal/InternalA.g:553:52: .
+            	    // ../a.A.ui/src-gen/a/ui/contentassist/antlr/internal/InternalA.g:523:52: .
             	    {
             	    matchAny(); 
 
@@ -434,12 +434,12 @@ public class InternalALexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../a.A.ui/src-gen/a/ui/contentassist/antlr/internal/InternalA.g:555:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../a.A.ui/src-gen/a/ui/contentassist/antlr/internal/InternalA.g:555:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../a.A.ui/src-gen/a/ui/contentassist/antlr/internal/InternalA.g:525:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../a.A.ui/src-gen/a/ui/contentassist/antlr/internal/InternalA.g:525:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../a.A.ui/src-gen/a/ui/contentassist/antlr/internal/InternalA.g:555:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../a.A.ui/src-gen/a/ui/contentassist/antlr/internal/InternalA.g:525:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -452,7 +452,7 @@ public class InternalALexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // ../a.A.ui/src-gen/a/ui/contentassist/antlr/internal/InternalA.g:555:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../a.A.ui/src-gen/a/ui/contentassist/antlr/internal/InternalA.g:525:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -472,7 +472,7 @@ public class InternalALexer extends Lexer {
                 }
             } while (true);
 
-            // ../a.A.ui/src-gen/a/ui/contentassist/antlr/internal/InternalA.g:555:40: ( ( '\\r' )? '\\n' )?
+            // ../a.A.ui/src-gen/a/ui/contentassist/antlr/internal/InternalA.g:525:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -481,9 +481,9 @@ public class InternalALexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // ../a.A.ui/src-gen/a/ui/contentassist/antlr/internal/InternalA.g:555:41: ( '\\r' )? '\\n'
+                    // ../a.A.ui/src-gen/a/ui/contentassist/antlr/internal/InternalA.g:525:41: ( '\\r' )? '\\n'
                     {
-                    // ../a.A.ui/src-gen/a/ui/contentassist/antlr/internal/InternalA.g:555:41: ( '\\r' )?
+                    // ../a.A.ui/src-gen/a/ui/contentassist/antlr/internal/InternalA.g:525:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -492,7 +492,7 @@ public class InternalALexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // ../a.A.ui/src-gen/a/ui/contentassist/antlr/internal/InternalA.g:555:41: '\\r'
+                            // ../a.A.ui/src-gen/a/ui/contentassist/antlr/internal/InternalA.g:525:41: '\\r'
                             {
                             match('\r'); 
 
@@ -524,10 +524,10 @@ public class InternalALexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../a.A.ui/src-gen/a/ui/contentassist/antlr/internal/InternalA.g:557:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../a.A.ui/src-gen/a/ui/contentassist/antlr/internal/InternalA.g:557:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../a.A.ui/src-gen/a/ui/contentassist/antlr/internal/InternalA.g:527:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../a.A.ui/src-gen/a/ui/contentassist/antlr/internal/InternalA.g:527:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../a.A.ui/src-gen/a/ui/contentassist/antlr/internal/InternalA.g:557:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../a.A.ui/src-gen/a/ui/contentassist/antlr/internal/InternalA.g:527:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -581,8 +581,8 @@ public class InternalALexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../a.A.ui/src-gen/a/ui/contentassist/antlr/internal/InternalA.g:559:16: ( . )
-            // ../a.A.ui/src-gen/a/ui/contentassist/antlr/internal/InternalA.g:559:18: .
+            // ../a.A.ui/src-gen/a/ui/contentassist/antlr/internal/InternalA.g:529:16: ( . )
+            // ../a.A.ui/src-gen/a/ui/contentassist/antlr/internal/InternalA.g:529:18: .
             {
             matchAny(); 
 

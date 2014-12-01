@@ -8,10 +8,10 @@
       ecorePackage="A.ecore#/">
     <genClasses ecoreClass="A.ecore#//Model">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference A.ecore#//Model/package"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference A.ecore#//Model/greetings"/>
     </genClasses>
     <genClasses ecoreClass="A.ecore#//PackageDeclaration">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute A.ecore#//PackageDeclaration/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference A.ecore#//PackageDeclaration/greetings"/>
     </genClasses>
     <genClasses ecoreClass="A.ecore#//Greeting">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute A.ecore#//Greeting/name"/>

@@ -3,25 +3,17 @@
 package a.a.impl;
 
 import a.a.APackage;
-import a.a.Greeting;
 import a.a.Model;
 import a.a.PackageDeclaration;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,7 +23,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link a.a.impl.ModelImpl#getPackage <em>Package</em>}</li>
- *   <li>{@link a.a.impl.ModelImpl#getGreetings <em>Greetings</em>}</li>
  * </ul>
  * </p>
  *
@@ -48,16 +39,6 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * @ordered
    */
   protected PackageDeclaration package_;
-
-  /**
-   * The cached value of the '{@link #getGreetings() <em>Greetings</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getGreetings()
-   * @generated
-   * @ordered
-   */
-  protected EList<Greeting> greetings;
 
   /**
    * <!-- begin-user-doc -->
@@ -133,20 +114,6 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Greeting> getGreetings()
-  {
-    if (greetings == null)
-    {
-      greetings = new EObjectContainmentEList<Greeting>(Greeting.class, this, APackage.MODEL__GREETINGS);
-    }
-    return greetings;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -154,8 +121,6 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
     {
       case APackage.MODEL__PACKAGE:
         return basicSetPackage(null, msgs);
-      case APackage.MODEL__GREETINGS:
-        return ((InternalEList<?>)getGreetings()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -172,8 +137,6 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
     {
       case APackage.MODEL__PACKAGE:
         return getPackage();
-      case APackage.MODEL__GREETINGS:
-        return getGreetings();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -183,7 +146,6 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -191,10 +153,6 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
     {
       case APackage.MODEL__PACKAGE:
         setPackage((PackageDeclaration)newValue);
-        return;
-      case APackage.MODEL__GREETINGS:
-        getGreetings().clear();
-        getGreetings().addAll((Collection<? extends Greeting>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -213,9 +171,6 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
       case APackage.MODEL__PACKAGE:
         setPackage((PackageDeclaration)null);
         return;
-      case APackage.MODEL__GREETINGS:
-        getGreetings().clear();
-        return;
     }
     super.eUnset(featureID);
   }
@@ -232,8 +187,6 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
     {
       case APackage.MODEL__PACKAGE:
         return package_ != null;
-      case APackage.MODEL__GREETINGS:
-        return greetings != null && !greetings.isEmpty();
     }
     return super.eIsSet(featureID);
   }

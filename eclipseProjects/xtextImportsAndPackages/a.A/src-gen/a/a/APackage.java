@@ -76,22 +76,13 @@ public interface APackage extends EPackage
   int MODEL__PACKAGE = 0;
 
   /**
-   * The feature id for the '<em><b>Greetings</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MODEL__GREETINGS = 1;
-
-  /**
    * The number of structural features of the '<em>Model</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MODEL_FEATURE_COUNT = 2;
+  int MODEL_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link a.a.impl.PackageDeclarationImpl <em>Package Declaration</em>}' class.
@@ -113,13 +104,22 @@ public interface APackage extends EPackage
   int PACKAGE_DECLARATION__NAME = 0;
 
   /**
+   * The feature id for the '<em><b>Greetings</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PACKAGE_DECLARATION__GREETINGS = 1;
+
+  /**
    * The number of structural features of the '<em>Package Declaration</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PACKAGE_DECLARATION_FEATURE_COUNT = 1;
+  int PACKAGE_DECLARATION_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link a.a.impl.GreetingImpl <em>Greeting</em>}' class.
@@ -172,17 +172,6 @@ public interface APackage extends EPackage
   EReference getModel_Package();
 
   /**
-   * Returns the meta object for the containment reference list '{@link a.a.Model#getGreetings <em>Greetings</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Greetings</em>'.
-   * @see a.a.Model#getGreetings()
-   * @see #getModel()
-   * @generated
-   */
-  EReference getModel_Greetings();
-
-  /**
    * Returns the meta object for class '{@link a.a.PackageDeclaration <em>Package Declaration</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -202,6 +191,17 @@ public interface APackage extends EPackage
    * @generated
    */
   EAttribute getPackageDeclaration_Name();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link a.a.PackageDeclaration#getGreetings <em>Greetings</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Greetings</em>'.
+   * @see a.a.PackageDeclaration#getGreetings()
+   * @see #getPackageDeclaration()
+   * @generated
+   */
+  EReference getPackageDeclaration_Greetings();
 
   /**
    * Returns the meta object for class '{@link a.a.Greeting <em>Greeting</em>}'.
@@ -266,14 +266,6 @@ public interface APackage extends EPackage
     EReference MODEL__PACKAGE = eINSTANCE.getModel_Package();
 
     /**
-     * The meta object literal for the '<em><b>Greetings</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference MODEL__GREETINGS = eINSTANCE.getModel_Greetings();
-
-    /**
      * The meta object literal for the '{@link a.a.impl.PackageDeclarationImpl <em>Package Declaration</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -290,6 +282,14 @@ public interface APackage extends EPackage
      * @generated
      */
     EAttribute PACKAGE_DECLARATION__NAME = eINSTANCE.getPackageDeclaration_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Greetings</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PACKAGE_DECLARATION__GREETINGS = eINSTANCE.getPackageDeclaration_Greetings();
 
     /**
      * The meta object literal for the '{@link a.a.impl.GreetingImpl <em>Greeting</em>}' class.

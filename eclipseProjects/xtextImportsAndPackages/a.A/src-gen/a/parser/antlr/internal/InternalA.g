@@ -77,10 +77,10 @@ ruleModel returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-((
+(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getModelAccess().getPackagePackageDeclarationParserRuleCall_0_0()); 
+	        newCompositeNode(grammarAccess.getModelAccess().getPackagePackageDeclarationParserRuleCall_0()); 
 	    }
 		lv_package_0_0=rulePackageDeclaration		{
 	        if ($current==null) {
@@ -95,25 +95,7 @@ ruleModel returns [EObject current=null]
 	    }
 
 )
-)?(
-(
-		{ 
-	        newCompositeNode(grammarAccess.getModelAccess().getGreetingsGreetingParserRuleCall_1_0()); 
-	    }
-		lv_greetings_1_0=ruleGreeting		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getModelRule());
-	        }
-       		add(
-       			$current, 
-       			"greetings",
-        		lv_greetings_1_0, 
-        		"Greeting");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-)*)
+)?
 ;
 
 
@@ -156,7 +138,25 @@ rulePackageDeclaration returns [EObject current=null]
 	    }
 
 )
-))
+)(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getPackageDeclarationAccess().getGreetingsGreetingParserRuleCall_2_0()); 
+	    }
+		lv_greetings_2_0=ruleGreeting		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getPackageDeclarationRule());
+	        }
+       		add(
+       			$current, 
+       			"greetings",
+        		lv_greetings_2_0, 
+        		"Greeting");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)*)
 ;
 
 

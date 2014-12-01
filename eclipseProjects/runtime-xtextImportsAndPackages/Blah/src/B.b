@@ -1,4 +1,3 @@
+package hallo2
 
-
-g: Name2
-g: Name1
+g: hallo.Name1

@@ -65,6 +65,7 @@ public class BFactoryImpl extends EFactoryImpl implements BFactory
     switch (eClass.getClassifierID())
     {
       case BPackage.MODEL: return createModel();
+      case BPackage.PACKAGE_DECLARATION: return createPackageDeclaration();
       case BPackage.IMPORT: return createImport();
       case BPackage.REFERENCED_GREETINGS: return createReferencedGreetings();
       default:
@@ -81,6 +82,17 @@ public class BFactoryImpl extends EFactoryImpl implements BFactory
   {
     ModelImpl model = new ModelImpl();
     return model;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public PackageDeclaration createPackageDeclaration()
+  {
+    PackageDeclarationImpl packageDeclaration = new PackageDeclarationImpl();
+    return packageDeclaration;
   }
 
   /**

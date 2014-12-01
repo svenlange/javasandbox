@@ -8,8 +8,12 @@
   <genPackages prefix="B" basePackage="b" disposableProviderFactory="true" fileExtensions="b"
       ecorePackage="B.ecore#/">
     <genClasses ecoreClass="B.ecore#//Model">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference B.ecore#//Model/package"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference B.ecore#//Model/imports"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference B.ecore#//Model/greetings"/>
+    </genClasses>
+    <genClasses ecoreClass="B.ecore#//PackageDeclaration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute B.ecore#//PackageDeclaration/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference B.ecore#//PackageDeclaration/greetings"/>
     </genClasses>
     <genClasses ecoreClass="B.ecore#//Import">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute B.ecore#//Import/importedNamespace"/>

@@ -1,10 +1,10 @@
 /**
  */
-package a.a.impl;
+package b.b.impl;
 
-import a.a.APackage;
-import a.a.Greeting;
-import a.a.PackageDeclaration;
+import b.b.BPackage;
+import b.b.PackageDeclaration;
+import b.b.ReferencedGreetings;
 
 import java.util.Collection;
 
@@ -29,8 +29,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link a.a.impl.PackageDeclarationImpl#getName <em>Name</em>}</li>
- *   <li>{@link a.a.impl.PackageDeclarationImpl#getGreetings <em>Greetings</em>}</li>
+ *   <li>{@link b.b.impl.PackageDeclarationImpl#getName <em>Name</em>}</li>
+ *   <li>{@link b.b.impl.PackageDeclarationImpl#getGreetings <em>Greetings</em>}</li>
  * </ul>
  * </p>
  *
@@ -66,7 +66,7 @@ public class PackageDeclarationImpl extends MinimalEObjectImpl.Container impleme
    * @generated
    * @ordered
    */
-  protected EList<Greeting> greetings;
+  protected EList<ReferencedGreetings> greetings;
 
   /**
    * <!-- begin-user-doc -->
@@ -86,7 +86,7 @@ public class PackageDeclarationImpl extends MinimalEObjectImpl.Container impleme
   @Override
   protected EClass eStaticClass()
   {
-    return APackage.Literals.PACKAGE_DECLARATION;
+    return BPackage.Literals.PACKAGE_DECLARATION;
   }
 
   /**
@@ -109,7 +109,7 @@ public class PackageDeclarationImpl extends MinimalEObjectImpl.Container impleme
     String oldName = name;
     name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, APackage.PACKAGE_DECLARATION__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, BPackage.PACKAGE_DECLARATION__NAME, oldName, name));
   }
 
   /**
@@ -117,11 +117,11 @@ public class PackageDeclarationImpl extends MinimalEObjectImpl.Container impleme
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Greeting> getGreetings()
+  public EList<ReferencedGreetings> getGreetings()
   {
     if (greetings == null)
     {
-      greetings = new EObjectContainmentEList<Greeting>(Greeting.class, this, APackage.PACKAGE_DECLARATION__GREETINGS);
+      greetings = new EObjectContainmentEList<ReferencedGreetings>(ReferencedGreetings.class, this, BPackage.PACKAGE_DECLARATION__GREETINGS);
     }
     return greetings;
   }
@@ -136,7 +136,7 @@ public class PackageDeclarationImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case APackage.PACKAGE_DECLARATION__GREETINGS:
+      case BPackage.PACKAGE_DECLARATION__GREETINGS:
         return ((InternalEList<?>)getGreetings()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -152,9 +152,9 @@ public class PackageDeclarationImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case APackage.PACKAGE_DECLARATION__NAME:
+      case BPackage.PACKAGE_DECLARATION__NAME:
         return getName();
-      case APackage.PACKAGE_DECLARATION__GREETINGS:
+      case BPackage.PACKAGE_DECLARATION__GREETINGS:
         return getGreetings();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -171,12 +171,12 @@ public class PackageDeclarationImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case APackage.PACKAGE_DECLARATION__NAME:
+      case BPackage.PACKAGE_DECLARATION__NAME:
         setName((String)newValue);
         return;
-      case APackage.PACKAGE_DECLARATION__GREETINGS:
+      case BPackage.PACKAGE_DECLARATION__GREETINGS:
         getGreetings().clear();
-        getGreetings().addAll((Collection<? extends Greeting>)newValue);
+        getGreetings().addAll((Collection<? extends ReferencedGreetings>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -192,10 +192,10 @@ public class PackageDeclarationImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case APackage.PACKAGE_DECLARATION__NAME:
+      case BPackage.PACKAGE_DECLARATION__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case APackage.PACKAGE_DECLARATION__GREETINGS:
+      case BPackage.PACKAGE_DECLARATION__GREETINGS:
         getGreetings().clear();
         return;
     }
@@ -212,9 +212,9 @@ public class PackageDeclarationImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case APackage.PACKAGE_DECLARATION__NAME:
+      case BPackage.PACKAGE_DECLARATION__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case APackage.PACKAGE_DECLARATION__GREETINGS:
+      case BPackage.PACKAGE_DECLARATION__GREETINGS:
         return greetings != null && !greetings.isEmpty();
     }
     return super.eIsSet(featureID);
