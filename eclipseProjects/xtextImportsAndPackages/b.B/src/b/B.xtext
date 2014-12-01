@@ -10,13 +10,13 @@ Model:
 
 PackageDeclaration:
 	'package' name=QualifiedName
-	greetings+=ReferencedGreetings*
+	greetings+=ReferencedGreeting*
 ;
 
 Import:
 	'import' importedNamespace=QualifiedName;
 
-ReferencedGreetings:
+ReferencedGreeting:
 	'g: ' name=[a::Greeting|QualifiedName];
 
 QualifiedName:
