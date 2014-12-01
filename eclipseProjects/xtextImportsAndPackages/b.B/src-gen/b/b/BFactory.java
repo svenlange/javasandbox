@@ -50,13 +50,13 @@ public interface BFactory extends EFactory
   Import createImport();
 
   /**
-   * Returns a new object of class '<em>Referenced Greetings</em>'.
+   * Returns a new object of class '<em>Referenced Greeting</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Referenced Greetings</em>'.
+   * @return a new object of class '<em>Referenced Greeting</em>'.
    * @generated
    */
-  ReferencedGreetings createReferencedGreetings();
+  ReferencedGreeting createReferencedGreeting();
 
   /**
    * Returns the package supported by this factory.

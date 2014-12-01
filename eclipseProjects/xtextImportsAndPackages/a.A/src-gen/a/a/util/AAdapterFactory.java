@@ -85,6 +85,11 @@ public class AAdapterFactory extends AdapterFactoryImpl
         return createPackageDeclarationAdapter();
       }
       @Override
+      public Adapter caseImport(Import object)
+      {
+        return createImportAdapter();
+      }
+      @Override
       public Adapter caseGreeting(Greeting object)
       {
         return createGreetingAdapter();
@@ -137,6 +142,21 @@ public class AAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createPackageDeclarationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link a.a.Import <em>Import</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see a.a.Import
+   * @generated
+   */
+  public Adapter createImportAdapter()
   {
     return null;
   }

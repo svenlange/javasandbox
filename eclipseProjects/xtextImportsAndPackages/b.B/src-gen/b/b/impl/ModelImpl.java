@@ -3,25 +3,17 @@
 package b.b.impl;
 
 import b.b.BPackage;
-import b.b.Import;
 import b.b.Model;
 import b.b.PackageDeclaration;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,7 +23,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link b.b.impl.ModelImpl#getPackage <em>Package</em>}</li>
- *   <li>{@link b.b.impl.ModelImpl#getImports <em>Imports</em>}</li>
  * </ul>
  * </p>
  *
@@ -48,16 +39,6 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * @ordered
    */
   protected PackageDeclaration package_;
-
-  /**
-   * The cached value of the '{@link #getImports() <em>Imports</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getImports()
-   * @generated
-   * @ordered
-   */
-  protected EList<Import> imports;
 
   /**
    * <!-- begin-user-doc -->
@@ -133,20 +114,6 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Import> getImports()
-  {
-    if (imports == null)
-    {
-      imports = new EObjectContainmentEList<Import>(Import.class, this, BPackage.MODEL__IMPORTS);
-    }
-    return imports;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -154,8 +121,6 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
     {
       case BPackage.MODEL__PACKAGE:
         return basicSetPackage(null, msgs);
-      case BPackage.MODEL__IMPORTS:
-        return ((InternalEList<?>)getImports()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -172,8 +137,6 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
     {
       case BPackage.MODEL__PACKAGE:
         return getPackage();
-      case BPackage.MODEL__IMPORTS:
-        return getImports();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -183,7 +146,6 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -191,10 +153,6 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
     {
       case BPackage.MODEL__PACKAGE:
         setPackage((PackageDeclaration)newValue);
-        return;
-      case BPackage.MODEL__IMPORTS:
-        getImports().clear();
-        getImports().addAll((Collection<? extends Import>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -213,9 +171,6 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
       case BPackage.MODEL__PACKAGE:
         setPackage((PackageDeclaration)null);
         return;
-      case BPackage.MODEL__IMPORTS:
-        getImports().clear();
-        return;
     }
     super.eUnset(featureID);
   }
@@ -232,8 +187,6 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
     {
       case BPackage.MODEL__PACKAGE:
         return package_ != null;
-      case BPackage.MODEL__IMPORTS:
-        return imports != null && !imports.isEmpty();
     }
     return super.eIsSet(featureID);
   }

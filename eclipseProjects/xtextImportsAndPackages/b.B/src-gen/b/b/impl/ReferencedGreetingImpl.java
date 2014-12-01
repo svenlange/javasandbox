@@ -5,7 +5,7 @@ package b.b.impl;
 import a.a.Greeting;
 
 import b.b.BPackage;
-import b.b.ReferencedGreetings;
+import b.b.ReferencedGreeting;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -17,18 +17,18 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Referenced Greetings</b></em>'.
+ * An implementation of the model object '<em><b>Referenced Greeting</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link b.b.impl.ReferencedGreetingsImpl#getName <em>Name</em>}</li>
+ *   <li>{@link b.b.impl.ReferencedGreetingImpl#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ReferencedGreetingsImpl extends MinimalEObjectImpl.Container implements ReferencedGreetings
+public class ReferencedGreetingImpl extends MinimalEObjectImpl.Container implements ReferencedGreeting
 {
   /**
    * The cached value of the '{@link #getName() <em>Name</em>}' reference.
@@ -45,7 +45,7 @@ public class ReferencedGreetingsImpl extends MinimalEObjectImpl.Container implem
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ReferencedGreetingsImpl()
+  protected ReferencedGreetingImpl()
   {
     super();
   }
@@ -58,7 +58,7 @@ public class ReferencedGreetingsImpl extends MinimalEObjectImpl.Container implem
   @Override
   protected EClass eStaticClass()
   {
-    return BPackage.Literals.REFERENCED_GREETINGS;
+    return BPackage.Literals.REFERENCED_GREETING;
   }
 
   /**
@@ -75,7 +75,7 @@ public class ReferencedGreetingsImpl extends MinimalEObjectImpl.Container implem
       if (name != oldName)
       {
         if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, BPackage.REFERENCED_GREETINGS__NAME, oldName, name));
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, BPackage.REFERENCED_GREETING__NAME, oldName, name));
       }
     }
     return name;
@@ -101,7 +101,7 @@ public class ReferencedGreetingsImpl extends MinimalEObjectImpl.Container implem
     Greeting oldName = name;
     name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, BPackage.REFERENCED_GREETINGS__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, BPackage.REFERENCED_GREETING__NAME, oldName, name));
   }
 
   /**
@@ -114,7 +114,7 @@ public class ReferencedGreetingsImpl extends MinimalEObjectImpl.Container implem
   {
     switch (featureID)
     {
-      case BPackage.REFERENCED_GREETINGS__NAME:
+      case BPackage.REFERENCED_GREETING__NAME:
         if (resolve) return getName();
         return basicGetName();
     }
@@ -131,7 +131,7 @@ public class ReferencedGreetingsImpl extends MinimalEObjectImpl.Container implem
   {
     switch (featureID)
     {
-      case BPackage.REFERENCED_GREETINGS__NAME:
+      case BPackage.REFERENCED_GREETING__NAME:
         setName((Greeting)newValue);
         return;
     }
@@ -148,7 +148,7 @@ public class ReferencedGreetingsImpl extends MinimalEObjectImpl.Container implem
   {
     switch (featureID)
     {
-      case BPackage.REFERENCED_GREETINGS__NAME:
+      case BPackage.REFERENCED_GREETING__NAME:
         setName((Greeting)null);
         return;
     }
@@ -165,10 +165,10 @@ public class ReferencedGreetingsImpl extends MinimalEObjectImpl.Container implem
   {
     switch (featureID)
     {
-      case BPackage.REFERENCED_GREETINGS__NAME:
+      case BPackage.REFERENCED_GREETING__NAME:
         return name != null;
     }
     return super.eIsSet(featureID);
   }
 
-} //ReferencedGreetingsImpl
+} //ReferencedGreetingImpl

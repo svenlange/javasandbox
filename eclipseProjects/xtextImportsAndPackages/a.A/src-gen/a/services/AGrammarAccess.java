@@ -24,10 +24,10 @@ public class AGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cPackagePackageDeclarationParserRuleCall_0 = (RuleCall)cPackageAssignment.eContents().get(0);
 		
 		//Model:
-		//	package=PackageDeclaration?;
+		//	package=PackageDeclaration;
 		public ParserRule getRule() { return rule; }
 
-		//package=PackageDeclaration?
+		//package=PackageDeclaration
 		public Assignment getPackageAssignment() { return cPackageAssignment; }
 
 		//PackageDeclaration
@@ -40,14 +40,16 @@ public class AGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cPackageKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameQualifiedNameParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Assignment cGreetingsAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cGreetingsGreetingParserRuleCall_2_0 = (RuleCall)cGreetingsAssignment_2.eContents().get(0);
+		private final Assignment cImportsAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cImportsImportParserRuleCall_2_0 = (RuleCall)cImportsAssignment_2.eContents().get(0);
+		private final Assignment cGreetingsAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cGreetingsGreetingParserRuleCall_3_0 = (RuleCall)cGreetingsAssignment_3.eContents().get(0);
 		
 		//PackageDeclaration:
-		//	"package" name=QualifiedName greetings+=Greeting*;
+		//	"package" name=QualifiedName imports+=Import* greetings+=Greeting*;
 		public ParserRule getRule() { return rule; }
 
-		//"package" name=QualifiedName greetings+=Greeting*
+		//"package" name=QualifiedName imports+=Import* greetings+=Greeting*
 		public Group getGroup() { return cGroup; }
 
 		//"package"
@@ -59,11 +61,61 @@ public class AGrammarAccess extends AbstractGrammarElementFinder {
 		//QualifiedName
 		public RuleCall getNameQualifiedNameParserRuleCall_1_0() { return cNameQualifiedNameParserRuleCall_1_0; }
 
+		//imports+=Import*
+		public Assignment getImportsAssignment_2() { return cImportsAssignment_2; }
+
+		//Import
+		public RuleCall getImportsImportParserRuleCall_2_0() { return cImportsImportParserRuleCall_2_0; }
+
 		//greetings+=Greeting*
-		public Assignment getGreetingsAssignment_2() { return cGreetingsAssignment_2; }
+		public Assignment getGreetingsAssignment_3() { return cGreetingsAssignment_3; }
 
 		//Greeting
-		public RuleCall getGreetingsGreetingParserRuleCall_2_0() { return cGreetingsGreetingParserRuleCall_2_0; }
+		public RuleCall getGreetingsGreetingParserRuleCall_3_0() { return cGreetingsGreetingParserRuleCall_3_0; }
+	}
+
+	public class ImportElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Import");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cImportKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cImportedNamespaceAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cImportedNamespaceQualifiedNameWithWildcardParserRuleCall_1_0 = (RuleCall)cImportedNamespaceAssignment_1.eContents().get(0);
+		
+		//Import:
+		//	"import" importedNamespace=QualifiedNameWithWildcard;
+		public ParserRule getRule() { return rule; }
+
+		//"import" importedNamespace=QualifiedNameWithWildcard
+		public Group getGroup() { return cGroup; }
+
+		//"import"
+		public Keyword getImportKeyword_0() { return cImportKeyword_0; }
+
+		//importedNamespace=QualifiedNameWithWildcard
+		public Assignment getImportedNamespaceAssignment_1() { return cImportedNamespaceAssignment_1; }
+
+		//QualifiedNameWithWildcard
+		public RuleCall getImportedNamespaceQualifiedNameWithWildcardParserRuleCall_1_0() { return cImportedNamespaceQualifiedNameWithWildcardParserRuleCall_1_0; }
+	}
+
+	public class QualifiedNameWithWildcardElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "QualifiedNameWithWildcard");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cQualifiedNameParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Keyword cFullStopAsteriskKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		
+		//QualifiedNameWithWildcard:
+		//	QualifiedName ".*"?;
+		public ParserRule getRule() { return rule; }
+
+		//QualifiedName ".*"?
+		public Group getGroup() { return cGroup; }
+
+		//QualifiedName
+		public RuleCall getQualifiedNameParserRuleCall_0() { return cQualifiedNameParserRuleCall_0; }
+
+		//".*"?
+		public Keyword getFullStopAsteriskKeyword_1() { return cFullStopAsteriskKeyword_1; }
 	}
 
 	public class QualifiedNameElements extends AbstractParserRuleElementFinder {
@@ -121,6 +173,8 @@ public class AGrammarAccess extends AbstractGrammarElementFinder {
 	
 	private final ModelElements pModel;
 	private final PackageDeclarationElements pPackageDeclaration;
+	private final ImportElements pImport;
+	private final QualifiedNameWithWildcardElements pQualifiedNameWithWildcard;
 	private final QualifiedNameElements pQualifiedName;
 	private final GreetingElements pGreeting;
 	
@@ -135,6 +189,8 @@ public class AGrammarAccess extends AbstractGrammarElementFinder {
 		this.gaTerminals = gaTerminals;
 		this.pModel = new ModelElements();
 		this.pPackageDeclaration = new PackageDeclarationElements();
+		this.pImport = new ImportElements();
+		this.pQualifiedNameWithWildcard = new QualifiedNameWithWildcardElements();
 		this.pQualifiedName = new QualifiedNameElements();
 		this.pGreeting = new GreetingElements();
 	}
@@ -167,7 +223,7 @@ public class AGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//Model:
-	//	package=PackageDeclaration?;
+	//	package=PackageDeclaration;
 	public ModelElements getModelAccess() {
 		return pModel;
 	}
@@ -177,13 +233,33 @@ public class AGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//PackageDeclaration:
-	//	"package" name=QualifiedName greetings+=Greeting*;
+	//	"package" name=QualifiedName imports+=Import* greetings+=Greeting*;
 	public PackageDeclarationElements getPackageDeclarationAccess() {
 		return pPackageDeclaration;
 	}
 	
 	public ParserRule getPackageDeclarationRule() {
 		return getPackageDeclarationAccess().getRule();
+	}
+
+	//Import:
+	//	"import" importedNamespace=QualifiedNameWithWildcard;
+	public ImportElements getImportAccess() {
+		return pImport;
+	}
+	
+	public ParserRule getImportRule() {
+		return getImportAccess().getRule();
+	}
+
+	//QualifiedNameWithWildcard:
+	//	QualifiedName ".*"?;
+	public QualifiedNameWithWildcardElements getQualifiedNameWithWildcardAccess() {
+		return pQualifiedNameWithWildcard;
+	}
+	
+	public ParserRule getQualifiedNameWithWildcardRule() {
+		return getQualifiedNameWithWildcardAccess().getRule();
 	}
 
 	//QualifiedName:

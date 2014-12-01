@@ -9,17 +9,17 @@
       ecorePackage="B.ecore#/">
     <genClasses ecoreClass="B.ecore#//Model">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference B.ecore#//Model/package"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference B.ecore#//Model/imports"/>
     </genClasses>
     <genClasses ecoreClass="B.ecore#//PackageDeclaration">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute B.ecore#//PackageDeclaration/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference B.ecore#//PackageDeclaration/imports"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference B.ecore#//PackageDeclaration/greetings"/>
     </genClasses>
     <genClasses ecoreClass="B.ecore#//Import">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute B.ecore#//Import/importedNamespace"/>
     </genClasses>
-    <genClasses ecoreClass="B.ecore#//ReferencedGreetings">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference B.ecore#//ReferencedGreetings/name"/>
+    <genClasses ecoreClass="B.ecore#//ReferencedGreeting">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference B.ecore#//ReferencedGreeting/name"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

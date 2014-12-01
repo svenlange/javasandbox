@@ -104,13 +104,22 @@ public interface APackage extends EPackage
   int PACKAGE_DECLARATION__NAME = 0;
 
   /**
+   * The feature id for the '<em><b>Imports</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PACKAGE_DECLARATION__IMPORTS = 1;
+
+  /**
    * The feature id for the '<em><b>Greetings</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PACKAGE_DECLARATION__GREETINGS = 1;
+  int PACKAGE_DECLARATION__GREETINGS = 2;
 
   /**
    * The number of structural features of the '<em>Package Declaration</em>' class.
@@ -119,7 +128,35 @@ public interface APackage extends EPackage
    * @generated
    * @ordered
    */
-  int PACKAGE_DECLARATION_FEATURE_COUNT = 2;
+  int PACKAGE_DECLARATION_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link a.a.impl.ImportImpl <em>Import</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see a.a.impl.ImportImpl
+   * @see a.a.impl.APackageImpl#getImport()
+   * @generated
+   */
+  int IMPORT = 2;
+
+  /**
+   * The feature id for the '<em><b>Imported Namespace</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IMPORT__IMPORTED_NAMESPACE = 0;
+
+  /**
+   * The number of structural features of the '<em>Import</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IMPORT_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link a.a.impl.GreetingImpl <em>Greeting</em>}' class.
@@ -129,7 +166,7 @@ public interface APackage extends EPackage
    * @see a.a.impl.APackageImpl#getGreeting()
    * @generated
    */
-  int GREETING = 2;
+  int GREETING = 3;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -193,6 +230,17 @@ public interface APackage extends EPackage
   EAttribute getPackageDeclaration_Name();
 
   /**
+   * Returns the meta object for the containment reference list '{@link a.a.PackageDeclaration#getImports <em>Imports</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Imports</em>'.
+   * @see a.a.PackageDeclaration#getImports()
+   * @see #getPackageDeclaration()
+   * @generated
+   */
+  EReference getPackageDeclaration_Imports();
+
+  /**
    * Returns the meta object for the containment reference list '{@link a.a.PackageDeclaration#getGreetings <em>Greetings</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -202,6 +250,27 @@ public interface APackage extends EPackage
    * @generated
    */
   EReference getPackageDeclaration_Greetings();
+
+  /**
+   * Returns the meta object for class '{@link a.a.Import <em>Import</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Import</em>'.
+   * @see a.a.Import
+   * @generated
+   */
+  EClass getImport();
+
+  /**
+   * Returns the meta object for the attribute '{@link a.a.Import#getImportedNamespace <em>Imported Namespace</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Imported Namespace</em>'.
+   * @see a.a.Import#getImportedNamespace()
+   * @see #getImport()
+   * @generated
+   */
+  EAttribute getImport_ImportedNamespace();
 
   /**
    * Returns the meta object for class '{@link a.a.Greeting <em>Greeting</em>}'.
@@ -284,12 +353,38 @@ public interface APackage extends EPackage
     EAttribute PACKAGE_DECLARATION__NAME = eINSTANCE.getPackageDeclaration_Name();
 
     /**
+     * The meta object literal for the '<em><b>Imports</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PACKAGE_DECLARATION__IMPORTS = eINSTANCE.getPackageDeclaration_Imports();
+
+    /**
      * The meta object literal for the '<em><b>Greetings</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EReference PACKAGE_DECLARATION__GREETINGS = eINSTANCE.getPackageDeclaration_Greetings();
+
+    /**
+     * The meta object literal for the '{@link a.a.impl.ImportImpl <em>Import</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see a.a.impl.ImportImpl
+     * @see a.a.impl.APackageImpl#getImport()
+     * @generated
+     */
+    EClass IMPORT = eINSTANCE.getImport();
+
+    /**
+     * The meta object literal for the '<em><b>Imported Namespace</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute IMPORT__IMPORTED_NAMESPACE = eINSTANCE.getImport_ImportedNamespace();
 
     /**
      * The meta object literal for the '{@link a.a.impl.GreetingImpl <em>Greeting</em>}' class.

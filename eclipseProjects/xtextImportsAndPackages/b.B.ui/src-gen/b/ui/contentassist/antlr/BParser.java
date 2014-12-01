@@ -37,18 +37,18 @@ public class BParser extends AbstractContentAssistParser {
 			nameMappings = new HashMap<AbstractElement, String>() {
 				private static final long serialVersionUID = 1L;
 				{
-					put(grammarAccess.getModelAccess().getGroup(), "rule__Model__Group__0");
 					put(grammarAccess.getPackageDeclarationAccess().getGroup(), "rule__PackageDeclaration__Group__0");
 					put(grammarAccess.getImportAccess().getGroup(), "rule__Import__Group__0");
-					put(grammarAccess.getReferencedGreetingsAccess().getGroup(), "rule__ReferencedGreetings__Group__0");
+					put(grammarAccess.getQualifiedNameWithWildcardAccess().getGroup(), "rule__QualifiedNameWithWildcard__Group__0");
+					put(grammarAccess.getReferencedGreetingAccess().getGroup(), "rule__ReferencedGreeting__Group__0");
 					put(grammarAccess.getQualifiedNameAccess().getGroup(), "rule__QualifiedName__Group__0");
 					put(grammarAccess.getQualifiedNameAccess().getGroup_1(), "rule__QualifiedName__Group_1__0");
-					put(grammarAccess.getModelAccess().getPackageAssignment_0(), "rule__Model__PackageAssignment_0");
-					put(grammarAccess.getModelAccess().getImportsAssignment_1(), "rule__Model__ImportsAssignment_1");
+					put(grammarAccess.getModelAccess().getPackageAssignment(), "rule__Model__PackageAssignment");
 					put(grammarAccess.getPackageDeclarationAccess().getNameAssignment_1(), "rule__PackageDeclaration__NameAssignment_1");
-					put(grammarAccess.getPackageDeclarationAccess().getGreetingsAssignment_2(), "rule__PackageDeclaration__GreetingsAssignment_2");
+					put(grammarAccess.getPackageDeclarationAccess().getImportsAssignment_2(), "rule__PackageDeclaration__ImportsAssignment_2");
+					put(grammarAccess.getPackageDeclarationAccess().getGreetingsAssignment_3(), "rule__PackageDeclaration__GreetingsAssignment_3");
 					put(grammarAccess.getImportAccess().getImportedNamespaceAssignment_1(), "rule__Import__ImportedNamespaceAssignment_1");
-					put(grammarAccess.getReferencedGreetingsAccess().getNameAssignment_1(), "rule__ReferencedGreetings__NameAssignment_1");
+					put(grammarAccess.getReferencedGreetingAccess().getNameAssignment_1(), "rule__ReferencedGreeting__NameAssignment_1");
 				}
 			};
 		}

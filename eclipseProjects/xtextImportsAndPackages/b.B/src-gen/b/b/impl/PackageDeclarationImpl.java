@@ -3,8 +3,9 @@
 package b.b.impl;
 
 import b.b.BPackage;
+import b.b.Import;
 import b.b.PackageDeclaration;
-import b.b.ReferencedGreetings;
+import b.b.ReferencedGreeting;
 
 import java.util.Collection;
 
@@ -30,6 +31,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link b.b.impl.PackageDeclarationImpl#getName <em>Name</em>}</li>
+ *   <li>{@link b.b.impl.PackageDeclarationImpl#getImports <em>Imports</em>}</li>
  *   <li>{@link b.b.impl.PackageDeclarationImpl#getGreetings <em>Greetings</em>}</li>
  * </ul>
  * </p>
@@ -59,6 +61,16 @@ public class PackageDeclarationImpl extends MinimalEObjectImpl.Container impleme
   protected String name = NAME_EDEFAULT;
 
   /**
+   * The cached value of the '{@link #getImports() <em>Imports</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getImports()
+   * @generated
+   * @ordered
+   */
+  protected EList<Import> imports;
+
+  /**
    * The cached value of the '{@link #getGreetings() <em>Greetings</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -66,7 +78,7 @@ public class PackageDeclarationImpl extends MinimalEObjectImpl.Container impleme
    * @generated
    * @ordered
    */
-  protected EList<ReferencedGreetings> greetings;
+  protected EList<ReferencedGreeting> greetings;
 
   /**
    * <!-- begin-user-doc -->
@@ -117,11 +129,25 @@ public class PackageDeclarationImpl extends MinimalEObjectImpl.Container impleme
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<ReferencedGreetings> getGreetings()
+  public EList<Import> getImports()
+  {
+    if (imports == null)
+    {
+      imports = new EObjectContainmentEList<Import>(Import.class, this, BPackage.PACKAGE_DECLARATION__IMPORTS);
+    }
+    return imports;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<ReferencedGreeting> getGreetings()
   {
     if (greetings == null)
     {
-      greetings = new EObjectContainmentEList<ReferencedGreetings>(ReferencedGreetings.class, this, BPackage.PACKAGE_DECLARATION__GREETINGS);
+      greetings = new EObjectContainmentEList<ReferencedGreeting>(ReferencedGreeting.class, this, BPackage.PACKAGE_DECLARATION__GREETINGS);
     }
     return greetings;
   }
@@ -136,6 +162,8 @@ public class PackageDeclarationImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
+      case BPackage.PACKAGE_DECLARATION__IMPORTS:
+        return ((InternalEList<?>)getImports()).basicRemove(otherEnd, msgs);
       case BPackage.PACKAGE_DECLARATION__GREETINGS:
         return ((InternalEList<?>)getGreetings()).basicRemove(otherEnd, msgs);
     }
@@ -154,6 +182,8 @@ public class PackageDeclarationImpl extends MinimalEObjectImpl.Container impleme
     {
       case BPackage.PACKAGE_DECLARATION__NAME:
         return getName();
+      case BPackage.PACKAGE_DECLARATION__IMPORTS:
+        return getImports();
       case BPackage.PACKAGE_DECLARATION__GREETINGS:
         return getGreetings();
     }
@@ -174,9 +204,13 @@ public class PackageDeclarationImpl extends MinimalEObjectImpl.Container impleme
       case BPackage.PACKAGE_DECLARATION__NAME:
         setName((String)newValue);
         return;
+      case BPackage.PACKAGE_DECLARATION__IMPORTS:
+        getImports().clear();
+        getImports().addAll((Collection<? extends Import>)newValue);
+        return;
       case BPackage.PACKAGE_DECLARATION__GREETINGS:
         getGreetings().clear();
-        getGreetings().addAll((Collection<? extends ReferencedGreetings>)newValue);
+        getGreetings().addAll((Collection<? extends ReferencedGreeting>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -194,6 +228,9 @@ public class PackageDeclarationImpl extends MinimalEObjectImpl.Container impleme
     {
       case BPackage.PACKAGE_DECLARATION__NAME:
         setName(NAME_EDEFAULT);
+        return;
+      case BPackage.PACKAGE_DECLARATION__IMPORTS:
+        getImports().clear();
         return;
       case BPackage.PACKAGE_DECLARATION__GREETINGS:
         getGreetings().clear();
@@ -214,6 +251,8 @@ public class PackageDeclarationImpl extends MinimalEObjectImpl.Container impleme
     {
       case BPackage.PACKAGE_DECLARATION__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case BPackage.PACKAGE_DECLARATION__IMPORTS:
+        return imports != null && !imports.isEmpty();
       case BPackage.PACKAGE_DECLARATION__GREETINGS:
         return greetings != null && !greetings.isEmpty();
     }

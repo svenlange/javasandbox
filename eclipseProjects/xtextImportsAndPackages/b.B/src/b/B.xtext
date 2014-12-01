@@ -4,17 +4,18 @@ generate b "http://www.B.b"
 import "http://www.A.a" as a
 
 Model:
-	package=PackageDeclaration?
-	imports+=Import*
-	;
+	package=PackageDeclaration;
 
 PackageDeclaration:
 	'package' name=QualifiedName
-	greetings+=ReferencedGreeting*
-;
+	imports+=Import*
+	greetings+=ReferencedGreeting*;
 
 Import:
-	'import' importedNamespace=QualifiedName;
+	'import' importedNamespace=QualifiedNameWithWildcard;
+
+QualifiedNameWithWildcard:
+	QualifiedName '.*'?;
 
 ReferencedGreeting:
 	'g: ' name=[a::Greeting|QualifiedName];

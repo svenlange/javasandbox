@@ -77,10 +77,10 @@ ruleModel returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-((
+(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getModelAccess().getPackagePackageDeclarationParserRuleCall_0_0()); 
+	        newCompositeNode(grammarAccess.getModelAccess().getPackagePackageDeclarationParserRuleCall_0()); 
 	    }
 		lv_package_0_0=rulePackageDeclaration		{
 	        if ($current==null) {
@@ -95,25 +95,7 @@ ruleModel returns [EObject current=null]
 	    }
 
 )
-)?(
-(
-		{ 
-	        newCompositeNode(grammarAccess.getModelAccess().getImportsImportParserRuleCall_1_0()); 
-	    }
-		lv_imports_1_0=ruleImport		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getModelRule());
-	        }
-       		add(
-       			$current, 
-       			"imports",
-        		lv_imports_1_0, 
-        		"Import");
-	        afterParserOrEnumRuleCall();
-	    }
-
 )
-)*)
 ;
 
 
@@ -159,17 +141,35 @@ rulePackageDeclaration returns [EObject current=null]
 )(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getPackageDeclarationAccess().getGreetingsReferencedGreetingsParserRuleCall_2_0()); 
+	        newCompositeNode(grammarAccess.getPackageDeclarationAccess().getImportsImportParserRuleCall_2_0()); 
 	    }
-		lv_greetings_2_0=ruleReferencedGreetings		{
+		lv_imports_2_0=ruleImport		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getPackageDeclarationRule());
+	        }
+       		add(
+       			$current, 
+       			"imports",
+        		lv_imports_2_0, 
+        		"Import");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)*(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getPackageDeclarationAccess().getGreetingsReferencedGreetingParserRuleCall_3_0()); 
+	    }
+		lv_greetings_3_0=ruleReferencedGreeting		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getPackageDeclarationRule());
 	        }
        		add(
        			$current, 
        			"greetings",
-        		lv_greetings_2_0, 
-        		"ReferencedGreetings");
+        		lv_greetings_3_0, 
+        		"ReferencedGreeting");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -202,9 +202,9 @@ ruleImport returns [EObject current=null]
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getImportAccess().getImportedNamespaceQualifiedNameParserRuleCall_1_0()); 
+	        newCompositeNode(grammarAccess.getImportAccess().getImportedNamespaceQualifiedNameWithWildcardParserRuleCall_1_0()); 
 	    }
-		lv_importedNamespace_1_0=ruleQualifiedName		{
+		lv_importedNamespace_1_0=ruleQualifiedNameWithWildcard		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getImportRule());
 	        }
@@ -212,7 +212,7 @@ ruleImport returns [EObject current=null]
        			$current, 
        			"importedNamespace",
         		lv_importedNamespace_1_0, 
-        		"QualifiedName");
+        		"QualifiedNameWithWildcard");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -224,33 +224,71 @@ ruleImport returns [EObject current=null]
 
 
 
-// Entry rule entryRuleReferencedGreetings
-entryRuleReferencedGreetings returns [EObject current=null] 
+// Entry rule entryRuleQualifiedNameWithWildcard
+entryRuleQualifiedNameWithWildcard returns [String current=null] 
 	:
-	{ newCompositeNode(grammarAccess.getReferencedGreetingsRule()); }
-	 iv_ruleReferencedGreetings=ruleReferencedGreetings 
-	 { $current=$iv_ruleReferencedGreetings.current; } 
+	{ newCompositeNode(grammarAccess.getQualifiedNameWithWildcardRule()); } 
+	 iv_ruleQualifiedNameWithWildcard=ruleQualifiedNameWithWildcard 
+	 { $current=$iv_ruleQualifiedNameWithWildcard.current.getText(); }  
 	 EOF 
 ;
 
-// Rule ReferencedGreetings
-ruleReferencedGreetings returns [EObject current=null] 
+// Rule QualifiedNameWithWildcard
+ruleQualifiedNameWithWildcard returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(
+    { 
+        newCompositeNode(grammarAccess.getQualifiedNameWithWildcardAccess().getQualifiedNameParserRuleCall_0()); 
+    }
+    this_QualifiedName_0=ruleQualifiedName    {
+		$current.merge(this_QualifiedName_0);
+    }
+
+    { 
+        afterParserOrEnumRuleCall();
+    }
+(
+	kw='.*' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getQualifiedNameWithWildcardAccess().getFullStopAsteriskKeyword_1()); 
+    }
+)?)
+    ;
+
+
+
+
+
+// Entry rule entryRuleReferencedGreeting
+entryRuleReferencedGreeting returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getReferencedGreetingRule()); }
+	 iv_ruleReferencedGreeting=ruleReferencedGreeting 
+	 { $current=$iv_ruleReferencedGreeting.current; } 
+	 EOF 
+;
+
+// Rule ReferencedGreeting
+ruleReferencedGreeting returns [EObject current=null] 
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
 (	otherlv_0='g: ' 
     {
-    	newLeafNode(otherlv_0, grammarAccess.getReferencedGreetingsAccess().getGKeyword_0());
+    	newLeafNode(otherlv_0, grammarAccess.getReferencedGreetingAccess().getGKeyword_0());
     }
 (
 (
 		{
 			if ($current==null) {
-	            $current = createModelElement(grammarAccess.getReferencedGreetingsRule());
+	            $current = createModelElement(grammarAccess.getReferencedGreetingRule());
 	        }
         }
 		{ 
-	        newCompositeNode(grammarAccess.getReferencedGreetingsAccess().getNameGreetingCrossReference_1_0()); 
+	        newCompositeNode(grammarAccess.getReferencedGreetingAccess().getNameGreetingCrossReference_1_0()); 
 	    }
 		ruleQualifiedName		{ 
 	        afterParserOrEnumRuleCall();

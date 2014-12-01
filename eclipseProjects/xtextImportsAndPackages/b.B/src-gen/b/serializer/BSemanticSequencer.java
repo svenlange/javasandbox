@@ -4,7 +4,7 @@ import b.b.BPackage;
 import b.b.Import;
 import b.b.Model;
 import b.b.PackageDeclaration;
-import b.b.ReferencedGreetings;
+import b.b.ReferencedGreeting;
 import b.services.BGrammarAccess;
 import com.google.inject.Inject;
 import com.google.inject.Provider;
@@ -46,9 +46,9 @@ public class BSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 					return; 
 				}
 				else break;
-			case BPackage.REFERENCED_GREETINGS:
-				if(context == grammarAccess.getReferencedGreetingsRule()) {
-					sequence_ReferencedGreetings(context, (ReferencedGreetings) semanticObject); 
+			case BPackage.REFERENCED_GREETING:
+				if(context == grammarAccess.getReferencedGreetingRule()) {
+					sequence_ReferencedGreeting(context, (ReferencedGreeting) semanticObject); 
 					return; 
 				}
 				else break;
@@ -58,7 +58,7 @@ public class BSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     importedNamespace=QualifiedName
+	 *     importedNamespace=QualifiedNameWithWildcard
 	 */
 	protected void sequence_Import(EObject context, Import semanticObject) {
 		if(errorAcceptor != null) {
@@ -67,23 +67,30 @@ public class BSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getImportAccess().getImportedNamespaceQualifiedNameParserRuleCall_1_0(), semanticObject.getImportedNamespace());
+		feeder.accept(grammarAccess.getImportAccess().getImportedNamespaceQualifiedNameWithWildcardParserRuleCall_1_0(), semanticObject.getImportedNamespace());
 		feeder.finish();
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (package=PackageDeclaration? imports+=Import*)
+	 *     package=PackageDeclaration
 	 */
 	protected void sequence_Model(EObject context, Model semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, BPackage.Literals.MODEL__PACKAGE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, BPackage.Literals.MODEL__PACKAGE));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getModelAccess().getPackagePackageDeclarationParserRuleCall_0(), semanticObject.getPackage());
+		feeder.finish();
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (name=QualifiedName greetings+=ReferencedGreetings*)
+	 *     (name=QualifiedName imports+=Import* greetings+=ReferencedGreeting*)
 	 */
 	protected void sequence_PackageDeclaration(EObject context, PackageDeclaration semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -94,14 +101,14 @@ public class BSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 * Constraint:
 	 *     name=[Greeting|QualifiedName]
 	 */
-	protected void sequence_ReferencedGreetings(EObject context, ReferencedGreetings semanticObject) {
+	protected void sequence_ReferencedGreeting(EObject context, ReferencedGreeting semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, BPackage.Literals.REFERENCED_GREETINGS__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, BPackage.Literals.REFERENCED_GREETINGS__NAME));
+			if(transientValues.isValueTransient(semanticObject, BPackage.Literals.REFERENCED_GREETING__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, BPackage.Literals.REFERENCED_GREETING__NAME));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getReferencedGreetingsAccess().getNameGreetingQualifiedNameParserRuleCall_1_0_1(), semanticObject.getName());
+		feeder.accept(grammarAccess.getReferencedGreetingAccess().getNameGreetingQualifiedNameParserRuleCall_1_0_1(), semanticObject.getName());
 		feeder.finish();
 	}
 }

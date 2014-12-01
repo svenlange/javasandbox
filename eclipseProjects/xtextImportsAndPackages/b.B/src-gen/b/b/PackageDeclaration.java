@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link b.b.PackageDeclaration#getName <em>Name</em>}</li>
+ *   <li>{@link b.b.PackageDeclaration#getImports <em>Imports</em>}</li>
  *   <li>{@link b.b.PackageDeclaration#getGreetings <em>Greetings</em>}</li>
  * </ul>
  * </p>
@@ -52,8 +53,24 @@ public interface PackageDeclaration extends EObject
   void setName(String value);
 
   /**
+   * Returns the value of the '<em><b>Imports</b></em>' containment reference list.
+   * The list contents are of type {@link b.b.Import}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Imports</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Imports</em>' containment reference list.
+   * @see b.b.BPackage#getPackageDeclaration_Imports()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Import> getImports();
+
+  /**
    * Returns the value of the '<em><b>Greetings</b></em>' containment reference list.
-   * The list contents are of type {@link b.b.ReferencedGreetings}.
+   * The list contents are of type {@link b.b.ReferencedGreeting}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Greetings</em>' containment reference list isn't clear,
@@ -65,6 +82,6 @@ public interface PackageDeclaration extends EObject
    * @model containment="true"
    * @generated
    */
-  EList<ReferencedGreetings> getGreetings();
+  EList<ReferencedGreeting> getGreetings();
 
 } // PackageDeclaration

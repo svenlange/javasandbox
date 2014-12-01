@@ -67,7 +67,7 @@ public class BFactoryImpl extends EFactoryImpl implements BFactory
       case BPackage.MODEL: return createModel();
       case BPackage.PACKAGE_DECLARATION: return createPackageDeclaration();
       case BPackage.IMPORT: return createImport();
-      case BPackage.REFERENCED_GREETINGS: return createReferencedGreetings();
+      case BPackage.REFERENCED_GREETING: return createReferencedGreeting();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -111,10 +111,10 @@ public class BFactoryImpl extends EFactoryImpl implements BFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public ReferencedGreetings createReferencedGreetings()
+  public ReferencedGreeting createReferencedGreeting()
   {
-    ReferencedGreetingsImpl referencedGreetings = new ReferencedGreetingsImpl();
-    return referencedGreetings;
+    ReferencedGreetingImpl referencedGreeting = new ReferencedGreetingImpl();
+    return referencedGreeting;
   }
 
   /**
