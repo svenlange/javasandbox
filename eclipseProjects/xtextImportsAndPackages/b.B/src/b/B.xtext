@@ -1,0 +1,17 @@
+grammar b.B with org.eclipse.xtext.common.Terminals
+
+generate b "http://www.B.b"
+import "http://www.A.a" as a
+
+Model:
+	imports+=Import*
+	greetings+=ReferencedGreetings*;
+
+Import:
+	'import' importedNamespace=QualifiedName;
+
+QualifiedName:
+	ID ('.' ID)*;
+
+ReferencedGreetings:
+	'g: ' greet=[a::Greeting|QualifiedName];
