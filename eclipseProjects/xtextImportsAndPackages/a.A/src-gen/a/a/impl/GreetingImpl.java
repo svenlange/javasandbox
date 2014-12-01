@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link a.a.impl.GreetingImpl#getString <em>String</em>}</li>
+ *   <li>{@link a.a.impl.GreetingImpl#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -28,24 +28,24 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class GreetingImpl extends MinimalEObjectImpl.Container implements Greeting
 {
   /**
-   * The default value of the '{@link #getString() <em>String</em>}' attribute.
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getString()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected static final String STRING_EDEFAULT = null;
+  protected static final String NAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getString() <em>String</em>}' attribute.
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getString()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected String string = STRING_EDEFAULT;
+  protected String name = NAME_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -73,9 +73,9 @@ public class GreetingImpl extends MinimalEObjectImpl.Container implements Greeti
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getString()
+  public String getName()
   {
-    return string;
+    return name;
   }
 
   /**
@@ -83,12 +83,12 @@ public class GreetingImpl extends MinimalEObjectImpl.Container implements Greeti
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setString(String newString)
+  public void setName(String newName)
   {
-    String oldString = string;
-    string = newString;
+    String oldName = name;
+    name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, APackage.GREETING__STRING, oldString, string));
+      eNotify(new ENotificationImpl(this, Notification.SET, APackage.GREETING__NAME, oldName, name));
   }
 
   /**
@@ -101,8 +101,8 @@ public class GreetingImpl extends MinimalEObjectImpl.Container implements Greeti
   {
     switch (featureID)
     {
-      case APackage.GREETING__STRING:
-        return getString();
+      case APackage.GREETING__NAME:
+        return getName();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -117,8 +117,8 @@ public class GreetingImpl extends MinimalEObjectImpl.Container implements Greeti
   {
     switch (featureID)
     {
-      case APackage.GREETING__STRING:
-        setString((String)newValue);
+      case APackage.GREETING__NAME:
+        setName((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -134,8 +134,8 @@ public class GreetingImpl extends MinimalEObjectImpl.Container implements Greeti
   {
     switch (featureID)
     {
-      case APackage.GREETING__STRING:
-        setString(STRING_EDEFAULT);
+      case APackage.GREETING__NAME:
+        setName(NAME_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -151,8 +151,8 @@ public class GreetingImpl extends MinimalEObjectImpl.Container implements Greeti
   {
     switch (featureID)
     {
-      case APackage.GREETING__STRING:
-        return STRING_EDEFAULT == null ? string != null : !STRING_EDEFAULT.equals(string);
+      case APackage.GREETING__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
     }
     return super.eIsSet(featureID);
   }
@@ -168,8 +168,8 @@ public class GreetingImpl extends MinimalEObjectImpl.Container implements Greeti
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (string: ");
-    result.append(string);
+    result.append(" (name: ");
+    result.append(name);
     result.append(')');
     return result.toString();
   }

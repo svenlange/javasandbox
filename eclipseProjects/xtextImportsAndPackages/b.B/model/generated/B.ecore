@@ -11,6 +11,6 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="importedNamespace" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ReferencedGreetings">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="greet" eType="ecore:EClass platform:/resource/a.A/model/generated/A.ecore#//Greeting"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="name" eType="ecore:EClass platform:/resource/a.A/model/generated/A.ecore#//Greeting"/>
   </eClassifiers>
 </ecore:EPackage>

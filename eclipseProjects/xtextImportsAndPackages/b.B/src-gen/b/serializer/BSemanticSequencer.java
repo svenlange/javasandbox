@@ -76,16 +76,16 @@ public class BSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     greet=[Greeting|QualifiedName]
+	 *     name=[Greeting|ID]
 	 */
 	protected void sequence_ReferencedGreetings(EObject context, ReferencedGreetings semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, BPackage.Literals.REFERENCED_GREETINGS__GREET) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, BPackage.Literals.REFERENCED_GREETINGS__GREET));
+			if(transientValues.isValueTransient(semanticObject, BPackage.Literals.REFERENCED_GREETINGS__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, BPackage.Literals.REFERENCED_GREETINGS__NAME));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getReferencedGreetingsAccess().getGreetGreetingQualifiedNameParserRuleCall_1_0_1(), semanticObject.getGreet());
+		feeder.accept(grammarAccess.getReferencedGreetingsAccess().getNameGreetingIDTerminalRuleCall_1_0_1(), semanticObject.getName());
 		feeder.finish();
 	}
 }

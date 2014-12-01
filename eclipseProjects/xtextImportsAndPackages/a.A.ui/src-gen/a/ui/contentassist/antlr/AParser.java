@@ -38,17 +38,14 @@ public class AParser extends AbstractContentAssistParser {
 				private static final long serialVersionUID = 1L;
 				{
 					put(grammarAccess.getModelAccess().getGroup(), "rule__Model__Group__0");
-					put(grammarAccess.getImportAccess().getGroup(), "rule__Import__Group__0");
 					put(grammarAccess.getPackageDeclarationAccess().getGroup(), "rule__PackageDeclaration__Group__0");
 					put(grammarAccess.getQualifiedNameAccess().getGroup(), "rule__QualifiedName__Group__0");
 					put(grammarAccess.getQualifiedNameAccess().getGroup_1(), "rule__QualifiedName__Group_1__0");
 					put(grammarAccess.getGreetingAccess().getGroup(), "rule__Greeting__Group__0");
 					put(grammarAccess.getModelAccess().getPackageAssignment_0(), "rule__Model__PackageAssignment_0");
-					put(grammarAccess.getModelAccess().getImportsAssignment_1(), "rule__Model__ImportsAssignment_1");
-					put(grammarAccess.getModelAccess().getGreetingsAssignment_2(), "rule__Model__GreetingsAssignment_2");
-					put(grammarAccess.getImportAccess().getImportedNamespaceAssignment_1(), "rule__Import__ImportedNamespaceAssignment_1");
+					put(grammarAccess.getModelAccess().getGreetingsAssignment_1(), "rule__Model__GreetingsAssignment_1");
 					put(grammarAccess.getPackageDeclarationAccess().getNameAssignment_1(), "rule__PackageDeclaration__NameAssignment_1");
-					put(grammarAccess.getGreetingAccess().getStringAssignment_1(), "rule__Greeting__StringAssignment_1");
+					put(grammarAccess.getGreetingAccess().getNameAssignment_1(), "rule__Greeting__NameAssignment_1");
 				}
 			};
 		}

@@ -39,13 +39,13 @@ public class BParser extends AbstractContentAssistParser {
 				{
 					put(grammarAccess.getModelAccess().getGroup(), "rule__Model__Group__0");
 					put(grammarAccess.getImportAccess().getGroup(), "rule__Import__Group__0");
+					put(grammarAccess.getReferencedGreetingsAccess().getGroup(), "rule__ReferencedGreetings__Group__0");
 					put(grammarAccess.getQualifiedNameAccess().getGroup(), "rule__QualifiedName__Group__0");
 					put(grammarAccess.getQualifiedNameAccess().getGroup_1(), "rule__QualifiedName__Group_1__0");
-					put(grammarAccess.getReferencedGreetingsAccess().getGroup(), "rule__ReferencedGreetings__Group__0");
 					put(grammarAccess.getModelAccess().getImportsAssignment_0(), "rule__Model__ImportsAssignment_0");
 					put(grammarAccess.getModelAccess().getGreetingsAssignment_1(), "rule__Model__GreetingsAssignment_1");
 					put(grammarAccess.getImportAccess().getImportedNamespaceAssignment_1(), "rule__Import__ImportedNamespaceAssignment_1");
-					put(grammarAccess.getReferencedGreetingsAccess().getGreetAssignment_1(), "rule__ReferencedGreetings__GreetAssignment_1");
+					put(grammarAccess.getReferencedGreetingsAccess().getNameAssignment_1(), "rule__ReferencedGreetings__NameAssignment_1");
 				}
 			};
 		}

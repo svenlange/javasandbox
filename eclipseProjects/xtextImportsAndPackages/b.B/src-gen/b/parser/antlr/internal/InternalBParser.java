@@ -21,7 +21,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalBParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'import'", "'.'", "'g: '"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'import'", "'g: '", "'.'"
     };
     public static final int RULE_ID=4;
     public static final int RULE_STRING=6;
@@ -183,7 +183,7 @@ public class InternalBParser extends AbstractInternalAntlrParser {
                 int alt2=2;
                 int LA2_0 = input.LA(1);
 
-                if ( (LA2_0==13) ) {
+                if ( (LA2_0==12) ) {
                     alt2=1;
                 }
 
@@ -355,8 +355,106 @@ public class InternalBParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleImport"
 
 
+    // $ANTLR start "entryRuleReferencedGreetings"
+    // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:167:1: entryRuleReferencedGreetings returns [EObject current=null] : iv_ruleReferencedGreetings= ruleReferencedGreetings EOF ;
+    public final EObject entryRuleReferencedGreetings() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleReferencedGreetings = null;
+
+
+        try {
+            // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:168:2: (iv_ruleReferencedGreetings= ruleReferencedGreetings EOF )
+            // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:169:2: iv_ruleReferencedGreetings= ruleReferencedGreetings EOF
+            {
+             newCompositeNode(grammarAccess.getReferencedGreetingsRule()); 
+            pushFollow(FOLLOW_ruleReferencedGreetings_in_entryRuleReferencedGreetings294);
+            iv_ruleReferencedGreetings=ruleReferencedGreetings();
+
+            state._fsp--;
+
+             current =iv_ruleReferencedGreetings; 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleReferencedGreetings304); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleReferencedGreetings"
+
+
+    // $ANTLR start "ruleReferencedGreetings"
+    // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:176:1: ruleReferencedGreetings returns [EObject current=null] : (otherlv_0= 'g: ' ( (otherlv_1= RULE_ID ) ) ) ;
+    public final EObject ruleReferencedGreetings() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token otherlv_1=null;
+
+         enterRule(); 
+            
+        try {
+            // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:179:28: ( (otherlv_0= 'g: ' ( (otherlv_1= RULE_ID ) ) ) )
+            // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:180:1: (otherlv_0= 'g: ' ( (otherlv_1= RULE_ID ) ) )
+            {
+            // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:180:1: (otherlv_0= 'g: ' ( (otherlv_1= RULE_ID ) ) )
+            // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:180:3: otherlv_0= 'g: ' ( (otherlv_1= RULE_ID ) )
+            {
+            otherlv_0=(Token)match(input,12,FOLLOW_12_in_ruleReferencedGreetings341); 
+
+                	newLeafNode(otherlv_0, grammarAccess.getReferencedGreetingsAccess().getGKeyword_0());
+                
+            // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:184:1: ( (otherlv_1= RULE_ID ) )
+            // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:185:1: (otherlv_1= RULE_ID )
+            {
+            // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:185:1: (otherlv_1= RULE_ID )
+            // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:186:3: otherlv_1= RULE_ID
+            {
+
+            			if (current==null) {
+            	            current = createModelElement(grammarAccess.getReferencedGreetingsRule());
+            	        }
+                    
+            otherlv_1=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleReferencedGreetings361); 
+
+            		newLeafNode(otherlv_1, grammarAccess.getReferencedGreetingsAccess().getNameGreetingCrossReference_1_0()); 
+            	
+
+            }
+
+
+            }
+
+
+            }
+
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleReferencedGreetings"
+
+
     // $ANTLR start "entryRuleQualifiedName"
-    // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:167:1: entryRuleQualifiedName returns [String current=null] : iv_ruleQualifiedName= ruleQualifiedName EOF ;
+    // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:205:1: entryRuleQualifiedName returns [String current=null] : iv_ruleQualifiedName= ruleQualifiedName EOF ;
     public final String entryRuleQualifiedName() throws RecognitionException {
         String current = null;
 
@@ -364,17 +462,17 @@ public class InternalBParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:168:2: (iv_ruleQualifiedName= ruleQualifiedName EOF )
-            // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:169:2: iv_ruleQualifiedName= ruleQualifiedName EOF
+            // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:206:2: (iv_ruleQualifiedName= ruleQualifiedName EOF )
+            // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:207:2: iv_ruleQualifiedName= ruleQualifiedName EOF
             {
              newCompositeNode(grammarAccess.getQualifiedNameRule()); 
-            pushFollow(FOLLOW_ruleQualifiedName_in_entryRuleQualifiedName295);
+            pushFollow(FOLLOW_ruleQualifiedName_in_entryRuleQualifiedName398);
             iv_ruleQualifiedName=ruleQualifiedName();
 
             state._fsp--;
 
              current =iv_ruleQualifiedName.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleQualifiedName306); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleQualifiedName409); 
 
             }
 
@@ -392,7 +490,7 @@ public class InternalBParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleQualifiedName"
-    // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:176:1: ruleQualifiedName returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* ) ;
+    // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:214:1: ruleQualifiedName returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* ) ;
     public final AntlrDatatypeRuleToken ruleQualifiedName() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -403,40 +501,40 @@ public class InternalBParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:179:28: ( (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* ) )
-            // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:180:1: (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* )
+            // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:217:28: ( (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* ) )
+            // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:218:1: (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* )
             {
-            // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:180:1: (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* )
-            // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:180:6: this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )*
+            // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:218:1: (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* )
+            // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:218:6: this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )*
             {
-            this_ID_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleQualifiedName346); 
+            this_ID_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleQualifiedName449); 
 
             		current.merge(this_ID_0);
                 
              
                 newLeafNode(this_ID_0, grammarAccess.getQualifiedNameAccess().getIDTerminalRuleCall_0()); 
                 
-            // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:187:1: (kw= '.' this_ID_2= RULE_ID )*
+            // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:225:1: (kw= '.' this_ID_2= RULE_ID )*
             loop3:
             do {
                 int alt3=2;
                 int LA3_0 = input.LA(1);
 
-                if ( (LA3_0==12) ) {
+                if ( (LA3_0==13) ) {
                     alt3=1;
                 }
 
 
                 switch (alt3) {
             	case 1 :
-            	    // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:188:2: kw= '.' this_ID_2= RULE_ID
+            	    // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:226:2: kw= '.' this_ID_2= RULE_ID
             	    {
-            	    kw=(Token)match(input,12,FOLLOW_12_in_ruleQualifiedName365); 
+            	    kw=(Token)match(input,13,FOLLOW_13_in_ruleQualifiedName468); 
 
             	            current.merge(kw);
             	            newLeafNode(kw, grammarAccess.getQualifiedNameAccess().getFullStopKeyword_1_0()); 
             	        
-            	    this_ID_2=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleQualifiedName380); 
+            	    this_ID_2=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleQualifiedName483); 
 
             	    		current.merge(this_ID_2);
             	        
@@ -471,110 +569,6 @@ public class InternalBParser extends AbstractInternalAntlrParser {
     }
     // $ANTLR end "ruleQualifiedName"
 
-
-    // $ANTLR start "entryRuleReferencedGreetings"
-    // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:208:1: entryRuleReferencedGreetings returns [EObject current=null] : iv_ruleReferencedGreetings= ruleReferencedGreetings EOF ;
-    public final EObject entryRuleReferencedGreetings() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_ruleReferencedGreetings = null;
-
-
-        try {
-            // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:209:2: (iv_ruleReferencedGreetings= ruleReferencedGreetings EOF )
-            // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:210:2: iv_ruleReferencedGreetings= ruleReferencedGreetings EOF
-            {
-             newCompositeNode(grammarAccess.getReferencedGreetingsRule()); 
-            pushFollow(FOLLOW_ruleReferencedGreetings_in_entryRuleReferencedGreetings427);
-            iv_ruleReferencedGreetings=ruleReferencedGreetings();
-
-            state._fsp--;
-
-             current =iv_ruleReferencedGreetings; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleReferencedGreetings437); 
-
-            }
-
-        }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
-                appendSkippedTokens();
-            } 
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleReferencedGreetings"
-
-
-    // $ANTLR start "ruleReferencedGreetings"
-    // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:217:1: ruleReferencedGreetings returns [EObject current=null] : (otherlv_0= 'g: ' ( ( ruleQualifiedName ) ) ) ;
-    public final EObject ruleReferencedGreetings() throws RecognitionException {
-        EObject current = null;
-
-        Token otherlv_0=null;
-
-         enterRule(); 
-            
-        try {
-            // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:220:28: ( (otherlv_0= 'g: ' ( ( ruleQualifiedName ) ) ) )
-            // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:221:1: (otherlv_0= 'g: ' ( ( ruleQualifiedName ) ) )
-            {
-            // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:221:1: (otherlv_0= 'g: ' ( ( ruleQualifiedName ) ) )
-            // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:221:3: otherlv_0= 'g: ' ( ( ruleQualifiedName ) )
-            {
-            otherlv_0=(Token)match(input,13,FOLLOW_13_in_ruleReferencedGreetings474); 
-
-                	newLeafNode(otherlv_0, grammarAccess.getReferencedGreetingsAccess().getGKeyword_0());
-                
-            // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:225:1: ( ( ruleQualifiedName ) )
-            // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:226:1: ( ruleQualifiedName )
-            {
-            // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:226:1: ( ruleQualifiedName )
-            // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:227:3: ruleQualifiedName
-            {
-
-            			if (current==null) {
-            	            current = createModelElement(grammarAccess.getReferencedGreetingsRule());
-            	        }
-                    
-             
-            	        newCompositeNode(grammarAccess.getReferencedGreetingsAccess().getGreetGreetingCrossReference_1_0()); 
-            	    
-            pushFollow(FOLLOW_ruleQualifiedName_in_ruleReferencedGreetings497);
-            ruleQualifiedName();
-
-            state._fsp--;
-
-             
-            	        afterParserOrEnumRuleCall();
-            	    
-
-            }
-
-
-            }
-
-
-            }
-
-
-            }
-
-             leaveRule(); 
-        }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
-                appendSkippedTokens();
-            } 
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleReferencedGreetings"
-
     // Delegated rules
 
 
@@ -582,20 +576,20 @@ public class InternalBParser extends AbstractInternalAntlrParser {
 
     public static final BitSet FOLLOW_ruleModel_in_entryRuleModel75 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleModel85 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleImport_in_ruleModel131 = new BitSet(new long[]{0x0000000000002802L});
-    public static final BitSet FOLLOW_ruleReferencedGreetings_in_ruleModel153 = new BitSet(new long[]{0x0000000000002002L});
+    public static final BitSet FOLLOW_ruleImport_in_ruleModel131 = new BitSet(new long[]{0x0000000000001802L});
+    public static final BitSet FOLLOW_ruleReferencedGreetings_in_ruleModel153 = new BitSet(new long[]{0x0000000000001002L});
     public static final BitSet FOLLOW_ruleImport_in_entryRuleImport190 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleImport200 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_11_in_ruleImport237 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_ruleQualifiedName_in_ruleImport258 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_entryRuleQualifiedName295 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleQualifiedName306 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleQualifiedName346 = new BitSet(new long[]{0x0000000000001002L});
-    public static final BitSet FOLLOW_12_in_ruleQualifiedName365 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleQualifiedName380 = new BitSet(new long[]{0x0000000000001002L});
-    public static final BitSet FOLLOW_ruleReferencedGreetings_in_entryRuleReferencedGreetings427 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleReferencedGreetings437 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_13_in_ruleReferencedGreetings474 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleReferencedGreetings497 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleReferencedGreetings_in_entryRuleReferencedGreetings294 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleReferencedGreetings304 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_12_in_ruleReferencedGreetings341 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleReferencedGreetings361 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_entryRuleQualifiedName398 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleQualifiedName409 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleQualifiedName449 = new BitSet(new long[]{0x0000000000002002L});
+    public static final BitSet FOLLOW_13_in_ruleQualifiedName468 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleQualifiedName483 = new BitSet(new long[]{0x0000000000002002L});
 
 }

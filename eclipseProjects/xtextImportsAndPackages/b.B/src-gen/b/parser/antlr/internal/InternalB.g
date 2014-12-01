@@ -163,6 +163,44 @@ ruleImport returns [EObject current=null]
 
 
 
+// Entry rule entryRuleReferencedGreetings
+entryRuleReferencedGreetings returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getReferencedGreetingsRule()); }
+	 iv_ruleReferencedGreetings=ruleReferencedGreetings 
+	 { $current=$iv_ruleReferencedGreetings.current; } 
+	 EOF 
+;
+
+// Rule ReferencedGreetings
+ruleReferencedGreetings returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(	otherlv_0='g: ' 
+    {
+    	newLeafNode(otherlv_0, grammarAccess.getReferencedGreetingsAccess().getGKeyword_0());
+    }
+(
+(
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getReferencedGreetingsRule());
+	        }
+        }
+	otherlv_1=RULE_ID
+	{
+		newLeafNode(otherlv_1, grammarAccess.getReferencedGreetingsAccess().getNameGreetingCrossReference_1_0()); 
+	}
+
+)
+))
+;
+
+
+
+
+
 // Entry rule entryRuleQualifiedName
 entryRuleQualifiedName returns [String current=null] 
 	:
@@ -199,46 +237,6 @@ ruleQualifiedName returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleT
     }
 )*)
     ;
-
-
-
-
-
-// Entry rule entryRuleReferencedGreetings
-entryRuleReferencedGreetings returns [EObject current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getReferencedGreetingsRule()); }
-	 iv_ruleReferencedGreetings=ruleReferencedGreetings 
-	 { $current=$iv_ruleReferencedGreetings.current; } 
-	 EOF 
-;
-
-// Rule ReferencedGreetings
-ruleReferencedGreetings returns [EObject current=null] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-(	otherlv_0='g: ' 
-    {
-    	newLeafNode(otherlv_0, grammarAccess.getReferencedGreetingsAccess().getGKeyword_0());
-    }
-(
-(
-		{
-			if ($current==null) {
-	            $current = createModelElement(grammarAccess.getReferencedGreetingsRule());
-	        }
-        }
-		{ 
-	        newCompositeNode(grammarAccess.getReferencedGreetingsAccess().getGreetGreetingCrossReference_1_0()); 
-	    }
-		ruleQualifiedName		{ 
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-))
-;
 
 
 

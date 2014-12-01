@@ -70,6 +70,34 @@ public class BGrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getImportedNamespaceQualifiedNameParserRuleCall_1_0() { return cImportedNamespaceQualifiedNameParserRuleCall_1_0; }
 	}
 
+	public class ReferencedGreetingsElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ReferencedGreetings");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cGKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final CrossReference cNameGreetingCrossReference_1_0 = (CrossReference)cNameAssignment_1.eContents().get(0);
+		private final RuleCall cNameGreetingIDTerminalRuleCall_1_0_1 = (RuleCall)cNameGreetingCrossReference_1_0.eContents().get(1);
+		
+		//ReferencedGreetings:
+		//	"g: " name=[a::Greeting];
+		public ParserRule getRule() { return rule; }
+
+		//"g: " name=[a::Greeting]
+		public Group getGroup() { return cGroup; }
+
+		//"g: "
+		public Keyword getGKeyword_0() { return cGKeyword_0; }
+
+		//name=[a::Greeting]
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+
+		//[a::Greeting]
+		public CrossReference getNameGreetingCrossReference_1_0() { return cNameGreetingCrossReference_1_0; }
+
+		//ID
+		public RuleCall getNameGreetingIDTerminalRuleCall_1_0_1() { return cNameGreetingIDTerminalRuleCall_1_0_1; }
+	}
+
 	public class QualifiedNameElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "QualifiedName");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -97,40 +125,12 @@ public class BGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getIDTerminalRuleCall_1_1() { return cIDTerminalRuleCall_1_1; }
 	}
-
-	public class ReferencedGreetingsElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ReferencedGreetings");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cGKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cGreetAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final CrossReference cGreetGreetingCrossReference_1_0 = (CrossReference)cGreetAssignment_1.eContents().get(0);
-		private final RuleCall cGreetGreetingQualifiedNameParserRuleCall_1_0_1 = (RuleCall)cGreetGreetingCrossReference_1_0.eContents().get(1);
-		
-		//ReferencedGreetings:
-		//	"g: " greet=[a::Greeting|QualifiedName];
-		public ParserRule getRule() { return rule; }
-
-		//"g: " greet=[a::Greeting|QualifiedName]
-		public Group getGroup() { return cGroup; }
-
-		//"g: "
-		public Keyword getGKeyword_0() { return cGKeyword_0; }
-
-		//greet=[a::Greeting|QualifiedName]
-		public Assignment getGreetAssignment_1() { return cGreetAssignment_1; }
-
-		//[a::Greeting|QualifiedName]
-		public CrossReference getGreetGreetingCrossReference_1_0() { return cGreetGreetingCrossReference_1_0; }
-
-		//QualifiedName
-		public RuleCall getGreetGreetingQualifiedNameParserRuleCall_1_0_1() { return cGreetGreetingQualifiedNameParserRuleCall_1_0_1; }
-	}
 	
 	
 	private final ModelElements pModel;
 	private final ImportElements pImport;
-	private final QualifiedNameElements pQualifiedName;
 	private final ReferencedGreetingsElements pReferencedGreetings;
+	private final QualifiedNameElements pQualifiedName;
 	
 	private final Grammar grammar;
 
@@ -143,8 +143,8 @@ public class BGrammarAccess extends AbstractGrammarElementFinder {
 		this.gaTerminals = gaTerminals;
 		this.pModel = new ModelElements();
 		this.pImport = new ImportElements();
-		this.pQualifiedName = new QualifiedNameElements();
 		this.pReferencedGreetings = new ReferencedGreetingsElements();
+		this.pQualifiedName = new QualifiedNameElements();
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -194,6 +194,16 @@ public class BGrammarAccess extends AbstractGrammarElementFinder {
 		return getImportAccess().getRule();
 	}
 
+	//ReferencedGreetings:
+	//	"g: " name=[a::Greeting];
+	public ReferencedGreetingsElements getReferencedGreetingsAccess() {
+		return pReferencedGreetings;
+	}
+	
+	public ParserRule getReferencedGreetingsRule() {
+		return getReferencedGreetingsAccess().getRule();
+	}
+
 	//QualifiedName:
 	//	ID ("." ID)*;
 	public QualifiedNameElements getQualifiedNameAccess() {
@@ -202,16 +212,6 @@ public class BGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getQualifiedNameRule() {
 		return getQualifiedNameAccess().getRule();
-	}
-
-	//ReferencedGreetings:
-	//	"g: " greet=[a::Greeting|QualifiedName];
-	public ReferencedGreetingsElements getReferencedGreetingsAccess() {
-		return pReferencedGreetings;
-	}
-	
-	public ParserRule getReferencedGreetingsRule() {
-		return getReferencedGreetingsAccess().getRule();
 	}
 
 	//terminal ID:

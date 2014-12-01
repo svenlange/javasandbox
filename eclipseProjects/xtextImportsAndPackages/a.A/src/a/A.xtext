@@ -3,12 +3,7 @@ grammar a.A with org.eclipse.xtext.common.Terminals
 generate a "http://www.A.a"
 
 Model:
-	package=PackageDeclaration?
-	imports+=Import*
-	greetings+=Greeting*;
-
-Import:
-	'import' importedNamespace=QualifiedName;
+	package=PackageDeclaration?  greetings+=Greeting*;
 
 PackageDeclaration:
 	'package' name=QualifiedName;
@@ -17,4 +12,4 @@ QualifiedName:
 	ID ('.' ID)*;
 
 Greeting:
-	'★' string=ID;
+	'-' name=ID;

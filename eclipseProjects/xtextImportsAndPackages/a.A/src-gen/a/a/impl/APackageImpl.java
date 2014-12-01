@@ -5,7 +5,6 @@ package a.a.impl;
 import a.a.AFactory;
 import a.a.APackage;
 import a.a.Greeting;
-import a.a.Import;
 import a.a.Model;
 import a.a.PackageDeclaration;
 
@@ -30,13 +29,6 @@ public class APackageImpl extends EPackageImpl implements APackage
    * @generated
    */
   private EClass modelEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass importEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -140,39 +132,9 @@ public class APackageImpl extends EPackageImpl implements APackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getModel_Imports()
-  {
-    return (EReference)modelEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EReference getModel_Greetings()
   {
-    return (EReference)modelEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getImport()
-  {
-    return importEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getImport_ImportedNamespace()
-  {
-    return (EAttribute)importEClass.getEStructuralFeatures().get(0);
+    return (EReference)modelEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -210,7 +172,7 @@ public class APackageImpl extends EPackageImpl implements APackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getGreeting_String()
+  public EAttribute getGreeting_Name()
   {
     return (EAttribute)greetingEClass.getEStructuralFeatures().get(0);
   }
@@ -247,17 +209,13 @@ public class APackageImpl extends EPackageImpl implements APackage
     // Create classes and their features
     modelEClass = createEClass(MODEL);
     createEReference(modelEClass, MODEL__PACKAGE);
-    createEReference(modelEClass, MODEL__IMPORTS);
     createEReference(modelEClass, MODEL__GREETINGS);
-
-    importEClass = createEClass(IMPORT);
-    createEAttribute(importEClass, IMPORT__IMPORTED_NAMESPACE);
 
     packageDeclarationEClass = createEClass(PACKAGE_DECLARATION);
     createEAttribute(packageDeclarationEClass, PACKAGE_DECLARATION__NAME);
 
     greetingEClass = createEClass(GREETING);
-    createEAttribute(greetingEClass, GREETING__STRING);
+    createEAttribute(greetingEClass, GREETING__NAME);
   }
 
   /**
@@ -293,17 +251,13 @@ public class APackageImpl extends EPackageImpl implements APackage
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getModel_Package(), this.getPackageDeclaration(), null, "package", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getModel_Imports(), this.getImport(), null, "imports", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getModel_Greetings(), this.getGreeting(), null, "greetings", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(importEClass, Import.class, "Import", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getImport_ImportedNamespace(), ecorePackage.getEString(), "importedNamespace", null, 0, 1, Import.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(packageDeclarationEClass, PackageDeclaration.class, "PackageDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getPackageDeclaration_Name(), ecorePackage.getEString(), "name", null, 0, 1, PackageDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(greetingEClass, Greeting.class, "Greeting", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getGreeting_String(), ecorePackage.getEString(), "string", null, 0, 1, Greeting.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getGreeting_Name(), ecorePackage.getEString(), "name", null, 0, 1, Greeting.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

@@ -63,10 +63,11 @@ public class InternalBLexer extends Lexer {
         try {
             int _type = T__12;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:12:7: ( '.' )
-            // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:12:9: '.'
+            // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:12:7: ( 'g: ' )
+            // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:12:9: 'g: '
             {
-            match('.'); 
+            match("g: "); 
+
 
             }
 
@@ -83,11 +84,10 @@ public class InternalBLexer extends Lexer {
         try {
             int _type = T__13;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:13:7: ( 'g: ' )
-            // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:13:9: 'g: '
+            // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:13:7: ( '.' )
+            // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:13:9: '.'
             {
-            match("g: "); 
-
+            match('.'); 
 
             }
 
@@ -104,10 +104,10 @@ public class InternalBLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:247:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:247:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:245:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:245:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:247:11: ( '^' )?
+            // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:245:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -116,7 +116,7 @@ public class InternalBLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:247:11: '^'
+                    // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:245:11: '^'
                     {
                     match('^'); 
 
@@ -134,7 +134,7 @@ public class InternalBLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:247:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:245:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -183,10 +183,10 @@ public class InternalBLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:249:10: ( ( '0' .. '9' )+ )
-            // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:249:12: ( '0' .. '9' )+
+            // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:247:10: ( ( '0' .. '9' )+ )
+            // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:247:12: ( '0' .. '9' )+
             {
-            // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:249:12: ( '0' .. '9' )+
+            // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:247:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -200,7 +200,7 @@ public class InternalBLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:249:13: '0' .. '9'
+            	    // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:247:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -232,10 +232,10 @@ public class InternalBLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:251:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:251:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:249:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:249:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:251:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:249:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -253,10 +253,10 @@ public class InternalBLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:251:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:249:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:251:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:249:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -272,7 +272,7 @@ public class InternalBLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:251:21: '\\\\' .
+                    	    // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:249:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -280,7 +280,7 @@ public class InternalBLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:251:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:249:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -305,10 +305,10 @@ public class InternalBLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:251:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:249:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:251:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:249:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -324,7 +324,7 @@ public class InternalBLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:251:54: '\\\\' .
+                    	    // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:249:54: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -332,7 +332,7 @@ public class InternalBLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:251:61: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:249:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -375,12 +375,12 @@ public class InternalBLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:253:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:253:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:251:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:251:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:253:24: ( options {greedy=false; } : . )*
+            // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:251:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -405,7 +405,7 @@ public class InternalBLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:253:52: .
+            	    // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:251:52: .
             	    {
             	    matchAny(); 
 
@@ -435,12 +435,12 @@ public class InternalBLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:255:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:255:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:253:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:253:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:255:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:253:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -453,7 +453,7 @@ public class InternalBLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:255:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:253:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -473,7 +473,7 @@ public class InternalBLexer extends Lexer {
                 }
             } while (true);
 
-            // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:255:40: ( ( '\\r' )? '\\n' )?
+            // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:253:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -482,9 +482,9 @@ public class InternalBLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:255:41: ( '\\r' )? '\\n'
+                    // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:253:41: ( '\\r' )? '\\n'
                     {
-                    // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:255:41: ( '\\r' )?
+                    // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:253:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -493,7 +493,7 @@ public class InternalBLexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:255:41: '\\r'
+                            // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:253:41: '\\r'
                             {
                             match('\r'); 
 
@@ -525,10 +525,10 @@ public class InternalBLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:257:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:257:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:255:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:255:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:257:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:255:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -582,8 +582,8 @@ public class InternalBLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:259:16: ( . )
-            // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:259:18: .
+            // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:257:16: ( . )
+            // ../b.B/src-gen/b/parser/antlr/internal/InternalB.g:257:18: .
             {
             matchAny(); 
 
@@ -680,22 +680,22 @@ public class InternalBLexer extends Lexer {
 
     protected DFA12 dfa12 = new DFA12(this);
     static final String DFA12_eotS =
-        "\1\uffff\1\15\1\uffff\1\15\1\13\2\uffff\3\13\2\uffff\1\15\10\uffff\3\15\1\31\1\uffff";
+        "\1\uffff\2\15\1\uffff\1\13\2\uffff\3\13\2\uffff\1\15\10\uffff\3\15\1\31\1\uffff";
     static final String DFA12_eofS =
         "\32\uffff";
     static final String DFA12_minS =
-        "\1\0\1\155\1\uffff\1\72\1\101\2\uffff\2\0\1\52\2\uffff\1\160\10\uffff\1\157\1\162\1\164\1\60\1\uffff";
+        "\1\0\1\155\1\72\1\uffff\1\101\2\uffff\2\0\1\52\2\uffff\1\160\10\uffff\1\157\1\162\1\164\1\60\1\uffff";
     static final String DFA12_maxS =
-        "\1\uffff\1\155\1\uffff\1\72\1\172\2\uffff\2\uffff\1\57\2\uffff\1\160\10\uffff\1\157\1\162\1\164\1\172\1\uffff";
+        "\1\uffff\1\155\1\72\1\uffff\1\172\2\uffff\2\uffff\1\57\2\uffff\1\160\10\uffff\1\157\1\162\1\164\1\172\1\uffff";
     static final String DFA12_acceptS =
-        "\2\uffff\1\2\2\uffff\1\4\1\5\3\uffff\1\11\1\12\1\uffff\1\4\1\2\1\3\1\5\1\6\1\7\1\10\1\11\4\uffff\1\1";
+        "\3\uffff\1\3\1\uffff\1\4\1\5\3\uffff\1\11\1\12\1\uffff\1\4\1\2\1\3\1\5\1\6\1\7\1\10\1\11\4\uffff\1\1";
     static final String DFA12_specialS =
         "\1\2\6\uffff\1\0\1\1\21\uffff}>";
     static final String[] DFA12_transitionS = {
-            "\11\13\2\12\2\13\1\12\22\13\1\12\1\13\1\7\4\13\1\10\6\13\1\2\1\11\12\6\7\13\32\5\3\13\1\4\1\5\1\13\6\5\1\3\1\5\1\1\21\5\uff85\13",
+            "\11\13\2\12\2\13\1\12\22\13\1\12\1\13\1\7\4\13\1\10\6\13\1\3\1\11\12\6\7\13\32\5\3\13\1\4\1\5\1\13\6\5\1\2\1\5\1\1\21\5\uff85\13",
             "\1\14",
+            "\1\16",
             "",
-            "\1\17",
             "\32\15\4\uffff\1\15\1\uffff\32\15",
             "",
             "",
@@ -782,9 +782,9 @@ public class InternalBLexer extends Lexer {
                         s = -1;
                         if ( (LA12_0=='i') ) {s = 1;}
 
-                        else if ( (LA12_0=='.') ) {s = 2;}
+                        else if ( (LA12_0=='g') ) {s = 2;}
 
-                        else if ( (LA12_0=='g') ) {s = 3;}
+                        else if ( (LA12_0=='.') ) {s = 3;}
 
                         else if ( (LA12_0=='^') ) {s = 4;}
 

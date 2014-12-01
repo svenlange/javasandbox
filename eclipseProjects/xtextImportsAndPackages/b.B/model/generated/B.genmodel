@@ -15,7 +15,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute B.ecore#//Import/importedNamespace"/>
     </genClasses>
     <genClasses ecoreClass="B.ecore#//ReferencedGreetings">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference B.ecore#//ReferencedGreetings/greet"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference B.ecore#//ReferencedGreetings/name"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

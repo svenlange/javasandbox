@@ -10,8 +10,8 @@ Model:
 Import:
 	'import' importedNamespace=QualifiedName;
 
+ReferencedGreetings:
+	'g: ' name=[a::Greeting];
+
 QualifiedName:
 	ID ('.' ID)*;
-
-ReferencedGreetings:
-	'g: ' greet=[a::Greeting|QualifiedName];

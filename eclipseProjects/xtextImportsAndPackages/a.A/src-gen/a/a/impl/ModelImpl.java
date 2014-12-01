@@ -4,7 +4,6 @@ package a.a.impl;
 
 import a.a.APackage;
 import a.a.Greeting;
-import a.a.Import;
 import a.a.Model;
 import a.a.PackageDeclaration;
 
@@ -32,7 +31,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link a.a.impl.ModelImpl#getPackage <em>Package</em>}</li>
- *   <li>{@link a.a.impl.ModelImpl#getImports <em>Imports</em>}</li>
  *   <li>{@link a.a.impl.ModelImpl#getGreetings <em>Greetings</em>}</li>
  * </ul>
  * </p>
@@ -50,16 +48,6 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * @ordered
    */
   protected PackageDeclaration package_;
-
-  /**
-   * The cached value of the '{@link #getImports() <em>Imports</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getImports()
-   * @generated
-   * @ordered
-   */
-  protected EList<Import> imports;
 
   /**
    * The cached value of the '{@link #getGreetings() <em>Greetings</em>}' containment reference list.
@@ -145,20 +133,6 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Import> getImports()
-  {
-    if (imports == null)
-    {
-      imports = new EObjectContainmentEList<Import>(Import.class, this, APackage.MODEL__IMPORTS);
-    }
-    return imports;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EList<Greeting> getGreetings()
   {
     if (greetings == null)
@@ -180,8 +154,6 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
     {
       case APackage.MODEL__PACKAGE:
         return basicSetPackage(null, msgs);
-      case APackage.MODEL__IMPORTS:
-        return ((InternalEList<?>)getImports()).basicRemove(otherEnd, msgs);
       case APackage.MODEL__GREETINGS:
         return ((InternalEList<?>)getGreetings()).basicRemove(otherEnd, msgs);
     }
@@ -200,8 +172,6 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
     {
       case APackage.MODEL__PACKAGE:
         return getPackage();
-      case APackage.MODEL__IMPORTS:
-        return getImports();
       case APackage.MODEL__GREETINGS:
         return getGreetings();
     }
@@ -221,10 +191,6 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
     {
       case APackage.MODEL__PACKAGE:
         setPackage((PackageDeclaration)newValue);
-        return;
-      case APackage.MODEL__IMPORTS:
-        getImports().clear();
-        getImports().addAll((Collection<? extends Import>)newValue);
         return;
       case APackage.MODEL__GREETINGS:
         getGreetings().clear();
@@ -247,9 +213,6 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
       case APackage.MODEL__PACKAGE:
         setPackage((PackageDeclaration)null);
         return;
-      case APackage.MODEL__IMPORTS:
-        getImports().clear();
-        return;
       case APackage.MODEL__GREETINGS:
         getGreetings().clear();
         return;
@@ -269,8 +232,6 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
     {
       case APackage.MODEL__PACKAGE:
         return package_ != null;
-      case APackage.MODEL__IMPORTS:
-        return imports != null && !imports.isEmpty();
       case APackage.MODEL__GREETINGS:
         return greetings != null && !greetings.isEmpty();
     }

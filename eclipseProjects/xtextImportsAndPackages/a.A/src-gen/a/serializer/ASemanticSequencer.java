@@ -2,7 +2,6 @@ package a.serializer;
 
 import a.a.APackage;
 import a.a.Greeting;
-import a.a.Import;
 import a.a.Model;
 import a.a.PackageDeclaration;
 import a.services.AGrammarAccess;
@@ -34,12 +33,6 @@ public class ASemanticSequencer extends AbstractDelegatingSemanticSequencer {
 					return; 
 				}
 				else break;
-			case APackage.IMPORT:
-				if(context == grammarAccess.getImportRule()) {
-					sequence_Import(context, (Import) semanticObject); 
-					return; 
-				}
-				else break;
 			case APackage.MODEL:
 				if(context == grammarAccess.getModelRule()) {
 					sequence_Model(context, (Model) semanticObject); 
@@ -58,39 +51,23 @@ public class ASemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     string=ID
+	 *     name=ID
 	 */
 	protected void sequence_Greeting(EObject context, Greeting semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, APackage.Literals.GREETING__STRING) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, APackage.Literals.GREETING__STRING));
+			if(transientValues.isValueTransient(semanticObject, APackage.Literals.GREETING__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, APackage.Literals.GREETING__NAME));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getGreetingAccess().getStringIDTerminalRuleCall_1_0(), semanticObject.getString());
+		feeder.accept(grammarAccess.getGreetingAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
 		feeder.finish();
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     importedNamespace=QualifiedName
-	 */
-	protected void sequence_Import(EObject context, Import semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, APackage.Literals.IMPORT__IMPORTED_NAMESPACE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, APackage.Literals.IMPORT__IMPORTED_NAMESPACE));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getImportAccess().getImportedNamespaceQualifiedNameParserRuleCall_1_0(), semanticObject.getImportedNamespace());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (package=PackageDeclaration? imports+=Import* greetings+=Greeting*)
+	 *     (package=PackageDeclaration? greetings+=Greeting*)
 	 */
 	protected void sequence_Model(EObject context, Model semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

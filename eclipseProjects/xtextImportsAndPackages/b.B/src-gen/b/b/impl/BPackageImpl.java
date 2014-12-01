@@ -177,7 +177,7 @@ public class BPackageImpl extends EPackageImpl implements BPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getReferencedGreetings_Greet()
+  public EReference getReferencedGreetings_Name()
   {
     return (EReference)referencedGreetingsEClass.getEStructuralFeatures().get(0);
   }
@@ -220,7 +220,7 @@ public class BPackageImpl extends EPackageImpl implements BPackage
     createEAttribute(importEClass, IMPORT__IMPORTED_NAMESPACE);
 
     referencedGreetingsEClass = createEClass(REFERENCED_GREETINGS);
-    createEReference(referencedGreetingsEClass, REFERENCED_GREETINGS__GREET);
+    createEReference(referencedGreetingsEClass, REFERENCED_GREETINGS__NAME);
   }
 
   /**
@@ -265,7 +265,7 @@ public class BPackageImpl extends EPackageImpl implements BPackage
     initEAttribute(getImport_ImportedNamespace(), ecorePackage.getEString(), "importedNamespace", null, 0, 1, Import.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(referencedGreetingsEClass, ReferencedGreetings.class, "ReferencedGreetings", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getReferencedGreetings_Greet(), theAPackage.getGreeting(), null, "greet", null, 0, 1, ReferencedGreetings.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getReferencedGreetings_Name(), theAPackage.getGreeting(), null, "name", null, 0, 1, ReferencedGreetings.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

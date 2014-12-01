@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link b.b.ReferencedGreetings#getGreet <em>Greet</em>}</li>
+ *   <li>{@link b.b.ReferencedGreetings#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -25,29 +25,29 @@ import org.eclipse.emf.ecore.EObject;
 public interface ReferencedGreetings extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Greet</b></em>' reference.
+   * Returns the value of the '<em><b>Name</b></em>' reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Greet</em>' reference isn't clear,
+   * If the meaning of the '<em>Name</em>' reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Greet</em>' reference.
-   * @see #setGreet(Greeting)
-   * @see b.b.BPackage#getReferencedGreetings_Greet()
+   * @return the value of the '<em>Name</em>' reference.
+   * @see #setName(Greeting)
+   * @see b.b.BPackage#getReferencedGreetings_Name()
    * @model
    * @generated
    */
-  Greeting getGreet();
+  Greeting getName();
 
   /**
-   * Sets the value of the '{@link b.b.ReferencedGreetings#getGreet <em>Greet</em>}' reference.
+   * Sets the value of the '{@link b.b.ReferencedGreetings#getName <em>Name</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Greet</em>' reference.
-   * @see #getGreet()
+   * @param value the new value of the '<em>Name</em>' reference.
+   * @see #getName()
    * @generated
    */
-  void setGreet(Greeting value);
+  void setName(Greeting value);
 
 } // ReferencedGreetings

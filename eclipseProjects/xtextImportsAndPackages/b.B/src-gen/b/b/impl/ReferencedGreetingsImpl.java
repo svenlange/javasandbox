@@ -22,7 +22,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link b.b.impl.ReferencedGreetingsImpl#getGreet <em>Greet</em>}</li>
+ *   <li>{@link b.b.impl.ReferencedGreetingsImpl#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -31,14 +31,14 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class ReferencedGreetingsImpl extends MinimalEObjectImpl.Container implements ReferencedGreetings
 {
   /**
-   * The cached value of the '{@link #getGreet() <em>Greet</em>}' reference.
+   * The cached value of the '{@link #getName() <em>Name</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getGreet()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected Greeting greet;
+  protected Greeting name;
 
   /**
    * <!-- begin-user-doc -->
@@ -66,19 +66,19 @@ public class ReferencedGreetingsImpl extends MinimalEObjectImpl.Container implem
    * <!-- end-user-doc -->
    * @generated
    */
-  public Greeting getGreet()
+  public Greeting getName()
   {
-    if (greet != null && greet.eIsProxy())
+    if (name != null && name.eIsProxy())
     {
-      InternalEObject oldGreet = (InternalEObject)greet;
-      greet = (Greeting)eResolveProxy(oldGreet);
-      if (greet != oldGreet)
+      InternalEObject oldName = (InternalEObject)name;
+      name = (Greeting)eResolveProxy(oldName);
+      if (name != oldName)
       {
         if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, BPackage.REFERENCED_GREETINGS__GREET, oldGreet, greet));
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, BPackage.REFERENCED_GREETINGS__NAME, oldName, name));
       }
     }
-    return greet;
+    return name;
   }
 
   /**
@@ -86,9 +86,9 @@ public class ReferencedGreetingsImpl extends MinimalEObjectImpl.Container implem
    * <!-- end-user-doc -->
    * @generated
    */
-  public Greeting basicGetGreet()
+  public Greeting basicGetName()
   {
-    return greet;
+    return name;
   }
 
   /**
@@ -96,12 +96,12 @@ public class ReferencedGreetingsImpl extends MinimalEObjectImpl.Container implem
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setGreet(Greeting newGreet)
+  public void setName(Greeting newName)
   {
-    Greeting oldGreet = greet;
-    greet = newGreet;
+    Greeting oldName = name;
+    name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, BPackage.REFERENCED_GREETINGS__GREET, oldGreet, greet));
+      eNotify(new ENotificationImpl(this, Notification.SET, BPackage.REFERENCED_GREETINGS__NAME, oldName, name));
   }
 
   /**
@@ -114,9 +114,9 @@ public class ReferencedGreetingsImpl extends MinimalEObjectImpl.Container implem
   {
     switch (featureID)
     {
-      case BPackage.REFERENCED_GREETINGS__GREET:
-        if (resolve) return getGreet();
-        return basicGetGreet();
+      case BPackage.REFERENCED_GREETINGS__NAME:
+        if (resolve) return getName();
+        return basicGetName();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -131,8 +131,8 @@ public class ReferencedGreetingsImpl extends MinimalEObjectImpl.Container implem
   {
     switch (featureID)
     {
-      case BPackage.REFERENCED_GREETINGS__GREET:
-        setGreet((Greeting)newValue);
+      case BPackage.REFERENCED_GREETINGS__NAME:
+        setName((Greeting)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -148,8 +148,8 @@ public class ReferencedGreetingsImpl extends MinimalEObjectImpl.Container implem
   {
     switch (featureID)
     {
-      case BPackage.REFERENCED_GREETINGS__GREET:
-        setGreet((Greeting)null);
+      case BPackage.REFERENCED_GREETINGS__NAME:
+        setName((Greeting)null);
         return;
     }
     super.eUnset(featureID);
@@ -165,8 +165,8 @@ public class ReferencedGreetingsImpl extends MinimalEObjectImpl.Container implem
   {
     switch (featureID)
     {
-      case BPackage.REFERENCED_GREETINGS__GREET:
-        return greet != null;
+      case BPackage.REFERENCED_GREETINGS__NAME:
+        return name != null;
     }
     return super.eIsSet(featureID);
   }

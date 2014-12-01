@@ -65,7 +65,6 @@ public class AFactoryImpl extends EFactoryImpl implements AFactory
     switch (eClass.getClassifierID())
     {
       case APackage.MODEL: return createModel();
-      case APackage.IMPORT: return createImport();
       case APackage.PACKAGE_DECLARATION: return createPackageDeclaration();
       case APackage.GREETING: return createGreeting();
       default:
@@ -82,17 +81,6 @@ public class AFactoryImpl extends EFactoryImpl implements AFactory
   {
     ModelImpl model = new ModelImpl();
     return model;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Import createImport()
-  {
-    ImportImpl import_ = new ImportImpl();
-    return import_;
   }
 
   /**

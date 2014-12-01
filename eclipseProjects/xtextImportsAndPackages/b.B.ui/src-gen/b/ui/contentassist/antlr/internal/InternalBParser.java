@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalBParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'import'", "'.'", "'g: '"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'import'", "'g: '", "'.'"
     };
     public static final int RULE_ID=4;
     public static final int RULE_STRING=6;
@@ -227,98 +227,21 @@ public class InternalBParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "ruleImport"
 
 
-    // $ANTLR start "entryRuleQualifiedName"
-    // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:116:1: entryRuleQualifiedName : ruleQualifiedName EOF ;
-    public final void entryRuleQualifiedName() throws RecognitionException {
-        try {
-            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:117:1: ( ruleQualifiedName EOF )
-            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:118:1: ruleQualifiedName EOF
-            {
-             before(grammarAccess.getQualifiedNameRule()); 
-            pushFollow(FOLLOW_ruleQualifiedName_in_entryRuleQualifiedName181);
-            ruleQualifiedName();
-
-            state._fsp--;
-
-             after(grammarAccess.getQualifiedNameRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleQualifiedName188); 
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-        }
-        return ;
-    }
-    // $ANTLR end "entryRuleQualifiedName"
-
-
-    // $ANTLR start "ruleQualifiedName"
-    // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:125:1: ruleQualifiedName : ( ( rule__QualifiedName__Group__0 ) ) ;
-    public final void ruleQualifiedName() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:129:2: ( ( ( rule__QualifiedName__Group__0 ) ) )
-            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:130:1: ( ( rule__QualifiedName__Group__0 ) )
-            {
-            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:130:1: ( ( rule__QualifiedName__Group__0 ) )
-            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:131:1: ( rule__QualifiedName__Group__0 )
-            {
-             before(grammarAccess.getQualifiedNameAccess().getGroup()); 
-            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:132:1: ( rule__QualifiedName__Group__0 )
-            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:132:2: rule__QualifiedName__Group__0
-            {
-            pushFollow(FOLLOW_rule__QualifiedName__Group__0_in_ruleQualifiedName214);
-            rule__QualifiedName__Group__0();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getQualifiedNameAccess().getGroup()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "ruleQualifiedName"
-
-
     // $ANTLR start "entryRuleReferencedGreetings"
-    // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:144:1: entryRuleReferencedGreetings : ruleReferencedGreetings EOF ;
+    // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:116:1: entryRuleReferencedGreetings : ruleReferencedGreetings EOF ;
     public final void entryRuleReferencedGreetings() throws RecognitionException {
         try {
-            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:145:1: ( ruleReferencedGreetings EOF )
-            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:146:1: ruleReferencedGreetings EOF
+            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:117:1: ( ruleReferencedGreetings EOF )
+            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:118:1: ruleReferencedGreetings EOF
             {
              before(grammarAccess.getReferencedGreetingsRule()); 
-            pushFollow(FOLLOW_ruleReferencedGreetings_in_entryRuleReferencedGreetings241);
+            pushFollow(FOLLOW_ruleReferencedGreetings_in_entryRuleReferencedGreetings181);
             ruleReferencedGreetings();
 
             state._fsp--;
 
              after(grammarAccess.getReferencedGreetingsRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleReferencedGreetings248); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleReferencedGreetings188); 
 
             }
 
@@ -335,23 +258,23 @@ public class InternalBParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleReferencedGreetings"
-    // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:153:1: ruleReferencedGreetings : ( ( rule__ReferencedGreetings__Group__0 ) ) ;
+    // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:125:1: ruleReferencedGreetings : ( ( rule__ReferencedGreetings__Group__0 ) ) ;
     public final void ruleReferencedGreetings() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:157:2: ( ( ( rule__ReferencedGreetings__Group__0 ) ) )
-            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:158:1: ( ( rule__ReferencedGreetings__Group__0 ) )
+            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:129:2: ( ( ( rule__ReferencedGreetings__Group__0 ) ) )
+            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:130:1: ( ( rule__ReferencedGreetings__Group__0 ) )
             {
-            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:158:1: ( ( rule__ReferencedGreetings__Group__0 ) )
-            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:159:1: ( rule__ReferencedGreetings__Group__0 )
+            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:130:1: ( ( rule__ReferencedGreetings__Group__0 ) )
+            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:131:1: ( rule__ReferencedGreetings__Group__0 )
             {
              before(grammarAccess.getReferencedGreetingsAccess().getGroup()); 
-            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:160:1: ( rule__ReferencedGreetings__Group__0 )
-            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:160:2: rule__ReferencedGreetings__Group__0
+            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:132:1: ( rule__ReferencedGreetings__Group__0 )
+            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:132:2: rule__ReferencedGreetings__Group__0
             {
-            pushFollow(FOLLOW_rule__ReferencedGreetings__Group__0_in_ruleReferencedGreetings274);
+            pushFollow(FOLLOW_rule__ReferencedGreetings__Group__0_in_ruleReferencedGreetings214);
             rule__ReferencedGreetings__Group__0();
 
             state._fsp--;
@@ -379,6 +302,83 @@ public class InternalBParser extends AbstractInternalContentAssistParser {
         return ;
     }
     // $ANTLR end "ruleReferencedGreetings"
+
+
+    // $ANTLR start "entryRuleQualifiedName"
+    // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:144:1: entryRuleQualifiedName : ruleQualifiedName EOF ;
+    public final void entryRuleQualifiedName() throws RecognitionException {
+        try {
+            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:145:1: ( ruleQualifiedName EOF )
+            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:146:1: ruleQualifiedName EOF
+            {
+             before(grammarAccess.getQualifiedNameRule()); 
+            pushFollow(FOLLOW_ruleQualifiedName_in_entryRuleQualifiedName241);
+            ruleQualifiedName();
+
+            state._fsp--;
+
+             after(grammarAccess.getQualifiedNameRule()); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleQualifiedName248); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleQualifiedName"
+
+
+    // $ANTLR start "ruleQualifiedName"
+    // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:153:1: ruleQualifiedName : ( ( rule__QualifiedName__Group__0 ) ) ;
+    public final void ruleQualifiedName() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:157:2: ( ( ( rule__QualifiedName__Group__0 ) ) )
+            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:158:1: ( ( rule__QualifiedName__Group__0 ) )
+            {
+            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:158:1: ( ( rule__QualifiedName__Group__0 ) )
+            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:159:1: ( rule__QualifiedName__Group__0 )
+            {
+             before(grammarAccess.getQualifiedNameAccess().getGroup()); 
+            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:160:1: ( rule__QualifiedName__Group__0 )
+            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:160:2: rule__QualifiedName__Group__0
+            {
+            pushFollow(FOLLOW_rule__QualifiedName__Group__0_in_ruleQualifiedName274);
+            rule__QualifiedName__Group__0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getQualifiedNameAccess().getGroup()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleQualifiedName"
 
 
     // $ANTLR start "rule__Model__Group__0"
@@ -537,7 +537,7 @@ public class InternalBParser extends AbstractInternalContentAssistParser {
                 int alt2=2;
                 int LA2_0 = input.LA(1);
 
-                if ( (LA2_0==13) ) {
+                if ( (LA2_0==12) ) {
                     alt2=1;
                 }
 
@@ -737,22 +737,177 @@ public class InternalBParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Import__Group__1__Impl"
 
 
+    // $ANTLR start "rule__ReferencedGreetings__Group__0"
+    // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:298:1: rule__ReferencedGreetings__Group__0 : rule__ReferencedGreetings__Group__0__Impl rule__ReferencedGreetings__Group__1 ;
+    public final void rule__ReferencedGreetings__Group__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:302:1: ( rule__ReferencedGreetings__Group__0__Impl rule__ReferencedGreetings__Group__1 )
+            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:303:2: rule__ReferencedGreetings__Group__0__Impl rule__ReferencedGreetings__Group__1
+            {
+            pushFollow(FOLLOW_rule__ReferencedGreetings__Group__0__Impl_in_rule__ReferencedGreetings__Group__0554);
+            rule__ReferencedGreetings__Group__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_rule__ReferencedGreetings__Group__1_in_rule__ReferencedGreetings__Group__0557);
+            rule__ReferencedGreetings__Group__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ReferencedGreetings__Group__0"
+
+
+    // $ANTLR start "rule__ReferencedGreetings__Group__0__Impl"
+    // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:310:1: rule__ReferencedGreetings__Group__0__Impl : ( 'g: ' ) ;
+    public final void rule__ReferencedGreetings__Group__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:314:1: ( ( 'g: ' ) )
+            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:315:1: ( 'g: ' )
+            {
+            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:315:1: ( 'g: ' )
+            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:316:1: 'g: '
+            {
+             before(grammarAccess.getReferencedGreetingsAccess().getGKeyword_0()); 
+            match(input,12,FOLLOW_12_in_rule__ReferencedGreetings__Group__0__Impl585); 
+             after(grammarAccess.getReferencedGreetingsAccess().getGKeyword_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ReferencedGreetings__Group__0__Impl"
+
+
+    // $ANTLR start "rule__ReferencedGreetings__Group__1"
+    // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:329:1: rule__ReferencedGreetings__Group__1 : rule__ReferencedGreetings__Group__1__Impl ;
+    public final void rule__ReferencedGreetings__Group__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:333:1: ( rule__ReferencedGreetings__Group__1__Impl )
+            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:334:2: rule__ReferencedGreetings__Group__1__Impl
+            {
+            pushFollow(FOLLOW_rule__ReferencedGreetings__Group__1__Impl_in_rule__ReferencedGreetings__Group__1616);
+            rule__ReferencedGreetings__Group__1__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ReferencedGreetings__Group__1"
+
+
+    // $ANTLR start "rule__ReferencedGreetings__Group__1__Impl"
+    // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:340:1: rule__ReferencedGreetings__Group__1__Impl : ( ( rule__ReferencedGreetings__NameAssignment_1 ) ) ;
+    public final void rule__ReferencedGreetings__Group__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:344:1: ( ( ( rule__ReferencedGreetings__NameAssignment_1 ) ) )
+            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:345:1: ( ( rule__ReferencedGreetings__NameAssignment_1 ) )
+            {
+            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:345:1: ( ( rule__ReferencedGreetings__NameAssignment_1 ) )
+            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:346:1: ( rule__ReferencedGreetings__NameAssignment_1 )
+            {
+             before(grammarAccess.getReferencedGreetingsAccess().getNameAssignment_1()); 
+            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:347:1: ( rule__ReferencedGreetings__NameAssignment_1 )
+            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:347:2: rule__ReferencedGreetings__NameAssignment_1
+            {
+            pushFollow(FOLLOW_rule__ReferencedGreetings__NameAssignment_1_in_rule__ReferencedGreetings__Group__1__Impl643);
+            rule__ReferencedGreetings__NameAssignment_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getReferencedGreetingsAccess().getNameAssignment_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ReferencedGreetings__Group__1__Impl"
+
+
     // $ANTLR start "rule__QualifiedName__Group__0"
-    // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:298:1: rule__QualifiedName__Group__0 : rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1 ;
+    // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:361:1: rule__QualifiedName__Group__0 : rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1 ;
     public final void rule__QualifiedName__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:302:1: ( rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1 )
-            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:303:2: rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1
+            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:365:1: ( rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1 )
+            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:366:2: rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1
             {
-            pushFollow(FOLLOW_rule__QualifiedName__Group__0__Impl_in_rule__QualifiedName__Group__0554);
+            pushFollow(FOLLOW_rule__QualifiedName__Group__0__Impl_in_rule__QualifiedName__Group__0677);
             rule__QualifiedName__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__QualifiedName__Group__1_in_rule__QualifiedName__Group__0557);
+            pushFollow(FOLLOW_rule__QualifiedName__Group__1_in_rule__QualifiedName__Group__0680);
             rule__QualifiedName__Group__1();
 
             state._fsp--;
@@ -776,20 +931,20 @@ public class InternalBParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QualifiedName__Group__0__Impl"
-    // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:310:1: rule__QualifiedName__Group__0__Impl : ( RULE_ID ) ;
+    // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:373:1: rule__QualifiedName__Group__0__Impl : ( RULE_ID ) ;
     public final void rule__QualifiedName__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:314:1: ( ( RULE_ID ) )
-            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:315:1: ( RULE_ID )
+            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:377:1: ( ( RULE_ID ) )
+            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:378:1: ( RULE_ID )
             {
-            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:315:1: ( RULE_ID )
-            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:316:1: RULE_ID
+            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:378:1: ( RULE_ID )
+            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:379:1: RULE_ID
             {
              before(grammarAccess.getQualifiedNameAccess().getIDTerminalRuleCall_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__QualifiedName__Group__0__Impl584); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__QualifiedName__Group__0__Impl707); 
              after(grammarAccess.getQualifiedNameAccess().getIDTerminalRuleCall_0()); 
 
             }
@@ -813,16 +968,16 @@ public class InternalBParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QualifiedName__Group__1"
-    // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:327:1: rule__QualifiedName__Group__1 : rule__QualifiedName__Group__1__Impl ;
+    // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:390:1: rule__QualifiedName__Group__1 : rule__QualifiedName__Group__1__Impl ;
     public final void rule__QualifiedName__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:331:1: ( rule__QualifiedName__Group__1__Impl )
-            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:332:2: rule__QualifiedName__Group__1__Impl
+            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:394:1: ( rule__QualifiedName__Group__1__Impl )
+            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:395:2: rule__QualifiedName__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__QualifiedName__Group__1__Impl_in_rule__QualifiedName__Group__1613);
+            pushFollow(FOLLOW_rule__QualifiedName__Group__1__Impl_in_rule__QualifiedName__Group__1736);
             rule__QualifiedName__Group__1__Impl();
 
             state._fsp--;
@@ -846,35 +1001,35 @@ public class InternalBParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QualifiedName__Group__1__Impl"
-    // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:338:1: rule__QualifiedName__Group__1__Impl : ( ( rule__QualifiedName__Group_1__0 )* ) ;
+    // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:401:1: rule__QualifiedName__Group__1__Impl : ( ( rule__QualifiedName__Group_1__0 )* ) ;
     public final void rule__QualifiedName__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:342:1: ( ( ( rule__QualifiedName__Group_1__0 )* ) )
-            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:343:1: ( ( rule__QualifiedName__Group_1__0 )* )
+            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:405:1: ( ( ( rule__QualifiedName__Group_1__0 )* ) )
+            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:406:1: ( ( rule__QualifiedName__Group_1__0 )* )
             {
-            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:343:1: ( ( rule__QualifiedName__Group_1__0 )* )
-            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:344:1: ( rule__QualifiedName__Group_1__0 )*
+            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:406:1: ( ( rule__QualifiedName__Group_1__0 )* )
+            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:407:1: ( rule__QualifiedName__Group_1__0 )*
             {
              before(grammarAccess.getQualifiedNameAccess().getGroup_1()); 
-            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:345:1: ( rule__QualifiedName__Group_1__0 )*
+            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:408:1: ( rule__QualifiedName__Group_1__0 )*
             loop3:
             do {
                 int alt3=2;
                 int LA3_0 = input.LA(1);
 
-                if ( (LA3_0==12) ) {
+                if ( (LA3_0==13) ) {
                     alt3=1;
                 }
 
 
                 switch (alt3) {
             	case 1 :
-            	    // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:345:2: rule__QualifiedName__Group_1__0
+            	    // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:408:2: rule__QualifiedName__Group_1__0
             	    {
-            	    pushFollow(FOLLOW_rule__QualifiedName__Group_1__0_in_rule__QualifiedName__Group__1__Impl640);
+            	    pushFollow(FOLLOW_rule__QualifiedName__Group_1__0_in_rule__QualifiedName__Group__1__Impl763);
             	    rule__QualifiedName__Group_1__0();
 
             	    state._fsp--;
@@ -911,21 +1066,21 @@ public class InternalBParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QualifiedName__Group_1__0"
-    // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:359:1: rule__QualifiedName__Group_1__0 : rule__QualifiedName__Group_1__0__Impl rule__QualifiedName__Group_1__1 ;
+    // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:422:1: rule__QualifiedName__Group_1__0 : rule__QualifiedName__Group_1__0__Impl rule__QualifiedName__Group_1__1 ;
     public final void rule__QualifiedName__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:363:1: ( rule__QualifiedName__Group_1__0__Impl rule__QualifiedName__Group_1__1 )
-            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:364:2: rule__QualifiedName__Group_1__0__Impl rule__QualifiedName__Group_1__1
+            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:426:1: ( rule__QualifiedName__Group_1__0__Impl rule__QualifiedName__Group_1__1 )
+            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:427:2: rule__QualifiedName__Group_1__0__Impl rule__QualifiedName__Group_1__1
             {
-            pushFollow(FOLLOW_rule__QualifiedName__Group_1__0__Impl_in_rule__QualifiedName__Group_1__0675);
+            pushFollow(FOLLOW_rule__QualifiedName__Group_1__0__Impl_in_rule__QualifiedName__Group_1__0798);
             rule__QualifiedName__Group_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__QualifiedName__Group_1__1_in_rule__QualifiedName__Group_1__0678);
+            pushFollow(FOLLOW_rule__QualifiedName__Group_1__1_in_rule__QualifiedName__Group_1__0801);
             rule__QualifiedName__Group_1__1();
 
             state._fsp--;
@@ -949,20 +1104,20 @@ public class InternalBParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QualifiedName__Group_1__0__Impl"
-    // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:371:1: rule__QualifiedName__Group_1__0__Impl : ( '.' ) ;
+    // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:434:1: rule__QualifiedName__Group_1__0__Impl : ( '.' ) ;
     public final void rule__QualifiedName__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:375:1: ( ( '.' ) )
-            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:376:1: ( '.' )
+            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:438:1: ( ( '.' ) )
+            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:439:1: ( '.' )
             {
-            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:376:1: ( '.' )
-            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:377:1: '.'
+            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:439:1: ( '.' )
+            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:440:1: '.'
             {
              before(grammarAccess.getQualifiedNameAccess().getFullStopKeyword_1_0()); 
-            match(input,12,FOLLOW_12_in_rule__QualifiedName__Group_1__0__Impl706); 
+            match(input,13,FOLLOW_13_in_rule__QualifiedName__Group_1__0__Impl829); 
              after(grammarAccess.getQualifiedNameAccess().getFullStopKeyword_1_0()); 
 
             }
@@ -986,16 +1141,16 @@ public class InternalBParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QualifiedName__Group_1__1"
-    // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:390:1: rule__QualifiedName__Group_1__1 : rule__QualifiedName__Group_1__1__Impl ;
+    // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:453:1: rule__QualifiedName__Group_1__1 : rule__QualifiedName__Group_1__1__Impl ;
     public final void rule__QualifiedName__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:394:1: ( rule__QualifiedName__Group_1__1__Impl )
-            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:395:2: rule__QualifiedName__Group_1__1__Impl
+            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:457:1: ( rule__QualifiedName__Group_1__1__Impl )
+            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:458:2: rule__QualifiedName__Group_1__1__Impl
             {
-            pushFollow(FOLLOW_rule__QualifiedName__Group_1__1__Impl_in_rule__QualifiedName__Group_1__1737);
+            pushFollow(FOLLOW_rule__QualifiedName__Group_1__1__Impl_in_rule__QualifiedName__Group_1__1860);
             rule__QualifiedName__Group_1__1__Impl();
 
             state._fsp--;
@@ -1019,20 +1174,20 @@ public class InternalBParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QualifiedName__Group_1__1__Impl"
-    // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:401:1: rule__QualifiedName__Group_1__1__Impl : ( RULE_ID ) ;
+    // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:464:1: rule__QualifiedName__Group_1__1__Impl : ( RULE_ID ) ;
     public final void rule__QualifiedName__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:405:1: ( ( RULE_ID ) )
-            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:406:1: ( RULE_ID )
+            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:468:1: ( ( RULE_ID ) )
+            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:469:1: ( RULE_ID )
             {
-            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:406:1: ( RULE_ID )
-            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:407:1: RULE_ID
+            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:469:1: ( RULE_ID )
+            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:470:1: RULE_ID
             {
              before(grammarAccess.getQualifiedNameAccess().getIDTerminalRuleCall_1_1()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__QualifiedName__Group_1__1__Impl764); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__QualifiedName__Group_1__1__Impl887); 
              after(grammarAccess.getQualifiedNameAccess().getIDTerminalRuleCall_1_1()); 
 
             }
@@ -1053,161 +1208,6 @@ public class InternalBParser extends AbstractInternalContentAssistParser {
         return ;
     }
     // $ANTLR end "rule__QualifiedName__Group_1__1__Impl"
-
-
-    // $ANTLR start "rule__ReferencedGreetings__Group__0"
-    // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:422:1: rule__ReferencedGreetings__Group__0 : rule__ReferencedGreetings__Group__0__Impl rule__ReferencedGreetings__Group__1 ;
-    public final void rule__ReferencedGreetings__Group__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:426:1: ( rule__ReferencedGreetings__Group__0__Impl rule__ReferencedGreetings__Group__1 )
-            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:427:2: rule__ReferencedGreetings__Group__0__Impl rule__ReferencedGreetings__Group__1
-            {
-            pushFollow(FOLLOW_rule__ReferencedGreetings__Group__0__Impl_in_rule__ReferencedGreetings__Group__0797);
-            rule__ReferencedGreetings__Group__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_rule__ReferencedGreetings__Group__1_in_rule__ReferencedGreetings__Group__0800);
-            rule__ReferencedGreetings__Group__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__ReferencedGreetings__Group__0"
-
-
-    // $ANTLR start "rule__ReferencedGreetings__Group__0__Impl"
-    // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:434:1: rule__ReferencedGreetings__Group__0__Impl : ( 'g: ' ) ;
-    public final void rule__ReferencedGreetings__Group__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:438:1: ( ( 'g: ' ) )
-            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:439:1: ( 'g: ' )
-            {
-            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:439:1: ( 'g: ' )
-            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:440:1: 'g: '
-            {
-             before(grammarAccess.getReferencedGreetingsAccess().getGKeyword_0()); 
-            match(input,13,FOLLOW_13_in_rule__ReferencedGreetings__Group__0__Impl828); 
-             after(grammarAccess.getReferencedGreetingsAccess().getGKeyword_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__ReferencedGreetings__Group__0__Impl"
-
-
-    // $ANTLR start "rule__ReferencedGreetings__Group__1"
-    // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:453:1: rule__ReferencedGreetings__Group__1 : rule__ReferencedGreetings__Group__1__Impl ;
-    public final void rule__ReferencedGreetings__Group__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:457:1: ( rule__ReferencedGreetings__Group__1__Impl )
-            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:458:2: rule__ReferencedGreetings__Group__1__Impl
-            {
-            pushFollow(FOLLOW_rule__ReferencedGreetings__Group__1__Impl_in_rule__ReferencedGreetings__Group__1859);
-            rule__ReferencedGreetings__Group__1__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__ReferencedGreetings__Group__1"
-
-
-    // $ANTLR start "rule__ReferencedGreetings__Group__1__Impl"
-    // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:464:1: rule__ReferencedGreetings__Group__1__Impl : ( ( rule__ReferencedGreetings__GreetAssignment_1 ) ) ;
-    public final void rule__ReferencedGreetings__Group__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:468:1: ( ( ( rule__ReferencedGreetings__GreetAssignment_1 ) ) )
-            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:469:1: ( ( rule__ReferencedGreetings__GreetAssignment_1 ) )
-            {
-            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:469:1: ( ( rule__ReferencedGreetings__GreetAssignment_1 ) )
-            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:470:1: ( rule__ReferencedGreetings__GreetAssignment_1 )
-            {
-             before(grammarAccess.getReferencedGreetingsAccess().getGreetAssignment_1()); 
-            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:471:1: ( rule__ReferencedGreetings__GreetAssignment_1 )
-            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:471:2: rule__ReferencedGreetings__GreetAssignment_1
-            {
-            pushFollow(FOLLOW_rule__ReferencedGreetings__GreetAssignment_1_in_rule__ReferencedGreetings__Group__1__Impl886);
-            rule__ReferencedGreetings__GreetAssignment_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getReferencedGreetingsAccess().getGreetAssignment_1()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__ReferencedGreetings__Group__1__Impl"
 
 
     // $ANTLR start "rule__Model__ImportsAssignment_0"
@@ -1333,34 +1333,30 @@ public class InternalBParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Import__ImportedNamespaceAssignment_1"
 
 
-    // $ANTLR start "rule__ReferencedGreetings__GreetAssignment_1"
-    // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:531:1: rule__ReferencedGreetings__GreetAssignment_1 : ( ( ruleQualifiedName ) ) ;
-    public final void rule__ReferencedGreetings__GreetAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__ReferencedGreetings__NameAssignment_1"
+    // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:531:1: rule__ReferencedGreetings__NameAssignment_1 : ( ( RULE_ID ) ) ;
+    public final void rule__ReferencedGreetings__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:535:1: ( ( ( ruleQualifiedName ) ) )
-            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:536:1: ( ( ruleQualifiedName ) )
+            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:535:1: ( ( ( RULE_ID ) ) )
+            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:536:1: ( ( RULE_ID ) )
             {
-            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:536:1: ( ( ruleQualifiedName ) )
-            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:537:1: ( ruleQualifiedName )
+            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:536:1: ( ( RULE_ID ) )
+            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:537:1: ( RULE_ID )
             {
-             before(grammarAccess.getReferencedGreetingsAccess().getGreetGreetingCrossReference_1_0()); 
-            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:538:1: ( ruleQualifiedName )
-            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:539:1: ruleQualifiedName
+             before(grammarAccess.getReferencedGreetingsAccess().getNameGreetingCrossReference_1_0()); 
+            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:538:1: ( RULE_ID )
+            // ../b.B.ui/src-gen/b/ui/contentassist/antlr/internal/InternalB.g:539:1: RULE_ID
             {
-             before(grammarAccess.getReferencedGreetingsAccess().getGreetGreetingQualifiedNameParserRuleCall_1_0_1()); 
-            pushFollow(FOLLOW_ruleQualifiedName_in_rule__ReferencedGreetings__GreetAssignment_11022);
-            ruleQualifiedName();
-
-            state._fsp--;
-
-             after(grammarAccess.getReferencedGreetingsAccess().getGreetGreetingQualifiedNameParserRuleCall_1_0_1()); 
+             before(grammarAccess.getReferencedGreetingsAccess().getNameGreetingIDTerminalRuleCall_1_0_1()); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__ReferencedGreetings__NameAssignment_11022); 
+             after(grammarAccess.getReferencedGreetingsAccess().getNameGreetingIDTerminalRuleCall_1_0_1()); 
 
             }
 
-             after(grammarAccess.getReferencedGreetingsAccess().getGreetGreetingCrossReference_1_0()); 
+             after(grammarAccess.getReferencedGreetingsAccess().getNameGreetingCrossReference_1_0()); 
 
             }
 
@@ -1379,7 +1375,7 @@ public class InternalBParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ReferencedGreetings__GreetAssignment_1"
+    // $ANTLR end "rule__ReferencedGreetings__NameAssignment_1"
 
     // Delegated rules
 
@@ -1392,40 +1388,40 @@ public class InternalBParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_ruleImport_in_entryRuleImport121 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleImport128 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Import__Group__0_in_ruleImport154 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_entryRuleQualifiedName181 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleQualifiedName188 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__QualifiedName__Group__0_in_ruleQualifiedName214 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleReferencedGreetings_in_entryRuleReferencedGreetings241 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleReferencedGreetings248 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ReferencedGreetings__Group__0_in_ruleReferencedGreetings274 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Model__Group__0__Impl_in_rule__Model__Group__0308 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_ruleReferencedGreetings_in_entryRuleReferencedGreetings181 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleReferencedGreetings188 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ReferencedGreetings__Group__0_in_ruleReferencedGreetings214 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_entryRuleQualifiedName241 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleQualifiedName248 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__QualifiedName__Group__0_in_ruleQualifiedName274 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Model__Group__0__Impl_in_rule__Model__Group__0308 = new BitSet(new long[]{0x0000000000001000L});
     public static final BitSet FOLLOW_rule__Model__Group__1_in_rule__Model__Group__0311 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Model__ImportsAssignment_0_in_rule__Model__Group__0__Impl338 = new BitSet(new long[]{0x0000000000000802L});
     public static final BitSet FOLLOW_rule__Model__Group__1__Impl_in_rule__Model__Group__1369 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Model__GreetingsAssignment_1_in_rule__Model__Group__1__Impl396 = new BitSet(new long[]{0x0000000000002002L});
+    public static final BitSet FOLLOW_rule__Model__GreetingsAssignment_1_in_rule__Model__Group__1__Impl396 = new BitSet(new long[]{0x0000000000001002L});
     public static final BitSet FOLLOW_rule__Import__Group__0__Impl_in_rule__Import__Group__0431 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_rule__Import__Group__1_in_rule__Import__Group__0434 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_11_in_rule__Import__Group__0__Impl462 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Import__Group__1__Impl_in_rule__Import__Group__1493 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Import__ImportedNamespaceAssignment_1_in_rule__Import__Group__1__Impl520 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__QualifiedName__Group__0__Impl_in_rule__QualifiedName__Group__0554 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_rule__QualifiedName__Group__1_in_rule__QualifiedName__Group__0557 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__QualifiedName__Group__0__Impl584 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__QualifiedName__Group__1__Impl_in_rule__QualifiedName__Group__1613 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__QualifiedName__Group_1__0_in_rule__QualifiedName__Group__1__Impl640 = new BitSet(new long[]{0x0000000000001002L});
-    public static final BitSet FOLLOW_rule__QualifiedName__Group_1__0__Impl_in_rule__QualifiedName__Group_1__0675 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__QualifiedName__Group_1__1_in_rule__QualifiedName__Group_1__0678 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_12_in_rule__QualifiedName__Group_1__0__Impl706 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__QualifiedName__Group_1__1__Impl_in_rule__QualifiedName__Group_1__1737 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__QualifiedName__Group_1__1__Impl764 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ReferencedGreetings__Group__0__Impl_in_rule__ReferencedGreetings__Group__0797 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__ReferencedGreetings__Group__1_in_rule__ReferencedGreetings__Group__0800 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_13_in_rule__ReferencedGreetings__Group__0__Impl828 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ReferencedGreetings__Group__1__Impl_in_rule__ReferencedGreetings__Group__1859 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ReferencedGreetings__GreetAssignment_1_in_rule__ReferencedGreetings__Group__1__Impl886 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ReferencedGreetings__Group__0__Impl_in_rule__ReferencedGreetings__Group__0554 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__ReferencedGreetings__Group__1_in_rule__ReferencedGreetings__Group__0557 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_12_in_rule__ReferencedGreetings__Group__0__Impl585 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ReferencedGreetings__Group__1__Impl_in_rule__ReferencedGreetings__Group__1616 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ReferencedGreetings__NameAssignment_1_in_rule__ReferencedGreetings__Group__1__Impl643 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__QualifiedName__Group__0__Impl_in_rule__QualifiedName__Group__0677 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_rule__QualifiedName__Group__1_in_rule__QualifiedName__Group__0680 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__QualifiedName__Group__0__Impl707 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__QualifiedName__Group__1__Impl_in_rule__QualifiedName__Group__1736 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__QualifiedName__Group_1__0_in_rule__QualifiedName__Group__1__Impl763 = new BitSet(new long[]{0x0000000000002002L});
+    public static final BitSet FOLLOW_rule__QualifiedName__Group_1__0__Impl_in_rule__QualifiedName__Group_1__0798 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__QualifiedName__Group_1__1_in_rule__QualifiedName__Group_1__0801 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_13_in_rule__QualifiedName__Group_1__0__Impl829 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__QualifiedName__Group_1__1__Impl_in_rule__QualifiedName__Group_1__1860 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__QualifiedName__Group_1__1__Impl887 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleImport_in_rule__Model__ImportsAssignment_0925 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleReferencedGreetings_in_rule__Model__GreetingsAssignment_1956 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleQualifiedName_in_rule__Import__ImportedNamespaceAssignment_1987 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__ReferencedGreetings__GreetAssignment_11022 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__ReferencedGreetings__NameAssignment_11022 = new BitSet(new long[]{0x0000000000000002L});
 
 }

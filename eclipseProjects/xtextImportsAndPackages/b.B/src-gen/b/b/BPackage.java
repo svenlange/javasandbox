@@ -132,13 +132,13 @@ public interface BPackage extends EPackage
   int REFERENCED_GREETINGS = 2;
 
   /**
-   * The feature id for the '<em><b>Greet</b></em>' reference.
+   * The feature id for the '<em><b>Name</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int REFERENCED_GREETINGS__GREET = 0;
+  int REFERENCED_GREETINGS__NAME = 0;
 
   /**
    * The number of structural features of the '<em>Referenced Greetings</em>' class.
@@ -214,15 +214,15 @@ public interface BPackage extends EPackage
   EClass getReferencedGreetings();
 
   /**
-   * Returns the meta object for the reference '{@link b.b.ReferencedGreetings#getGreet <em>Greet</em>}'.
+   * Returns the meta object for the reference '{@link b.b.ReferencedGreetings#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Greet</em>'.
-   * @see b.b.ReferencedGreetings#getGreet()
+   * @return the meta object for the reference '<em>Name</em>'.
+   * @see b.b.ReferencedGreetings#getName()
    * @see #getReferencedGreetings()
    * @generated
    */
-  EReference getReferencedGreetings_Greet();
+  EReference getReferencedGreetings_Name();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -302,12 +302,12 @@ public interface BPackage extends EPackage
     EClass REFERENCED_GREETINGS = eINSTANCE.getReferencedGreetings();
 
     /**
-     * The meta object literal for the '<em><b>Greet</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Name</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference REFERENCED_GREETINGS__GREET = eINSTANCE.getReferencedGreetings_Greet();
+    EReference REFERENCED_GREETINGS__NAME = eINSTANCE.getReferencedGreetings_Name();
 
   }
 
