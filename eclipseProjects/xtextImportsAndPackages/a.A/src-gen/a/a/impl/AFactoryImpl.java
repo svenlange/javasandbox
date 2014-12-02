@@ -66,7 +66,6 @@ public class AFactoryImpl extends EFactoryImpl implements AFactory
     {
       case APackage.MODEL: return createModel();
       case APackage.PACKAGE_DECLARATION: return createPackageDeclaration();
-      case APackage.IMPORT: return createImport();
       case APackage.GREETING: return createGreeting();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -93,17 +92,6 @@ public class AFactoryImpl extends EFactoryImpl implements AFactory
   {
     PackageDeclarationImpl packageDeclaration = new PackageDeclarationImpl();
     return packageDeclaration;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Import createImport()
-  {
-    ImportImpl import_ = new ImportImpl();
-    return import_;
   }
 
   /**

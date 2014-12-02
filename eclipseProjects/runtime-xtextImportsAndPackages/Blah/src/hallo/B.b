@@ -1,6 +1,6 @@
-package hallo
+package hallo1
 
-// import hallo.*
+// import hallo1.*
 
 g: Name1
 g: Name2

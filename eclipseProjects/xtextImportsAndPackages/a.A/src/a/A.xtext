@@ -7,14 +7,7 @@ Model:
 
 PackageDeclaration:
 	'package' name=QualifiedName
-	imports+=Import*
 	greetings+=Greeting*;
-
-Import:
-	'import' importedNamespace=QualifiedNameWithWildcard;
-
-QualifiedNameWithWildcard:
-	QualifiedName '.*'?;
 
 QualifiedName:
 	ID ('.' ID)*;
