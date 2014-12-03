@@ -4,9 +4,6 @@ generate b "http://www.B.b"
 import "http://www.A.a" as a
 
 Model:
-	package=PackageDeclaration;
-
-PackageDeclaration:
 	'package' name=QualifiedName
 	imports+=Import*
 	greetings+=ReferencedGreeting*;
