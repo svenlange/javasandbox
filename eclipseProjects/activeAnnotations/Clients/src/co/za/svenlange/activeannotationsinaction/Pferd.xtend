@@ -5,7 +5,12 @@ import za.co.svenlange.xtend.example.ProfileMethods
 @ProfileMethods
 class Pferd {
 	
-	def mahlzeit(String dummy) {
+	def void mahlzeit1(String dummy) {
+		println(dummy)  
+		"tach"
+	}
+	
+	def void mahlzeit2(String dummy) {
 		println(dummy)
 		"tach"
 	}
