@@ -5,3 +5,5 @@ out
 bin
 *._trace
 *.class
+eclipseProjects/runtime-*
+xtend-gen
